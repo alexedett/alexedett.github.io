@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introducción a la Inteligencia Artificial</title>
+    <title>Historia y Creación de la IA</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -59,6 +59,27 @@
             margin-top: 0;
         }
 
+        .acordeon {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .acordeon summary {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .acordeon p {
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            margin: 0;
+        }
+
         footer {
             margin-top: 20px;
             font-size: 0.9em;
@@ -76,12 +97,39 @@
         // Contenido de los talleres
         const contenido = {
             taller1: {
-                seccion1: 'Sección 1: Introducción a la Inteligencia Artificial: Definición, diferencias entre IA fuerte e IA débil, y aplicaciones en la vida cotidiana.',
-                seccion2: 'Sección 2: Historia de la Inteligencia Artificial: Desde la Conferencia de Dartmouth en 1956 hasta la explosión de IA en la década de 2010.',
-                seccion3: 'Sección 3: Creación de la IA y sus Fundamentos: Algoritmos de aprendizaje automático, redes neuronales y tipos de aprendizaje.',
-                seccion4: 'Sección 4: Preguntas de Reflexión e Investigación: Exploración de las aplicaciones actuales de la IA y su impacto en la comunicación.',
-                conclusion: 'Conclusión y Reflexión Final: Impactos positivos y negativos de la IA, rol de los ingenieros y el futuro de la IA.',
-                evaluacion: 'Evaluación: Reflexión escrita de una página sobre lo aprendido y la opinión acerca del futuro de la IA.'
+                seccion1: `
+                    <div class="acordeon">
+                        <details>
+                            <summary>Subtítulo 1: Definición de IA</summary>
+                            <p>La Inteligencia Artificial (IA) se refiere a la simulación de procesos de inteligencia humana por parte de máquinas.</p>
+                        </details>
+                        <details>
+                            <summary>Subtítulo 2: IA Fuerte vs IA Débil</summary>
+                            <p>La IA fuerte busca replicar completamente la inteligencia humana, mientras que la IA débil se centra en tareas específicas.</p>
+                        </details>
+                        <details>
+                            <summary>Subtítulo 3: Aplicaciones de la IA</summary>
+                            <p>La IA se utiliza en medicina, transporte, finanzas y más.</p>
+                        </details>
+                    </div>
+                `,
+                seccion2: `
+                    <div class="acordeon">
+                        <details>
+                            <summary>Subtítulo 1: Conferencia de Dartmouth (1956)</summary>
+                            <p>Este evento marcó el inicio formal de la IA como disciplina científica.</p>
+                        </details>
+                        <details>
+                            <summary>Subtítulo 2: Inviernos de la IA</summary>
+                            <p>Períodos de desilusión y reducción de fondos para la investigación en IA.</p>
+                        </details>
+                        <details>
+                            <summary>Subtítulo 3: Explosión de la IA en los 2010s</summary>
+                            <p>Avances en aprendizaje profundo y big data impulsaron la IA moderna.</p>
+                        </details>
+                    </div>
+                `,
+                // Agrega más secciones aquí
             },
             taller2: {
                 introduccion: 'Espacio para el Taller 2: Introducción.',
