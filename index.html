@@ -38,6 +38,12 @@
         function mostrarSeccion(seccion) {
             const contenido = {
                 taller1: {
+                    seccion1: 'Sección 1: Introducción a la Inteligencia Artificial: Definición, diferencias entre IA fuerte e IA débil, y aplicaciones en la vida cotidiana.',
+                    seccion2: 'Sección 2: Historia de la Inteligencia Artificial: Desde la Conferencia de Dartmouth en 1956 hasta la explosión de IA en la década de 2010.',
+                    seccion3: 'Sección 3: Creación de la IA y sus Fundamentos: Algoritmos de aprendizaje automático, redes neuronales y tipos de aprendizaje.',
+                    seccion4: 'Sección 4: Preguntas de Reflexión e Investigación: Exploración de las aplicaciones actuales de la IA y su impacto en la comunicación.',
+                    conclusion: 'Conclusión y Reflexión Final: Impactos positivos y negativos de la IA, rol de los ingenieros y el futuro de la IA.',
+                    evaluacion: 'Evaluación: Reflexión escrita de una página sobre lo aprendido y la opinión acerca del futuro de la IA.'
                     introduccion: 'Introducción a la Inteligencia Artificial: Definición, diferencias entre IA fuerte e IA débil, y aplicaciones en la vida cotidiana.',
                     historia: 'Historia de la IA: Desde la Conferencia de Dartmouth en 1956 hasta la explosión de IA en la década de 2010.',
                     creacion: 'Creación de la IA: Algoritmos de aprendizaje automático, redes neuronales y tipos de aprendizaje.',
@@ -61,6 +67,8 @@
 <body>
     <h1>Historia y Creación de la Inteligencia Artificial</h1>
     <div class="content" id="contenido">
+        <h2>Bienvenidos al Taller 1</h2>
+        <p>Explora las diferentes secciones del Taller 1 sobre Inteligencia Artificial.</p>
         <h2>Bienvenidos</h2>
         <p>Explora la historia, fundamentos y reflexiones sobre la Inteligencia Artificial.</p>
     </div>
@@ -69,7 +77,12 @@
         <button onclick="cambiarTaller('taller2')">Taller 2</button>
     </div>
     <div>
-        <button onclick="mostrarSeccion('introduccion')">Introducción</button>
+        <button onclick="mostrarSeccion('seccion1')">Sección 1: Introducción a la IA</button>
+        <button onclick="mostrarSeccion('seccion2')">Sección 2: Historia de la IA</button>
+        <button onclick="mostrarSeccion('seccion3')">Sección 3: Creación de la IA</button>
+        <button onclick="mostrarSeccion('seccion4')">Sección 4: Reflexión e Investigación</button>
+        <button onclick="mostrarSeccion('conclusion')">Conclusión y Reflexión Final</button>
+        <button onclick="mostrarSeccion('evaluacion')">Evaluación</button>
         <button onclick="mostrarSeccion('historia')">Historia</button>
         <button onclick="mostrarSeccion('creacion')">Creación de la IA</button>
         <button onclick="mostrarSeccion('reflexion')">Reflexión Final</button>
