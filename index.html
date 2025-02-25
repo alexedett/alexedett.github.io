@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taller de la Inteligencia Artificial</title>
+    <title>Historia y Creación de la IA</title>
     <style>
         body {
-            font-family: Times-new-roman, sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
-            background-color: #f0f0f0;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
+            background: url('https://www.w3schools.com/css/img_tree.gif') no-repeat center center fixed;
+            background-size: cover;
         }
         .content {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -39,37 +34,27 @@
         }
     </style>
     <script>
+        let currentTaller = 'taller1';
         function mostrarSeccion(seccion) {
             const contenido = {
-                introduccion: `
-                    <h2>Introducción a la Inteligencia Artificial</h2>
-                    <p>La Inteligencia Artificial (IA) es una rama de la informática que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.</p>
-                    <p>Existen dos tipos principales: IA débil (especializada en tareas específicas) e IA fuerte (que busca emular la inteligencia humana general).</p>
-                    <p>La IA se utiliza en la vida cotidiana en asistentes virtuales, sistemas de recomendación, y mucho más.</p>
-                `,
-                historia: `
-                    <h2>Historia de la Inteligencia Artificial</h2>
-                    <p>El término 'Inteligencia Artificial' fue acuñado en 1956 por John McCarthy durante la Conferencia de Dartmouth.</p>
-                    <p>Desde entonces, la IA ha pasado por altibajos, incluidos los 'inviernos de la IA' donde el interés y la financiación disminuyeron.</p>
-                    <p>En la década de 2010, la 'explosión de IA' revitalizó el campo gracias a los avances en redes neuronales y big data.</p>
-                `,
-                creacion: `
-                    <h2>Creación de la IA y sus Fundamentos</h2>
-                    <p>La IA se basa en algoritmos de aprendizaje automático que permiten a las máquinas aprender de datos y mejorar con el tiempo.</p>
-                    <p>Las redes neuronales artificiales imitan el funcionamiento del cerebro humano, utilizando capas de neuronas interconectadas.</p>
-                    <p>Existen tres tipos de aprendizaje en IA: supervisado, no supervisado y por refuerzo.</p>
-                    <p>Se utilizan herramientas como Python, TensorFlow, y PyTorch en el desarrollo de IA.</p>
-                `,
-                reflexion: `
-                    <h2>Reflexión Final</h2>
-                    <p>La IA ha transformado la sociedad, aportando beneficios significativos pero también planteando desafíos éticos.</p>
-                    <p>Los ingenieros tienen un rol crucial en el desarrollo de IA responsable y transparente.</p>
-                    <p>En los próximos 50 años, la IA podría cambiar radicalmente el trabajo, la educación y la comunicación.</p>
-                    <p>¿Podremos equilibrar el avance tecnológico con la preservación de los valores humanos?</p>
-                `
+                taller1: {
+                    introduccion: 'Introducción a la Inteligencia Artificial: Definición, diferencias entre IA fuerte e IA débil, y aplicaciones en la vida cotidiana.',
+                    historia: 'Historia de la IA: Desde la Conferencia de Dartmouth en 1956 hasta la explosión de IA en la década de 2010.',
+                    creacion: 'Creación de la IA: Algoritmos de aprendizaje automático, redes neuronales y tipos de aprendizaje.',
+                    reflexion: 'Reflexión Final: Impactos positivos y negativos de la IA, rol de los ingenieros y el futuro de la IA.'
+                },
+                taller2: {
+                    introduccion: 'Taller 2 - Introducción: Exploración avanzada sobre los modelos de lenguaje como ChatGPT y sus aplicaciones.',
+                    historia: 'Taller 2 - Historia: Evolución de la IA en el procesamiento del lenguaje natural.',
+                    creacion: 'Taller 2 - Creación de la IA: Fundamentos técnicos de los Transformers y el aprendizaje profundo.',
+                    reflexion: 'Taller 2 - Reflexión: Ética en la IA, sesgos algorítmicos y desafíos futuros.'
+                }
             };
-
-            document.getElementById('contenido').innerHTML = contenido[seccion];
+            document.getElementById('contenido').innerHTML = contenido[currentTaller][seccion];
+        }
+        function cambiarTaller(taller) {
+            currentTaller = taller;
+            mostrarSeccion('introduccion');
         }
     </script>
 </head>
@@ -78,6 +63,10 @@
     <div class="content" id="contenido">
         <h2>Bienvenidos</h2>
         <p>Explora la historia, fundamentos y reflexiones sobre la Inteligencia Artificial.</p>
+    </div>
+    <div>
+        <button onclick="cambiarTaller('taller1')">Taller 1</button>
+        <button onclick="cambiarTaller('taller2')">Taller 2</button>
     </div>
     <div>
         <button onclick="mostrarSeccion('introduccion')">Introducción</button>
