@@ -11,13 +11,16 @@
             color: #fff;
             text-align: center;
             padding: 50px;
+            margin: 0;
         }
+
         .navbar {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-bottom: 20px;
         }
+
         .navbar button {
             background-color: #fff;
             color: #333;
@@ -28,10 +31,12 @@
             font-weight: bold;
             transition: all 0.3s ease;
         }
+
         .navbar button:hover {
             background-color: #333;
             color: #fff;
         }
+
         .content {
             background-color: rgba(255, 255, 255, 0.9);
             color: #333;
@@ -41,44 +46,50 @@
             max-width: 800px;
             margin: auto;
         }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
     </style>
     <script>
         let currentTaller = 'taller1';
+
+        // Contenido de los talleres
+        const contenido = {
+            taller1: {
+                seccion1: 'Sección 1: Introducción a la Inteligencia Artificial: Definición, diferencias entre IA fuerte e IA débil, y aplicaciones en la vida cotidiana.',
+                seccion2: 'Sección 2: Historia de la Inteligencia Artificial: Desde la Conferencia de Dartmouth en 1956 hasta la explosión de IA en la década de 2010.',
+                seccion3: 'Sección 3: Creación de la IA y sus Fundamentos: Algoritmos de aprendizaje automático, redes neuronales y tipos de aprendizaje.',
+                seccion4: 'Sección 4: Preguntas de Reflexión e Investigación: Exploración de las aplicaciones actuales de la IA y su impacto en la comunicación.',
+                conclusion: 'Conclusión y Reflexión Final: Impactos positivos y negativos de la IA, rol de los ingenieros y el futuro de la IA.',
+                evaluacion: 'Evaluación: Reflexión escrita de una página sobre lo aprendido y la opinión acerca del futuro de la IA.'
+            },
+            taller2: {
+                introduccion: 'Espacio para el Taller 2: Introducción.',
+                desarrollo: 'Espacio para el Taller 2: Desarrollo de contenidos.',
+                conclusiones: 'Espacio para el Taller 2: Conclusiones y reflexiones finales.'
+            }
+        };
+
+        // Función para mostrar la sección seleccionada
         function mostrarSeccion(seccion) {
-            const contenido = {
-                taller1: {
-                    seccion1: 'Sección 1: Introducción a la Inteligencia Artificial: Definición, diferencias entre IA fuerte e IA débil, y aplicaciones en la vida cotidiana.',
-                    seccion2: 'Sección 2: Historia de la Inteligencia Artificial: Desde la Conferencia de Dartmouth en 1956 hasta la explosión de IA en la década de 2010.',
-                    seccion3: 'Sección 3: Creación de la IA y sus Fundamentos: Algoritmos de aprendizaje automático, redes neuronales y tipos de aprendizaje.',
-                    seccion4: 'Sección 4: Preguntas de Reflexión e Investigación: Exploración de las aplicaciones actuales de la IA y su impacto en la comunicación.',
-                    conclusion: 'Conclusión y Reflexión Final: Impactos positivos y negativos de la IA, rol de los ingenieros y el futuro de la IA.',
-                    evaluacion: 'Evaluación: Reflexión escrita de una página sobre lo aprendido y la opinión acerca del futuro de la IA.'
-                },
-                taller2: {
-                    // Aquí puedes agregar contenido para el Taller 2
-                    introduccion: 'Espacio para el Taller 2: Introducción.',
-                    desarrollo: 'Espacio para el Taller 2: Desarrollo de contenidos.',
-                    conclusiones: 'Espacio para el Taller 2: Conclusiones y reflexiones finales.'
-                }
-            };
             document.getElementById('contenido').innerHTML = contenido[currentTaller][seccion];
         }
+
+        // Función para cambiar entre talleres
         function cambiarTaller(taller) {
             currentTaller = taller;
-            if (taller === 'taller1') {
-                document.getElementById('botones-taller1').style.display = 'flex';
-                document.getElementById('botones-taller2').style.display = 'none';
-                mostrarSeccion('seccion1');
-            } else if (taller === 'taller2') {
-                document.getElementById('botones-taller1').style.display = 'none';
-                document.getElementById('botones-taller2').style.display = 'flex';
-                mostrarSeccion('introduccion');
-            }
+            document.getElementById('botones-taller1').style.display = (taller === 'taller1') ? 'flex' : 'none';
+            document.getElementById('botones-taller2').style.display = (taller === 'taller2') ? 'flex' : 'none';
+            mostrarSeccion((taller === 'taller1') ? 'seccion1' : 'introduccion');
         }
     </script>
 </head>
 <body>
     <h1>Historia y Creación de la Inteligencia Artificial</h1>
+
+    <!-- Navegación principal -->
     <div class="navbar">
         <button onclick="cambiarTaller('taller1')">Taller 1</button>
         <button onclick="cambiarTaller('taller2')">Taller 2</button>
@@ -94,17 +105,20 @@
         <button onclick="mostrarSeccion('evaluacion')">Evaluación</button>
     </div>
 
-    <!-- Botones para Taller 2 (Agregar contenido en el script arriba) -->
+    <!-- Botones para Taller 2 -->
     <div class="navbar" id="botones-taller2" style="display: none;">
         <button onclick="mostrarSeccion('introduccion')">Introducción</button>
         <button onclick="mostrarSeccion('desarrollo')">Desarrollo</button>
         <button onclick="mostrarSeccion('conclusiones')">Conclusiones</button>
     </div>
 
+    <!-- Contenido dinámico -->
     <div class="content" id="contenido">
         <h2>Bienvenidos</h2>
         <p>Explora la historia, fundamentos y reflexiones sobre la Inteligencia Artificial.</p>
     </div>
+
+    <!-- Pie de página -->
     <footer>
         <p>© 2025 Historia y Creación de la IA</p>
     </footer>
