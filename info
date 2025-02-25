@@ -1,0 +1,40 @@
+import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+
+const ReflexionIA = () => {
+  const [section, setSection] = useState('intro');
+
+  const sections = {
+    intro: 'La inteligencia artificial (IA) se ha convertido en una de las tecnologías más revolucionarias de nuestra era... ',
+    impacto: 'La IA tiene un impacto tanto positivo como negativo. Ofrece beneficios como la automatización de procesos... ',
+    ingenieros: 'El rol de los ingenieros y desarrolladores en la IA es fundamental para garantizar que su evolución se lleve a cabo de manera ética... ',
+    futuro: 'Pensando en el futuro de la IA en los próximos 50 años, es posible que esta evolucione hasta alcanzar niveles de inteligencia artificial general... ',
+    historia: 'La historia de la IA comienza en 1956 con la Conferencia de Dartmouth, donde se acuñó el término por John McCarthy... ',
+    creacion: 'La creación de la IA se basa en algoritmos de aprendizaje automático y redes neuronales inspiradas en el cerebro humano... ',
+    reflexion: 'La IA ha cambiado la forma en que interactuamos con la tecnología, pero plantea desafíos éticos y sociales importantes... '
+  };
+
+  return (
+    <div className="p-10">
+      <h1 className="text-4xl font-bold mb-4">Reflexión sobre la Inteligencia Artificial</h1>
+      <Card className="mb-4">
+        <CardContent>
+          <p>{sections[section]}</p>
+        </CardContent>
+      </Card>
+      <div className="flex gap-4">
+        <Button onClick={() => setSection('intro')}>Introducción</Button>
+        <Button onClick={() => setSection('impacto')}>Impacto</Button>
+        <Button onClick={() => setSection('ingenieros')}>Rol de Ingenieros</Button>
+        <Button onClick={() => setSection('futuro')}>Futuro</Button>
+<Button onClick={() => setSection('historia')}>Historia</Button>
+<Button onClick={() => setSection('creacion')}>Creación de la IA</Button>
+<Button onClick={() => setSection('reflexion')}>Reflexión Final</Button>
+      </div>
+    </div>
+  );
+};
+
+export default ReflexionIA;
