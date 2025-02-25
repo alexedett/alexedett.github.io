@@ -14,6 +14,11 @@
             margin: 0;
         }
 
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
         .navbar {
             display: flex;
             justify-content: center;
@@ -25,16 +30,18 @@
             background-color: #fff;
             color: #333;
             border: none;
-            padding: 10px 20px;
+            padding: 15px 30px;
             cursor: pointer;
             border-radius: 25px;
             font-weight: bold;
             transition: all 0.3s ease;
+            font-size: 1.1em;
         }
 
         .navbar button:hover {
             background-color: #333;
             color: #fff;
+            transform: scale(1.05);
         }
 
         .content {
@@ -44,16 +51,27 @@
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             max-width: 800px;
-            margin: auto;
+            margin: 20px auto;
+            display: none; /* Ocultar inicialmente */
+        }
+
+        .content h2 {
+            margin-top: 0;
         }
 
         footer {
             margin-top: 20px;
             font-size: 0.9em;
         }
+
+        .author {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #f0f0f0;
+        }
     </style>
     <script>
-        let currentTaller = 'taller1';
+        let currentTaller = null;
 
         // Contenido de los talleres
         const contenido = {
@@ -74,20 +92,33 @@
 
         // Función para mostrar la sección seleccionada
         function mostrarSeccion(seccion) {
-            document.getElementById('contenido').innerHTML = contenido[currentTaller][seccion];
+            const contenidoDiv = document.getElementById('contenido');
+            contenidoDiv.innerHTML = contenido[currentTaller][seccion];
+            contenidoDiv.style.display = 'block'; // Mostrar el contenido
         }
 
         // Función para cambiar entre talleres
         function cambiarTaller(taller) {
             currentTaller = taller;
-            document.getElementById('botones-taller1').style.display = (taller === 'taller1') ? 'flex' : 'none';
-            document.getElementById('botones-taller2').style.display = (taller === 'taller2') ? 'flex' : 'none';
-            mostrarSeccion((taller === 'taller1') ? 'seccion1' : 'introduccion');
+            const botonesTaller1 = document.getElementById('botones-taller1');
+            const botonesTaller2 = document.getElementById('botones-taller2');
+            const contenidoDiv = document.getElementById('contenido');
+
+            if (taller === 'taller1') {
+                botonesTaller1.style.display = 'flex';
+                botonesTaller2.style.display = 'none';
+                contenidoDiv.style.display = 'none'; // Ocultar contenido inicial
+            } else if (taller === 'taller2') {
+                botonesTaller1.style.display = 'none';
+                botonesTaller2.style.display = 'flex';
+                contenidoDiv.style.display = 'none'; // Ocultar contenido inicial
+            }
         }
     </script>
 </head>
 <body>
     <h1>Historia y Creación de la Inteligencia Artificial</h1>
+    <div class="author">Creado por [Tu Nombre]</div>
 
     <!-- Navegación principal -->
     <div class="navbar">
@@ -96,7 +127,7 @@
     </div>
 
     <!-- Botones para Taller 1 -->
-    <div class="navbar" id="botones-taller1" style="display: flex;">
+    <div class="navbar" id="botones-taller1" style="display: none;">
         <button onclick="mostrarSeccion('seccion1')">Sección 1: Introducción</button>
         <button onclick="mostrarSeccion('seccion2')">Sección 2: Historia</button>
         <button onclick="mostrarSeccion('seccion3')">Sección 3: Creación de la IA</button>
@@ -115,7 +146,7 @@
     <!-- Contenido dinámico -->
     <div class="content" id="contenido">
         <h2>Bienvenidos</h2>
-        <p>Explora la historia, fundamentos y reflexiones sobre la Inteligencia Artificial.</p>
+        <p>Selecciona un taller para comenzar.</p>
     </div>
 
     <!-- Pie de página -->
