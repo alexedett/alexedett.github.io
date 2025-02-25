@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>Historia y Creación de la IA</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 50px;
+            padding: 20px;
             background-color: #f0f0f0;
         }
         h1 {
@@ -17,10 +17,76 @@
         p {
             color: #666;
         }
+        .content {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: auto;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
+    <script>
+        function mostrarSeccion(seccion) {
+            const contenido = {
+                introduccion: `
+                    <h2>Introducción a la Inteligencia Artificial</h2>
+                    <p>La Inteligencia Artificial (IA) es una rama de la informática que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.</p>
+                    <p>Existen dos tipos principales: IA débil (especializada en tareas específicas) e IA fuerte (que busca emular la inteligencia humana general).</p>
+                    <p>La IA se utiliza en la vida cotidiana en asistentes virtuales, sistemas de recomendación, y mucho más.</p>
+                `,
+                historia: `
+                    <h2>Historia de la Inteligencia Artificial</h2>
+                    <p>El término 'Inteligencia Artificial' fue acuñado en 1956 por John McCarthy durante la Conferencia de Dartmouth.</p>
+                    <p>Desde entonces, la IA ha pasado por altibajos, incluidos los 'inviernos de la IA' donde el interés y la financiación disminuyeron.</p>
+                    <p>En la década de 2010, la 'explosión de IA' revitalizó el campo gracias a los avances en redes neuronales y big data.</p>
+                `,
+                creacion: `
+                    <h2>Creación de la IA y sus Fundamentos</h2>
+                    <p>La IA se basa en algoritmos de aprendizaje automático que permiten a las máquinas aprender de datos y mejorar con el tiempo.</p>
+                    <p>Las redes neuronales artificiales imitan el funcionamiento del cerebro humano, utilizando capas de neuronas interconectadas.</p>
+                    <p>Existen tres tipos de aprendizaje en IA: supervisado, no supervisado y por refuerzo.</p>
+                    <p>Se utilizan herramientas como Python, TensorFlow, y PyTorch en el desarrollo de IA.</p>
+                `,
+                reflexion: `
+                    <h2>Reflexión Final</h2>
+                    <p>La IA ha transformado la sociedad, aportando beneficios significativos pero también planteando desafíos éticos.</p>
+                    <p>Los ingenieros tienen un rol crucial en el desarrollo de IA responsable y transparente.</p>
+                    <p>En los próximos 50 años, la IA podría cambiar radicalmente el trabajo, la educación y la comunicación.</p>
+                    <p>¿Podremos equilibrar el avance tecnológico con la preservación de los valores humanos?</p>
+                `
+            };
+
+            document.getElementById('contenido').innerHTML = contenido[seccion];
+        }
+    </script>
 </head>
 <body>
-    <h1>¡Bienvenidos a mi página web!</h1>
-    <p>Esta es mi primera página web usando GitHub Pages.</p>
+    <h1>Historia y Creación de la Inteligencia Artificial</h1>
+    <div class="content" id="contenido">
+        <h2>Bienvenidos</h2>
+        <p>Explora la historia, fundamentos y reflexiones sobre la Inteligencia Artificial.</p>
+    </div>
+    <div>
+        <button onclick="mostrarSeccion('introduccion')">Introducción</button>
+        <button onclick="mostrarSeccion('historia')">Historia</button>
+        <button onclick="mostrarSeccion('creacion')">Creación de la IA</button>
+        <button onclick="mostrarSeccion('reflexion')">Reflexión Final</button>
+    </div>
+    <footer>
+        <p>© 2025 Historia y Creación de la IA</p>
+    </footer>
 </body>
 </html>
