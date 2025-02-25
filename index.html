@@ -64,6 +64,7 @@
             document.getElementById('contenido').innerHTML = contenido[currentTaller][seccion];
         }
         function cambiarTaller(taller) {
+            document.getElementById('navbar-taller1').style.display = (taller === 'taller1') ? 'flex' : 'none';
             currentTaller = taller;
             mostrarSeccion('seccion1');
         }
@@ -75,6 +76,7 @@
         <button onclick="cambiarTaller('taller1')">Taller 1</button>
         <button onclick="cambiarTaller('taller2')">Taller 2</button>
     </div>
+    
     <div class="navbar">
         <button onclick="mostrarSeccion('seccion1')">Sección 1</button>
         <button onclick="mostrarSeccion('seccion2')">Sección 2</button>
