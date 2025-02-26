@@ -774,150 +774,175 @@ opinión acerca del futuro de la IA (1000 palabras mínimo)</p>
                 </div>
             </div>
             
-            <!-- Taller 2 -->
-            <div class="tab-pane fade" id="taller2" role="tabpanel">
-                <ul class="nav nav-tabs mb-3" id="taller2-sections" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="introduccion-tab" data-bs-toggle="tab" data-bs-target="#introduccion" type="button" role="tab">
-                            Introducción
+          <!-- Taller 2 -->
+<div class="tab-pane fade" id="taller2" role="tabpanel">
+    <ul class="nav nav-tabs mb-3" id="taller2-sections" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="introduccion-tab" data-bs-toggle="tab" data-bs-target="#introduccion" type="button" role="tab">
+                Introducción
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="desarrollo-tab" data-bs-toggle="tab" data-bs-target="#desarrollo" type="button" role="tab">
+                Desarrollo
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="conclusiones-tab" data-bs-toggle="tab" data-bs-target="#conclusiones" type="button" role="tab">
+                Conclusiones
+            </button>
+        </li>
+    </ul>
+    
+    <div class="tab-content bg-white text-dark p-4 rounded" id="taller2-content">
+        <!-- Introducción taller 2 -->
+        <div class="tab-pane fade show active" id="introduccion" role="tabpanel">
+            <h2>Introducción a las Tipologías de la Inteligencia Artificial</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p>Este taller tiene como objetivo introducir a los estudiantes en las diferentes tipologías de la Inteligencia Artificial (IA), su clasificación y aplicaciones en la vida cotidiana. Al finalizar, los estudiantes comprenderán las diferencias entre IA Estrecha (ANI), IA General (AGI) y IA Superinteligente (ASI), sin necesidad de conocimientos previos en programación.</p>
+                    
+                    <h5>Objetivos del taller:</h5>
+                    <ul>
+                        <li>Definir qué es la Inteligencia Artificial y sus aplicaciones.</li>
+                        <li>Comprender las diferencias entre ANI, AGI y ASI.</li>
+                        <li>Reflexionar sobre los desafíos éticos de la IA.</li>
+                        <li>Identificar ejemplos de IA en la vida cotidiana.</li>
+                    </ul>
+
+                    <h5>Preguntas iniciales:</h5>
+                    <ul>
+                        <li>¿Habías escuchado sobre IA antes?</li>
+                        <li>¿En qué ámbitos crees que se usa la IA actualmente?</li>
+                        <li>Enumera al menos tres ejemplos de aplicaciones de IA que hayas utilizado sin darte cuenta.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Desarrollo taller 2 -->
+        <div class="tab-pane fade" id="desarrollo" role="tabpanel">
+            <h2>Desarrollo: Tipologías de la Inteligencia Artificial</h2>
+            <div class="accordion" id="accordion-desarrollo">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ani">
+                            IA Estrecha (ANI)
                         </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="desarrollo-tab" data-bs-toggle="tab" data-bs-target="#desarrollo" type="button" role="tab">
-                            Desarrollo
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="conclusiones-tab" data-bs-toggle="tab" data-bs-target="#conclusiones" type="button" role="tab">
-                            Conclusiones
-                        </button>
-                    </li>
-                </ul>
+                    </h2>
+                    <div id="collapse-ani" class="accordion-collapse collapse show" data-bs-parent="#accordion-desarrollo">
+                        <div class="accordion-body">
+                            <p>La IA Estrecha (ANI) se especializa en una tarea concreta y depende de los datos de entrenamiento. No tiene capacidad de aprendizaje fuera de su dominio específico.</p>
+                            <p><strong>Características:</strong></p>
+                            <ul>
+                                <li>Especializada en una tarea específica.</li>
+                                <li>Alta dependencia de los datos de entrenamiento.</li>
+                                <li>No puede generalizar conocimientos.</li>
+                            </ul>
+                            <p><strong>Ejemplos:</strong></p>
+                            <ul>
+                                <li>Asistentes virtuales como Siri o Alexa.</li>
+                                <li>Sistemas de recomendación como Netflix o Spotify.</li>
+                                <li>Reconocimiento facial en cámaras de seguridad.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="tab-content bg-white text-dark p-4 rounded" id="taller2-content">
-                    <!-- Introducción taller 2 -->
-                    <div class="tab-pane fade show active" id="introduccion" role="tabpanel">
-                        <h2>Introducción a las Aplicaciones Prácticas de la IA</h2>
-                        <div class="card">
-                            <div class="card-body">
-                                <p>En este taller, exploraremos cómo la inteligencia artificial se aplica en diversos campos y cómo podemos comenzar a implementar soluciones básicas de IA. Veremos ejemplos prácticos y herramientas accesibles para principiantes.</p>
-                                
-                                <h5>Objetivos del taller:</h5>
-                                <ul>
-                                    <li>Identificar aplicaciones reales de la IA en diferentes industrias</li>
-                                    <li>Comprender los componentes básicos de un proyecto de IA</li>
-                                    <li>Explorar herramientas y plataformas para principiantes</li>
-                                    <li>Diseñar un concepto de aplicación basada en IA</li>
-                                </ul>
-                                
-                                <div class="file-upload">
-                                    <label class="form-label">Subir documento PDF relacionado:</label>
-                                    <input class="form-control" type="file" accept=".pdf" id="pdf-intro-t2" onchange="handleFileUpload('intro-t2', this.files)">
-                                </div>
-                                <div id="pdf-list-intro-t2" class="pdf-list"></div>
-                            </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-agi">
+                            IA General (AGI)
+                        </button>
+                    </h2>
+                    <div id="collapse-agi" class="accordion-collapse collapse" data-bs-parent="#accordion-desarrollo">
+                        <div class="accordion-body">
+                            <p>La IA General (AGI) tiene la capacidad de aprender de manera general, razonar y resolver problemas complejos, y adaptarse a nuevos entornos y tareas desconocidas.</p>
+                            <p><strong>Características:</strong></p>
+                            <ul>
+                                <li>Capacidad de aprendizaje general.</li>
+                                <li>Razonamiento y resolución de problemas complejos.</li>
+                                <li>Adaptabilidad a nuevos entornos.</li>
+                            </ul>
+                            <p><strong>Ejemplo futuro:</strong></p>
+                            <ul>
+                                <li>Un robot que puede aprender a cocinar cualquier platillo o realizar tareas domésticas sin programación específica.</li>
+                                <li>Un sistema que puede resolver problemas científicos complejos sin intervención humana.</li>
+                            </ul>
                         </div>
                     </div>
-                    
-                    <!-- Desarrollo taller 2 -->
-                    <div class="tab-pane fade" id="desarrollo" role="tabpanel">
-                        <h2>Desarrollo: Herramientas y Aplicaciones de IA</h2>
-                        <div class="accordion" id="accordion-desarrollo">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-plataformas">
-                                        Plataformas de IA para Principiantes
-                                    </button>
-                                </h2>
-                                <div id="collapse-plataformas" class="accordion-collapse collapse show" data-bs-parent="#accordion-desarrollo">
-                                    <div class="accordion-body">
-                                        <p>Existen numerosas plataformas que permiten experimentar con IA sin necesidad de conocimientos avanzados de programación. Algunas opciones incluyen Google Teachable Machine, Microsoft Azure AI, IBM Watson y Amazon SageMaker.</p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-plataformas" onchange="handleFileUpload('plataformas', this.files)">
-                                        </div>
-                                        <div id="pdf-list-plataformas" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-sectores">
-                                        Aplicaciones de IA por Sector
-                                    </button>
-                                </h2>
-                                <div id="collapse-sectores" class="accordion-collapse collapse" data-bs-parent="#accordion-desarrollo">
-                                    <div class="accordion-body">
-                                        <p>La IA está transformando sectores como la salud (diagnóstico médico, desarrollo de fármacos), educación (aprendizaje personalizado, sistemas de tutoría), agricultura (monitoreo de cultivos, optimización de recursos), finanzas (detección de fraudes, trading algorítmico) y muchos más.</p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-sectores" onchange="handleFileUpload('sectores', this.files)">
-                                        </div>
-                                        <div id="pdf-list-sectores" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-proyecto">
-                                        Diseño de un Proyecto de IA
-                                    </button>
-                                </h2>
-                                <div id="collapse-proyecto" class="accordion-collapse collapse" data-bs-parent="#accordion-desarrollo">
-                                    <div class="accordion-body">
-                                        <p>Para diseñar un proyecto de IA, es importante seguir estos pasos:</p>
-                                        <ol>
-                                            <li>Identificar el problema que se quiere resolver</li>
-                                            <li>Definir los objetivos y resultados esperados</li>
-                                            <li>Recopilar y preparar los datos necesarios</li>
-                                            <li>Seleccionar el tipo de algoritmo o modelo adecuado</li>
-                                            <li>Entrenar y optimizar el modelo</li>
-                                            <li>Evaluar los resultados</li>
-                                            <li>Implementar la solución</li>
-                                        </ol>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-proyecto" onchange="handleFileUpload('proyecto', this.files)">
-                                        </div>
-                                        <div id="pdf-list-proyecto" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Conclusiones taller 2 -->
-                    <div class="tab-pane fade" id="conclusiones" role="tabpanel">
-                        <h2>Conclusiones: El Futuro de las Aplicaciones de IA</h2>
-                        <div class="card">
-                            <div class="card-body">
-                                <p>La inteligencia artificial continuará evolucionando y expandiéndose a nuevas áreas. Las tendencias futuras incluyen:</p>
-                                <ul>
-                                    <li>Mayor integración de la IA en dispositivos cotidianos (IoT)</li>
-                                    <li>Sistemas de IA más autónomos y adaptables</li>
-                                    <li>Mejora en la colaboración humano-máquina</li>
-                                    <li>Democratización de las herramientas de IA</li>
-                                    <li>Mayor énfasis en la ética y transparencia</li>
-                                </ul>
-                                
-                                <p>A medida que estas tecnologías evolucionan, surge la necesidad de desarrollar habilidades para trabajar junto a sistemas inteligentes y aprovechar su potencial para resolver problemas complejos.</p>
-                                
-                                <div class="file-upload">
-                                    <label class="form-label">Subir documento PDF relacionado:</label>
-                                    <input class="form-control" type="file" accept=".pdf" id="pdf-conclusiones" onchange="handleFileUpload('conclusiones', this.files)">
-                                </div>
-                                <div id="pdf-list-conclusiones" class="pdf-list"></div>
-                            </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-asi">
+                            IA Superinteligente (ASI)
+                        </button>
+                    </h2>
+                    <div id="collapse-asi" class="accordion-collapse collapse" data-bs-parent="#accordion-desarrollo">
+                        <div class="accordion-body">
+                            <p>La IA Superinteligente (ASI) superaría el intelecto humano en todas las áreas, tomaría decisiones autónomas a gran escala y plantearía debates éticos sobre su control.</p>
+                            <p><strong>Características:</strong></p>
+                            <ul>
+                                <li>Supera el intelecto humano en todas las áreas.</li>
+                                <li>Capacidad de tomar decisiones autónomas a gran escala.</li>
+                                <li>Plantea debates éticos sobre su control.</li>
+                            </ul>
+                            <p><strong>Desafíos éticos:</strong></p>
+                            <ul>
+                                <li>Control de la IA y su autonomía.</li>
+                                <li>Impacto en la sociedad y riesgos existenciales.</li>
+                                <li>Responsabilidad sobre las decisiones tomadas por la IA.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Conclusiones taller 2 -->
+        <div class="tab-pane fade" id="conclusiones" role="tabpanel">
+            <h2>Conclusiones: Reflexiones sobre las Tipologías de IA</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p>Al finalizar este taller, los estudiantes habrán comprendido las diferencias entre ANI, AGI y ASI, y habrán reflexionado sobre los desafíos éticos y aplicaciones prácticas de cada una.</p>
+                    
+                    <h5>Preguntas finales:</h5>
+                    <ul>
+                        <li>¿Cuál de estas tipologías crees que tiene mayor impacto en la actualidad?</li>
+                        <li>¿La AGI es realmente alcanzable?</li>
+                        <li>¿Cuáles son los límites éticos de la IA?</li>
+                    </ul>
+
+                    <h5>Preguntas de análisis y respuestas:</h5>
+                    <ol>
+                        <li><strong>¿Cuál es la principal diferencia entre ANI y AGI?</strong><br>La ANI está especializada en una tarea específica, mientras que la AGI tiene la capacidad de aprender y razonar en múltiples áreas, similar a la inteligencia humana.</li>
+                        <li><strong>¿Qué riesgos tiene una AGI mal implementada?</strong><br>Podría tomar decisiones autónomas peligrosas o fuera de control, especialmente si no está bien alineada con los valores humanos.</li>
+                        <li><strong>¿Cómo afectan los sesgos en los datos a la IA?</strong><br>Los sesgos pueden llevar a decisiones injustas o discriminatorias, ya que la IA aprende de los datos proporcionados.</li>
+                        <li><strong>¿Cuáles son las ventajas de la IA en la educación?</strong><br>Personalización del aprendizaje, automatización de tareas administrativas y acceso a recursos educativos avanzados.</li>
+                        <li><strong>¿Qué impacto tiene la IA en la toma de decisiones humanas?</strong><br>La IA puede mejorar la precisión y eficiencia, pero también puede generar dependencia y reducir el juicio humano.</li>
+                        <li><strong>¿Cómo puede la IA ayudar a resolver problemas ambientales?</strong><br>Puede optimizar el uso de recursos, predecir desastres naturales y mejorar la gestión de residuos.</li>
+                        <li><strong>¿Qué sectores industriales se benefician más de la IA?</strong><br>Salud, finanzas, manufactura, transporte y retail.</li>
+                        <li><strong>¿Es posible alcanzar una AGI en el corto plazo?</strong><br>Es poco probable, ya que requiere avances significativos en tecnología y comprensión de la inteligencia humana.</li>
+                        <li><strong>¿Qué dilemas éticos enfrenta la ASI?</strong><br>Control, autonomía, impacto en la sociedad y posibles riesgos existenciales.</li>
+                        <li><strong>¿Cómo se puede regular la IA para evitar daños?</strong><br>Se necesitan leyes y estándares éticos para garantizar que la IA se use de manera responsable y segura.</li>
+                        <li><strong>¿Qué tan importante es la transparencia en los algoritmos de IA?</strong><br>Es crucial para evitar decisiones sesgadas o injustas y para generar confianza en los usuarios.</li>
+                        <li><strong>¿Cómo se diferencia la IA de los sistemas tradicionales de software?</strong><br>La IA puede aprender y adaptarse, mientras que el software tradicional sigue reglas predefinidas.</li>
+                        <li><strong>¿Puede una IA creativa sustituir a los humanos en el arte?</strong><br>Puede complementar la creatividad humana, pero es poco probable que reemplace completamente a los artistas.</li>
+                        <li><strong>¿Cómo influye la IA en la privacidad de los datos?</strong><br>La IA puede recopilar y analizar grandes cantidades de datos, lo que plantea preocupaciones sobre la privacidad y el uso ético de la información.</li>
+                        <li><strong>¿Qué desafíos enfrenta la implementación de IA en medicina?</strong><br>Integración con los profesionales de la salud, aceptación por parte de los pacientes y manejo de datos sensibles.</li>
+                        <li><strong>¿Puede la IA generar discriminación en sus decisiones?</strong><br>Puede ocurrir si los datos de entrenamiento contienen sesgos o si los algoritmos no están bien diseñados.</li>
+                        <li><strong>¿Qué tan autónomas deberían ser las decisiones de una IA?</strong><br>Debe ser limitada y supervisada por humanos para evitar riesgos.</li>
+                        <li><strong>¿Cómo afecta la IA al empleo y la automatización?</strong><br>La automatización puede eliminar algunos trabajos, pero también crear nuevos roles y oportunidades.</li>
+                        <li><strong>¿Qué aspectos hacen que una IA sea ética o no?</strong><br>Depende de cómo se diseñe, implemente y utilice, asegurando que beneficie a la sociedad y respete los derechos humanos.</li>
+                        <li><strong>¿Cómo podría la IA mejorar la seguridad cibernética?</strong><br>La IA puede detectar amenazas en tiempo real, mejorar la protección de datos y prevenir ciberataques.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+             
         
         <!-- Botones de navegación -->
         <div class="d-flex justify-content-between mt-4">
