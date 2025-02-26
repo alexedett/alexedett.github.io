@@ -466,50 +466,182 @@
         </div>
     </div>
     
-    <!-- Sección 4 -->
-    <div class="tab-pane fade" id="seccion4" role="tabpanel">
-        <h2>Sección 4: Reflexión e Investigación</h2>
-        <div class="accordion" id="accordion-seccion4">
-            <!-- ChatGPT -->
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-etica">
-                        Explica brevemente qué es ChatGPT y cómo funciona
-                    </button>
-                </h2>
-                <div id="collapse-etica" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion4">
-                    <div class="accordion-body">
-                        <p>ChatGPT es un modelo de lenguaje desarrollado por OpenAI que utiliza la arquitectura GPT (Generative Pre-trained Transformer). Está diseñado para generar texto coherente y relevante en función de las entradas que recibe, permitiendo mantener conversaciones, responder preguntas y realizar tareas de generación de contenido.</p>
-                        <div class="file-upload">
-                            <label class="form-label">Subir documento PDF relacionado:</label>
-                            <input class="form-control" type="file" accept=".pdf" id="pdf-etica" onchange="handleFileUpload('etica', this.files)">
-                        </div>
-                        <div id="pdf-list-etica" class="pdf-list"></div>
+   <!-- Sección 4: Reflexión e Investigación -->
+<div class="tab-pane fade" id="seccion4" role="tabpanel">
+    <h2>Sección 4: Reflexión e Investigación</h2>
+    <div class="accordion" id="accordion-seccion4">
+        <!-- ¿Qué es ChatGPT? -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-chatgpt">
+                    Explica brevemente qué es ChatGPT y cómo funciona
+                </button>
+            </h2>
+            <div id="collapse-chatgpt" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion4">
+                <div class="accordion-body">
+                    <p>ChatGPT es un modelo de lenguaje desarrollado por OpenAI que utiliza la arquitectura GPT (Generative Pre-trained Transformer). Está diseñado para generar texto coherente y relevante en función de las entradas que recibe, permitiendo mantener conversaciones, responder preguntas y realizar tareas de generación de contenido.</p>
+                    <p><strong>Funcionamiento:</strong></p>
+                    <ul>
+                        <li>Utiliza mecanismos de atención para procesar y generar secuencias de texto.</li>
+                        <li>Se entrena con grandes volúmenes de datos para aprender patrones lingüísticos.</li>
+                        <li>Puede mantener conversaciones fluidas y contextualizadas.</li>
+                    </ul>
+                    <div class="file-upload">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-chatgpt" onchange="handleFileUpload('chatgpt', this.files)">
                     </div>
+                    <div id="pdf-list-chatgpt" class="pdf-list"></div>
                 </div>
             </div>
-            
-            <!-- Tecnología detrás de ChatGPT -->
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-futuro">
-                        ¿Cuál es la tecnología principal que permite el funcionamiento de ChatGPT?
-                    </button>
-                </h2>
-                <div id="collapse-futuro" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
-                    <div class="accordion-body">
-                        <p>La tecnología principal detrás de ChatGPT es la arquitectura Transformer, específicamente la variante GPT. Esta arquitectura utiliza mecanismos de atención para procesar y generar secuencias de texto, permitiendo al modelo comprender el contexto y generar respuestas coherentes.</p>
-                        <div class="file-upload">
-                            <label class="form-label">Subir documento PDF relacionado:</label>
-                            <input class="form-control" type="file" accept=".pdf" id="pdf-futuro" onchange="handleFileUpload('futuro', this.files)">
-                        </div>
-                        <div id="pdf-list-futuro" class="pdf-list"></div>
+        </div>
+
+        <!-- Tecnología detrás de ChatGPT -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-tecnologia">
+                    ¿Cuál es la tecnología principal que permite el funcionamiento de ChatGPT?
+                </button>
+            </h2>
+            <div id="collapse-tecnologia" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
+                <div class="accordion-body">
+                    <p>La tecnología principal detrás de ChatGPT es la arquitectura <strong>Transformer</strong>, específicamente la variante GPT (Generative Pre-trained Transformer). Esta arquitectura utiliza mecanismos de atención para procesar y generar secuencias de texto, permitiendo al modelo comprender el contexto y generar respuestas coherentes.</p>
+                    <p><strong>Características clave:</strong></p>
+                    <ul>
+                        <li>Mecanismos de atención para procesar texto de manera eficiente.</li>
+                        <li>Entrenamiento con grandes volúmenes de datos para aprender patrones lingüísticos.</li>
+                        <li>Capacidad para generar texto en función del contexto proporcionado.</li>
+                    </ul>
+                    <div class="file-upload">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-tecnologia" onchange="handleFileUpload('tecnologia', this.files)">
                     </div>
+                    <div id="pdf-list-tecnologia" class="pdf-list"></div>
                 </div>
             </div>
-            
+        </div>
+
+        <!-- Limitaciones de ChatGPT -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-limitaciones">
+                    ¿Cuáles son las limitaciones actuales de ChatGPT?
+                </button>
+            </h2>
+            <div id="collapse-limitaciones" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
+                <div class="accordion-body">
+                    <p>ChatGPT tiene algunas limitaciones importantes:</p>
+                    <ul>
+                        <li><strong>Conocimiento desactualizado:</strong> El modelo fue entrenado con datos hasta 2021, por lo que no tiene información sobre eventos o desarrollos posteriores a esa fecha.</li>
+                        <li><strong>Posibles sesgos:</strong> Puede reflejar sesgos presentes en los datos de entrenamiento, lo que podría llevar a respuestas parcializadas o inapropiadas.</li>
+                        <li><strong>Falta de comprensión profunda:</strong> Aunque genera respuestas coherentes, no posee una comprensión real del mundo y puede producir información incorrecta o sin sentido.</li>
+                    </ul>
+                    <div class="file-upload">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-limitaciones" onchange="handleFileUpload('limitaciones', this.files)">
+                    </div>
+                    <div id="pdf-list-limitaciones" class="pdf-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Entrenamiento de ChatGPT -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-entrenamiento">
+                    ¿Cómo se entrena un modelo de lenguaje como ChatGPT?
+                </button>
+            </h2>
+            <div id="collapse-entrenamiento" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
+                <div class="accordion-body">
+                    <p>El entrenamiento de ChatGPT implica dos fases principales:</p>
+                    <ol>
+                        <li><strong>Preentrenamiento:</strong> El modelo se expone a una gran cantidad de texto para aprender patrones lingüísticos, gramática y conocimiento general.</li>
+                        <li><strong>Ajuste fino (Fine-tuning):</strong> Se refina el modelo utilizando conjuntos de datos más específicos y, en ocasiones, retroalimentación humana para mejorar su desempeño en tareas particulares.</li>
+                    </ol>
+                    <div class="file-upload">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-entrenamiento" onchange="handleFileUpload('entrenamiento', this.files)">
+                    </div>
+                    <div id="pdf-list-entrenamiento" class="pdf-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Precauciones para evitar sesgos -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-sesgos">
+                    ¿Qué precauciones se toman para evitar sesgos en la IA?
+                </button>
+            </h2>
+            <div id="collapse-sesgos" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
+                <div class="accordion-body">
+                    <p>Para mitigar los sesgos en modelos de IA como ChatGPT, se implementan diversas estrategias:</p>
+                    <ul>
+                        <li><strong>Curación de datos:</strong> Seleccionar y filtrar los datos de entrenamiento para minimizar la inclusión de contenido sesgado.</li>
+                        <li><strong>Ajuste fino con retroalimentación humana:</strong> Utilizar evaluaciones humanas para identificar y corregir respuestas sesgadas durante el proceso de ajuste fino.</li>
+                        <li><strong>Transparencia:</strong> Documentar y comunicar los posibles sesgos del modelo para que los usuarios sean conscientes de sus limitaciones.</li>
+                    </ul>
+                    <div class="file-upload">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-sesgos" onchange="handleFileUpload('sesgos', this.files)">
+                    </div>
+                    <div id="pdf-list-sesgos" class="pdf-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aplicaciones actuales de IA -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-aplicaciones-ia">
+                    ¿Qué aplicaciones actuales de IA se mencionan en el video?
+                </button>
+            </h2>
+            <div id="collapse-aplicaciones-ia" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
+                <div class="accordion-body">
+                    <p>Las aplicaciones comunes de la IA incluyen:</p>
+                    <ul>
+                        <li><strong>Asistentes virtuales:</strong> Siri, Alexa y Google Assistant.</li>
+                        <li><strong>Traducción automática:</strong> Herramientas como Google Translate.</li>
+                        <li><strong>Análisis de datos:</strong> Plataformas que utilizan IA para analizar grandes volúmenes de datos.</li>
+                        <li><strong>Generación de contenido:</strong> Herramientas como ChatGPT para redacción de textos.</li>
+                        <li><strong>Sistemas de recomendación:</strong> Plataformas como Netflix y Spotify.</li>
+                    </ul>
+                    <div class="file-upload">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-aplicaciones-ia" onchange="handleFileUpload('aplicaciones-ia', this.files)">
+                    </div>
+                    <div id="pdf-list-aplicaciones-ia" class="pdf-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Impacto de la IA en la comunicación -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-comunicacion">
+                    ¿Cuál es el impacto de la IA en la comunicación entre humanos y máquinas?
+                </button>
+            </h2>
+            <div id="collapse-comunicacion" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
+                <div class="accordion-body">
+                    <p>La IA ha transformado la interacción entre humanos y máquinas, permitiendo comunicaciones más naturales y eficientes. Algunos impactos clave incluyen:</p>
+                    <ul>
+                        <li><strong>Conversaciones fluidas:</strong> Modelos como ChatGPT permiten mantener diálogos coherentes y contextualizados.</li>
+                        <li><strong>Accesibilidad a la información:</strong> Herramientas de IA facilitan el acceso rápido a información relevante.</li>
+                        <li><strong>Automatización de tareas:</strong> Asistentes virtuales y chatbots automatizan tareas de atención al cliente y soporte técnico.</li>
+                    </ul>
+                    <div class="file-upload">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-comunicacion" onchange="handleFileUpload('comunicacion', this.files)">
+                    </div>
+                    <div id="pdf-list-comunicacion" class="pdf-list"></div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
     
     <!-- Conclusión -->
     <div class="tab-pane fade" id="conclusion" role="tabpanel">
