@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+Copy<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -14,11 +14,14 @@
             background: linear-gradient(to right, #283c86, #45a247);
             color: #fff;
             padding-top: 20px;
+            min-height: 100vh;
         }
         
         .main-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 15px;
+            width: 100%;
         }
         
         .file-upload {
@@ -27,6 +30,7 @@
         
         .card {
             margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
         .btn-primary {
@@ -64,6 +68,83 @@
         .pdf-list {
             margin-top: 10px;
         }
+        
+        /* Estilos para consistencia entre dispositivos */
+        @media (min-width: 768px) {
+            .nav-pills .nav-link, .nav-tabs .nav-link {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .nav-pills .nav-link, .nav-tabs .nav-link {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+        }
+        
+        /* Asegurar que el contenido de las pestañas mantenga el mismo estilo */
+        .tab-content {
+            background-color: white;
+            border-radius: 0 0 5px 5px;
+            padding: 20px;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-height: 400px; /* Altura mínima consistente */
+        }
+        
+        /* Estilos para el acordeón */
+        .accordion-button {
+            padding: 15px;
+        }
+        
+        .accordion-body {
+            padding: 20px;
+        }
+        
+        /* Botones de navegación con tamaño consistente */
+        .btn {
+            padding: 10px 25px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        
+        /* Espacio consistente para las secciones */
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        /* Navegación principal con espacio uniforme */
+        .nav-pills, .nav-tabs {
+            margin-bottom: 20px;
+        }
+        
+        /* Hacer que las pestañas tengan mejor aspecto en todos los dispositivos */
+        .nav-tabs .nav-link {
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-right: 2px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        
+        .nav-tabs .nav-link.active {
+            background-color: white;
+            color: #283c86;
+            font-weight: bold;
+        }
+        
+        /* Encabezado consistente */
+        .text-center {
+            padding: 20px 0;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+    
     </style>
 </head>
 <body>
