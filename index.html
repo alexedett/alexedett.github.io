@@ -960,7 +960,8 @@
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Script personalizado -->
+    
+         <!-- Script personalizado -->
     <script>
         // Función para manejar la subida de archivos PDF
         function handleFileUpload(section, files) {
@@ -1014,7 +1015,7 @@
                     } else {
                         // Cambiar al Taller 2
                         currentTaller = 1;
-                        new bootstrap.Tab(seccionesT2[currentSeccionT2]).show();
+                        new bootstrap.Tab(talleresTabs[currentTaller]).show();
                     }
                 } else {
                     // Estamos en Taller 2
@@ -1084,4 +1085,4 @@
         });
     </script>
 </body>
-</html>
+</html>      
