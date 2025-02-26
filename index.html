@@ -205,563 +205,338 @@
                     </li>
                 </ul>
                 
-                <div class="tab-content bg-white text-dark p-4 rounded" id="taller1-content">
-                    <!-- Sección 1 -->
-                    <div class="tab-pane fade show active" id="seccion1" role="tabpanel">
-                        <h2>Sección 1: Introducción a la IA</h2>
-                        <div class="accordion" id="accordion-seccion1">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-definicion">
-                                        Definir el concepto de IA
-                                    </button>
-                                </h2>
-                                <div id="collapse-definicion" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion1">
-                                    <div class="accordion-body">
-                                        <p>La inteligencia artificial (IA) es un campo de la informática que busca desarrollar sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como el aprendizaje, la toma de decisiones y el reconocimiento de patrones.
-
-                                              Existen diferentes maneras de definir la IA según su enfoque:
-
-                                               IA como construcción de programas: Se centra en el desarrollo de software capaz de resolver problemas complejos.
-                                               IA basada en el comportamiento humano: Busca imitar el razonamiento y la conducta de las personas (ejemplo: Test de Turing).
-                                               IA basada en la racionalidad: Se enfoca en la toma de decisiones óptimas, sin necesidad de imitar a los humanos.
-                                               IA como agentes inteligentes: Sistemas que perciben su entorno y actúan de manera autónoma para cumplir sus objetivos.</p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-definicion" onchange="handleFileUpload('definicion', this.files)">
-                                        </div>
-                                        <div id="pdf-list-definicion" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-fuerte-debil">
-                                        Explicar las diferencias entre IA Fuerte e IA Débil
-                                    </button>
-                                </h2>
-                                <div id="collapse-fuerte-debil" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion1">
-                                    <div class="accordion-body">
-                                        <p>La inteligencia artificial "débil", también conocida como inteligencia artificial estrecha o limitada, se refiere a sistemas diseñados para realizar tareas específicas de forma eficiente,
-                                            imitando la inteligencia humana en un contexto limitado. A diferencia de la inteligencia artificial "fuerte", que busca replicar la cognición humana en su totalidad, la IA débil no tiene 
-                                            conciencia ni comprensión general, solo ejecuta programas y algoritmos para resolver problemas específicos.
-                                            
-                                            Un ejemplo de inteligencia artificial débil podría ser un sistema de recomendación de películas en una plataforma como Netflix. Este sistema utiliza algoritmos para analizar tus preferencias
-                                            (basadas en tus elecciones previas, calificaciones, géneros favoritos, etc.) y luego te sugiere películas o series que podrían gustarte. El sistema está diseñado solo para esa tarea 
-                                            específica: recomendar contenido. No tiene la capacidad de hacer algo fuera de esa función, como crear un guion original o comprender el contexto cultural de las películas.
-                                            
-                                            En cambio, un ejemplo de inteligencia artificial fuerte o inteligencia artificial general sería una máquina o robot que pueda resolver problemas complejos y tomar decisiones en una variedad
-                                            de situaciones.
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-fuerte-debil" onchange="handleFileUpload('fuerte-debil', this.files)">
-                                        </div>
-                                        <div id="pdf-list-fuerte-debil" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <biutton class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-aplicaciones">
-                                      Identificar las principales aplicaciones de la IA en la vida cotidiana
-                                    </button>
-                                </h2>
-                                <div id="collapse-aplicaciones" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion1">
-                                    <div class="accordion-body">
-                                        <p>
-                                         La  inteligencia  artificial  ha  sido  llevada  a  la  cotidianidad  a  través  de  los  diversos mecanismos comerciales tales
-                                         como: 
-                                            Teléfonos inteligentes: Unos de los ejemplos más constantes es el texto predictivo en los celulares ya que son muchas las
-                                            plataformas en la que escribimos. 
-                                            
-                                            Otro de los ejemplos es el reconocimiento facial que puede generar una imagen en 3D para determinar si la persona que intenta
-                                            desbloquear el teléfono es o no la autorizada. 
-                                            
-                                            Correo electrónico: La IA es una parte fundamental para programas como Grammarly y Spell Check se activan cuando uno redacta
-                                            un texto para escribirlo con menos errores. También la IA evita que más del 99 por ciento del spam ingrese a la bandeja de entrada.
-                                             
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-aplicaciones" onchange="handleFileUpload('aplicaciones', this.files)">
-                                        </div>
-                                        <div id="pdf-list-aplicaciones" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                                       <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <biutton class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-relacionia">
-                                       Comprender	la	relación	entre	la	IA	y	otras	tecnologías	emergentes	como	el	aprendizaje	automático	y	las	redes	neuronales	artificiales
-                                    </button>
-                                </h2>
-                                <div id="collapse-relacionia" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion1">
-                                    <div class="accordion-body">
-                                        <p>
-                                         La inteligencia artificial es el campo de la informática que busca desarrollar máquinas y sistemas capaces de realizar tareas que tradicionalmente requieren
-                                         inteligencia humana.
-                                            
-                                         Es un término amplio que engloba muchas subdisciplinas y enfoques, incluidos el aprendizaje automático y el aprendizaje profundo. 
-                                            
-                                         El aprendizaje automático es una subcategoría de la IA que permite a los sistemas aprender de los datos sin ser programados explícitamente para cada tarea. 
-                                         En lugar de seguir reglas estrictas, los modelos de ML identifican patrones en los datos y los usan para hacer predicciones o tomar decisiones.
-                                            
-                                         Las redes neuronales artificiales (RNA) son modelos inspirados en la estructura del cerebro humano. Están compuestas por capas de neuronas artificiales 
-                                         interconectadas que procesan la información de manera jerárquica. Cuando estas redes tienen múltiples capas ocultas, se habla de aprendizaje profundo
-                                         (deep learning). Este enfoque ha revolucionado la IA moderna, permitiendo avances en reconocimiento de imágenes, procesamiento de lenguaje natural y conducción autónoma. 
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-aplicaciones" onchange="handleFileUpload('aplicaciones', this.files)">
-                                        </div>
-                                        <div id="pdf-list-relacionia" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
+       <div class="tab-content bg-white text-dark p-4 rounded" id="taller1-content">
+    <!-- Sección 1 -->
+    <div class="tab-pane fade show active" id="seccion1" role="tabpanel">
+        <h2>Sección 1: Introducción a la IA</h2>
+        <div class="accordion" id="accordion-seccion1">
+            <!-- Definición de IA -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-definicion">
+                        Definir el concepto de IA
+                    </button>
+                </h2>
+                <div id="collapse-definicion" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion1">
+                    <div class="accordion-body">
+                        <p>La inteligencia artificial (IA) es un campo de la informática que busca desarrollar sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como el aprendizaje, la toma de decisiones y el reconocimiento de patrones.</p>
+                        <p><strong>Enfoques de la IA:</strong></p>
+                        <ul>
+                            <li><strong>IA como construcción de programas:</strong> Se centra en el desarrollo de software capaz de resolver problemas complejos.</li>
+                            <li><strong>IA basada en el comportamiento humano:</strong> Busca imitar el razonamiento y la conducta de las personas (ejemplo: Test de Turing).</li>
+                            <li><strong>IA basada en la racionalidad:</strong> Se enfoca en la toma de decisiones óptimas, sin necesidad de imitar a los humanos.</li>
+                            <li><strong>IA como agentes inteligentes:</strong> Sistemas que perciben su entorno y actúan de manera autónoma para cumplir sus objetivos.</li>
+                        </ul>
+                        <div class="file-upload">
+                            <label class="form-label">Subir documento PDF relacionado:</label>
+                            <input class="form-control" type="file" accept=".pdf" id="pdf-definicion" onchange="handleFileUpload('definicion', this.files)">
                         </div>
+                        <div id="pdf-list-definicion" class="pdf-list"></div>
                     </div>
-                    
-                    <!-- Sección 2 -->
-                    <div class="tab-pane fade" id="seccion2" role="tabpanel">
-                        <h2>Sección 2: Historia de la IA</h2>
-                        <div class="accordion" id="accordion-seccion2">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-dartmouth">
-                                        ¿Quién acuñó el término 'Inteligencia Artificial' y en qué contexto?
-                                    </button>
-                                </h2>
-                                <div id="collapse-dartmouth" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion2">
-                                    <div class="accordion-body">
-                                        <p>El término "Inteligencia Artificial" fue acuñado por John McCarthy en 1956 durante la Conferencia 
-                                            de Dartmouth, un evento clave en la historia de la IA. McCarthy, junto con Marvin Minsky, Nathaniel Rochester 
-                                            y Claude Shannon, organizó esta conferencia con el objetivo de reunir a investigadores interesados
-                                            en la posibilidad de que las máquinas pudieran imitar la inteligencia humana.La conferencia propuso formalmente
-                                            el estudio de la IA como una disciplina independiente, con el objetivo de desarrollar máquinas que pudieran 
-                                            realizar tareas como resolver problemas, aprender y entender el lenguaje natural
-                                            
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-dartmouth" onchange="handleFileUpload('dartmouth', this.files)">
-                                        </div>
-                                        <div id="pdf-list-dartmouth" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-inviernos">
-                                        Explicar la importancia de la Conferencia de Dartmouth (1956) en el desarrollo de la IA.
-                                    </button>
-                                </h2>
-                                <div id="collapse-inviernos" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
-                                    <div class="accordion-body">
-                                        <p>
-                                          La Conferencia de Dartmouth es considerada el punto de partida oficial del campo de la inteligencia artificial. En este evento:
-
-                                           Se estableció la IA como una nueva disciplina de investigación dentro de la informática.
-                                           Se plantearon problemas fundamentales como:
-                                           Cómo programar computadoras para entender el lenguaje.
-                                           El desarrollo de redes neuronales artificiales.
-                                           La mejora automática de los sistemas computacionales.
-                                           La creatividad y la abstracción en las máquinas.
-                                            
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-inviernos" onchange="handleFileUpload('inviernos', this.files)">
-                                        </div>
-                                        <div id="pdf-list-inviernos" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-explosion">
-                                        Identificar hitos importantes en la evolución de la IA durante el siglo XX y XXI.
-                                    </button>
-                                </h2>
-                                <div id="collapse-explosion" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
-                                    <div class="accordion-body">
-                                        <p>
-                                            Algunos de los momentos más importantes en la historia de la IA incluyen:
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-explosion" onchange="handleFileUpload('explosion', this.files)">
-                                        </div>
-                                        <div id="pdf-list-explosion" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-explosion">
-                                      Describir el impacto de la 'Explosión de IA' en la década de 2010.
-                                    </button>
-                                </h2>
-                                <div id="collapse-explosion" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
-                                    <div class="accordion-body">
-                                        <p>
-                                            La década de 2010 marcó un resurgimiento de la IA debido a tres factores clave:
-
-Disponibilidad de grandes volúmenes de datos (Big Data).
-Mayor capacidad de procesamiento gracias a las GPU y TPU.
-Avances en aprendizaje profundo (Deep Learning).
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-explosion" onchange="handleFileUpload('explosion', this.files)">
-                                        </div>
-                                        <div id="pdf-list-explosion" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-<div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-explosion">
-                                        Investigar qué son los 'inviernos de la IA' y cómo afectaron su desarrollo.
-                                    </button>
-                                </h2>
-                                <div id="collapse-explosion" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
-                                    <div class="accordion-body">
-                                        <p>
-                                            Los inviernos de la IA son períodos en los que el interés y la financiación en IA disminuyeron drásticamente debido a expectativas no cumplidas y avances tecnológicos limitados. Ha habido dos inviernos principales
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-explosion" onchange="handleFileUpload('explosion', this.files)">
-                                        </div>
-                                        <div id="pdf-list-explosion" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
+                </div>
+            </div>
+            
+            <!-- IA Fuerte vs IA Débil -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-fuerte-debil">
+                        Explicar las diferencias entre IA Fuerte e IA Débil
+                    </button>
+                </h2>
+                <div id="collapse-fuerte-debil" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion1">
+                    <div class="accordion-body">
+                        <p><strong>IA Débil (Estrecha):</strong></p>
+                        <ul>
+                            <li>Se refiere a sistemas diseñados para realizar tareas específicas de forma eficiente.</li>
+                            <li>No tiene conciencia ni comprensión general, solo ejecuta programas y algoritmos para resolver problemas específicos.</li>
+                            <li><strong>Ejemplo:</strong> Un sistema de recomendación de películas en Netflix.</li>
+                        </ul>
+                        <p><strong>IA Fuerte (General):</strong></p>
+                        <ul>
+                            <li>Busca replicar la cognición humana en su totalidad.</li>
+                            <li>Capaz de resolver problemas complejos y tomar decisiones en una variedad de situaciones.</li>
+                            <li><strong>Ejemplo:</strong> Un robot que puede aprender a cocinar cualquier platillo o realizar tareas domésticas sin programación específica.</li>
+                        </ul>
+                        <div class="file-upload">
+                            <label class="form-label">Subir documento PDF relacionado:</label>
+                            <input class="form-control" type="file" accept=".pdf" id="pdf-fuerte-debil" onchange="handleFileUpload('fuerte-debil', this.files)">
                         </div>
+                        <div id="pdf-list-fuerte-debil" class="pdf-list"></div>
                     </div>
-                    
-                    <!-- Sección 3 -->
-                    <div class="tab-pane fade" id="seccion3" role="tabpanel">
-                        <h2>Sección 3: Creación de la IA y sus Fundamentos </h2>
-                        <div class="accordion" id="accordion-seccion3">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-aprendizaje">
-                                        Explicar el funcionamiento de los algoritmos de aprendizaje automático.
-                                    </button>
-                                </h2>
-                                <div id="collapse-aprendizaje" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion3">
-                                    <div class="accordion-body">
-                                        <p>Los algoritmos de aprendizaje automático permiten a las computadoras identificar patrones en datos
-                                            y hacer predicciones sin ser programadas explícitamente. Su funcionamiento se basa en tres etapas principales
-                                            .</p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-aprendizaje" onchange="handleFileUpload('aprendizaje', this.files)">
-                                        </div>
-                                        <div id="pdf-list-aprendizaje" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-redes">
-                                        ¿Qué son las redes neuronales artificiales y cómo se inspiran en el cerebro humano?
-                                    </button>
-                                </h2>
-                                <div id="collapse-redes" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
-                                    <div class="accordion-body">
-                                        <p>Las redes neuronales artificiales (RNA) son modelos computacionales inspirados en la estructura
-                                            y funcionamiento del cerebro humano. Están compuestas por neuronas artificiales, organizadas en capas interconectadas.
-                                            
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-redes" onchange="handleFileUpload('redes', this.files)">
-                                        </div>
-                                        <div id="pdf-list-redes" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-pln">
-                                        Diferenciar los tipos de aprendizaje en IA: supervisado, no supervisado y por refuerzo.
-                                    </button>
-                                </h2>
-                                <div id="collapse-pln" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
-                                    <div class="accordion-body">
-                                        <p>Existen tres tipos principales de aprendizaje automático:
-                                           Aprendizaje supervisado: Se entrena con datos etiquetados (ejemplo: imágenes de gatos con la etiqueta "gato").
-                                           Aprendizaje no supervisado: Se usa cuando los datos no tienen etiquetas, y el sistema debe encontrar patrones por sí solo.
-                                           Aprendizaje por refuerzo: El agente aprende interactuando con un entorno, recibiendo recompensas o penalizaciones.
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-pln" onchange="handleFileUpload('pln', this.files)">
-                                        </div>
-                                        <div id="pdf-list-pln" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-pln">
-                                        Mencionar herramientas y lenguajes de programación comunes en el desarrollo de IA.
-                                    </button>
-                                </h2>
-                                <div id="collapse-pln" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
-                                    <div class="accordion-body">
-                                        <p>El desarrollo de inteligencia artificial se apoya en diversas herramientas y lenguajes de programación:
-
-Lenguajes de programación:
-
-Python, R, Julia, Java y C++
-Bibliotecas y frameworks más usados:
-
-TensorFlow, PyTorch, Scikit-learn, Keras, OpenCV, NLTK y spaCy 
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-pln" onchange="handleFileUpload('pln', this.files)">
-                                        </div>
-                                        <div id="pdf-list-pln" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-pln">
-                                        ¿Cuáles son los principales componentes de un sistema de IA?
-                                    </button>
-                                </h2>
-                                <div id="collapse-pln" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
-                                    <div class="accordion-body">
-                                        <p>Un sistema de inteligencia artificial está compuesto por varios elementos clave:
-
-Datos, 
-Modelo de aprendizaje, 
-Motor de procesamiento, 
-Algoritmos de optimización, 
-Interfaz de usuario
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-pln" onchange="handleFileUpload('pln', this.files)">
-                                        </div>
-                                        <div id="pdf-list-pln" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
+                </div>
+            </div>
+            
+            <!-- Aplicaciones de la IA -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-aplicaciones">
+                        Identificar las principales aplicaciones de la IA en la vida cotidiana
+                    </button>
+                </h2>
+                <div id="collapse-aplicaciones" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion1">
+                    <div class="accordion-body">
+                        <p>La inteligencia artificial ha sido llevada a la cotidianidad a través de diversos mecanismos comerciales:</p>
+                        <ul>
+                            <li><strong>Teléfonos inteligentes:</strong> Texto predictivo y reconocimiento facial.</li>
+                            <li><strong>Correo electrónico:</strong> Herramientas como Grammarly y filtros de spam.</li>
+                            <li><strong>Asistentes virtuales:</strong> Siri, Alexa y Google Assistant.</li>
+                            <li><strong>Recomendaciones personalizadas:</strong> Plataformas como Netflix y Spotify.</li>
+                        </ul>
+                        <div class="file-upload">
+                            <label class="form-label">Subir documento PDF relacionado:</label>
+                            <input class="form-control" type="file" accept=".pdf" id="pdf-aplicaciones" onchange="handleFileUpload('aplicaciones', this.files)">
                         </div>
+                        <div id="pdf-list-aplicaciones" class="pdf-list"></div>
                     </div>
-                    
-                    <!-- Sección 4 -->
-                    <div class="tab-pane fade" id="seccion4" role="tabpanel">
-                        <h2>Sección 4: Reflexión e Investigación</h2>
-                        <div class="accordion" id="accordion-seccion4">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-etica">
-                                        Explica brevemente qué es ChatGPT y cómo funciona.
-                                    </button>
-                                </h2>
-                                <div id="collapse-etica" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p>ChatGPT es un modelo de lenguaje desarrollado por OpenAI que utiliza la arquitectura GPT (Generative Pre-trained Transformer). Está diseñado para generar texto coherente y relevante en función de las entradas que recibe, permitiendo mantener conversaciones, responder preguntas y realizar tareas de generación de contenido.</p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-etica" onchange="handleFileUpload('etica', this.files)">
-                                        </div>
-                                        <div id="pdf-list-etica" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-futuro">
-                                        ¿Cuál es la tecnología principal que permite el funcionamiento de ChatGPT?
-                                    </button>
-                                </h2>
-                                <div id="collapse-futuro" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p>
-                                            La tecnología principal detrás de ChatGPT es la arquitectura Transformer, específicamente la variante GPT. Esta arquitectura utiliza mecanismos de atención para procesar y generar secuencias de texto, permitiendo al modelo comprender el contexto y generar respuestas coherentes.
-
-
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-futuro" onchange="handleFileUpload('futuro', this.files)">
-                                        </div>
-                                        <div id="pdf-list-futuro" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-sociedad">
-                                         Según el video, ¿cuáles son las limitaciones actuales de ChatGPT?
-                                    </button>
-                                </h2>
-                                <div id="collapse-sociedad" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p>
-                                          Conocimiento desactualizado ya que el modelo fue entrenado con datos hasta 2021, por lo que no tiene información sobre eventos o desarrollos posteriores a esa fecha.
-
-Posibles sesgos, porque puede reflejar sesgos presentes en los datos de entrenamiento, lo que podría llevar a respuestas parcializadas o inapropiadas.
-
-Falta de comprensión profunda, aunque genera respuestas coherentes, no posee una comprensión real del mundo y puede producir información incorrecta o sin sentido.  
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-sociedad" onchange="handleFileUpload('sociedad', this.files)">
-                                        </div>
-                                        <div id="pdf-list-sociedad" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                              <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-sociedad">
-                                         ¿Cómo se entrena un modelo de lenguaje como ChatGPT?
-                                    </button>
-                                </h2>
-                                <div id="collapse-sociedad" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p> El entrenamiento de ChatGPT implica dos fases principales:
-
-Preentrenamiento: El modelo se expone a una gran cantidad de texto para aprender patrones lingüísticos, gramática y conocimiento general.
-
-Ajuste fino (Fine-tuning): Se refina el modelo utilizando conjuntos de datos más específicos y, en ocasiones, retroalimentación humana para mejorar su desempeño en tareas particulares.</p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-sociedad" onchange="handleFileUpload('sociedad', this.files)">
-                                        </div>
-                                        <div id="pdf-list-sociedad" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                              <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-sociedad">
-                                         ¿Qué precauciones se toman para evitar sesgos en la IA?
-                                    </button>
-                                </h2>
-                                <div id="collapse-sociedad" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p>Para mitigar los sesgos en modelos de IA como ChatGPT, se implementan diversas estrategias:
-
-Curación de datos: Seleccionar y filtrar los datos de entrenamiento para minimizar la inclusión de contenido sesgado.
-
-Ajuste fino con retroalimentación humana: Utilizar evaluaciones humanas para identificar y corregir respuestas sesgadas durante el proceso de ajuste fino.
-                                            
-                                        </p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-sociedad" onchange="handleFileUpload('sociedad', this.files)">
-                                        </div>
-                                        <div id="pdf-list-sociedad" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                              <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-sociedad">
-                                         ¿Qué aplicaciones actuales de IA se mencionan en el video?
-                                    </button>
-                                </h2>
-                                <div id="collapse-sociedad" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p> Las aplicaciones comunes de la IA incluyen asistentes virtuales, traducción automática, análisis de datos, generación de contenido y sistemas de recomendación, entre otros..</p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-sociedad" onchange="handleFileUpload('sociedad', this.files)">
-                                        </div>
-                                        <div id="pdf-list-sociedad" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                              <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-sociedad">
-                                         ¿Cuál es el impacto de la IA en la comunicación entre humanos y máquinas?
-                                    </button>
-                                </h2>
-                                <div id="collapse-sociedad" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p>La IA ha transformado la interacción entre humanos y máquinas, permitiendo comunicaciones más naturales y eficientes. Modelos como ChatGPT facilitan conversaciones fluidas, mejoran la accesibilidad a la información y automatizan tareas de atención al cliente, entre otras aplicaciones.</p>
-                                        
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-sociedad" onchange="handleFileUpload('sociedad', this.files)">
-                                        </div>
-                                        <div id="pdf-list-sociedad" class="pdf-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
+                </div>
+            </div>
+            
+            <!-- Relación entre IA y otras tecnologías -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-relacionia">
+                        Comprender la relación entre la IA y otras tecnologías emergentes
+                    </button>
+                </h2>
+                <div id="collapse-relacionia" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion1">
+                    <div class="accordion-body">
+                        <p><strong>IA y Aprendizaje Automático:</strong></p>
+                        <ul>
+                            <li>El aprendizaje automático es una subcategoría de la IA que permite a los sistemas aprender de los datos sin ser programados explícitamente.</li>
+                        </ul>
+                        <p><strong>Redes Neuronales Artificiales:</strong></p>
+                        <ul>
+                            <li>Modelos inspirados en la estructura del cerebro humano, compuestos por capas de neuronas artificiales interconectadas.</li>
+                            <li>Cuando estas redes tienen múltiples capas ocultas, se habla de aprendizaje profundo (deep learning).</li>
+                        </ul>
+                        <div class="file-upload">
+                            <label class="form-label">Subir documento PDF relacionado:</label>
+                            <input class="form-control" type="file" accept=".pdf" id="pdf-relacionia" onchange="handleFileUpload('relacionia', this.files)">
                         </div>
+                        <div id="pdf-list-relacionia" class="pdf-list"></div>
                     </div>
-                    
-                    <!-- Conclusión -->
-                    <div class="tab-pane fade" id="conclusion" role="tabpanel">
-                        <h2>Conclusión y Reflexión Final</h2>
-                        <div class="card">
-                            <div class="card-body">
-                                <p>Discusión abierta sobre los impactos positivos y negativos de la IA..</p>
-                                <p>Reflexión sobre el rol de los ingenieros en la creación de una IA responsable.</p>
-                                <p>Pregunta final: ¿Cómo podría la IA transformar el mundo en los próximos 50 años?</p>
-                                
-                                <div class="file-upload">
-                                    <label class="form-label">Subir documento PDF relacionado:</label>
-                                    <input class="form-control" type="file" accept=".pdf" id="pdf-conclusion" onchange="handleFileUpload('conclusion', this.files)">
-                                </div>
-                                <div id="pdf-list-conclusion" class="pdf-list"></div>
-                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sección 2 -->
+    <div class="tab-pane fade" id="seccion2" role="tabpanel">
+        <h2>Sección 2: Historia de la IA</h2>
+        <div class="accordion" id="accordion-seccion2">
+            <!-- Término "Inteligencia Artificial" -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-dartmouth">
+                        ¿Quién acuñó el término 'Inteligencia Artificial' y en qué contexto?
+                    </button>
+                </h2>
+                <div id="collapse-dartmouth" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion2">
+                    <div class="accordion-body">
+                        <p>El término "Inteligencia Artificial" fue acuñado por John McCarthy en 1956 durante la Conferencia de Dartmouth, un evento clave en la historia de la IA. McCarthy, junto con Marvin Minsky, Nathaniel Rochester y Claude Shannon, organizó esta conferencia con el objetivo de reunir a investigadores interesados en la posibilidad de que las máquinas pudieran imitar la inteligencia humana.</p>
+                        <div class="file-upload">
+                            <label class="form-label">Subir documento PDF relacionado:</label>
+                            <input class="form-control" type="file" accept=".pdf" id="pdf-dartmouth" onchange="handleFileUpload('dartmouth', this.files)">
                         </div>
+                        <div id="pdf-list-dartmouth" class="pdf-list"></div>
                     </div>
-                    
-                    <!-- Evaluación -->
-                    <div class="tab-pane fade" id="evaluacion" role="tabpanel">
-                        <h2>Evaluación</h2>
-                        <div class="card">
-                            <div class="card-body">
-                                <p>Cada estudiante presentará una reflexión escrita de una página sobre lo aprendido y su
-opinión acerca del futuro de la IA (1000 palabras mínimo)</p>
-                                <ol>
+                </div>
+            </div>
+            
+            <!-- Conferencia de Dartmouth -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-inviernos">
+                        Explicar la importancia de la Conferencia de Dartmouth (1956) en el desarrollo de la IA
+                    </button>
+                </h2>
+                <div id="collapse-inviernos" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
+                    <div class="accordion-body">
+                        <p>La Conferencia de Dartmouth es considerada el punto de partida oficial del campo de la inteligencia artificial. En este evento:</p>
+                        <ul>
+                            <li>Se estableció la IA como una nueva disciplina de investigación dentro de la informática.</li>
+                            <li>Se plantearon problemas fundamentales como el desarrollo de redes neuronales artificiales y la mejora automática de los sistemas computacionales.</li>
+                        </ul>
+                        <div class="file-upload">
+                            <label class="form-label">Subir documento PDF relacionado:</label>
+                            <input class="form-control" type="file" accept=".pdf" id="pdf-inviernos" onchange="handleFileUpload('inviernos', this.files)">
+                        </div>
+                        <div id="pdf-list-inviernos" class="pdf-list"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hitos importantes -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-explosion">
+                        Identificar hitos importantes en la evolución de la IA durante el siglo XX y XXI
+                    </button>
+                </h2>
+                <div id="collapse-explosion" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
+                    <div class="accordion-body">
+                        <p>Algunos de los momentos más importantes en la historia de la IA incluyen:</p>
+                        <ul>
+                            <li>1956: Conferencia de Dartmouth.</li>
+                            <li>1997: IBM Deep Blue vence al campeón mundial de ajedrez, Garry Kasparov.</li>
+                            <li>2011: IBM Watson gana el concurso de Jeopardy.</li>
+                            <li>2016: AlphaGo de DeepMind vence al campeón mundial de Go.</li>
+                        </ul>
+                        <div class="file-upload">
+                            <label class="form-label">Subir documento PDF relacionado:</label>
+                            <input class="form-control" type="file" accept=".pdf" id="pdf-explosion" onchange="handleFileUpload('explosion', this.files)">
+                        </div>
+                        <div id="pdf-list-explosion" class="pdf-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sección 3 -->
+    <div class="tab-pane fade" id="seccion3" role="tabpanel">
+        <h2>Sección 3: Creación de la IA y sus Fundamentos</h2>
+        <div class="accordion" id="accordion-seccion3">
+            <!-- Algoritmos de aprendizaje automático -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-aprendizaje">
+                        Explicar el funcionamiento de los algoritmos de aprendizaje automático
+                    </button>
+                </h2>
+                <div id="collapse-aprendizaje" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion3">
+                    <div class="accordion-body">
+                        <p>Los algoritmos de aprendizaje automático permiten a las computadoras identificar patrones en datos y hacer predicciones sin ser programadas explícitamente. Su funcionamiento se basa en tres etapas principales:</p>
+                        <ol>
+                            <li>Recopilación y preparación de datos.</li>
+                            <li>Entrenamiento del modelo.</li>
+                            <li>Evaluación y optimización.</li>
+                        </ol>
+                        <div class="file-upload">
+                            <label class="form-label">Subir documento PDF relacionado:</label>
+                            <input class="form-control" type="file" accept=".pdf" id="pdf-aprendizaje" onchange="handleFileUpload('aprendizaje', this.files)">
+                        </div>
+                        <div id="pdf-list-aprendizaje" class="pdf-list"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Redes Neuronales Artificiales -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-redes">
+                        ¿Qué son las redes neuronales artificiales y cómo se inspiran en el cerebro humano?
+                    </button>
+                </h2>
+                <div id="collapse-redes" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
+                    <div class="accordion-body">
+                        <p>Las redes neuronales artificiales (RNA) son modelos computacionales inspirados en la estructura y funcionamiento del cerebro humano. Están compuestas por neuronas artificiales, organizadas en capas interconectadas.</p>
+                        <div class="file-upload">
+                            <label class="form-label">Subir documento PDF relacionado:</label>
+                            <input class="form-control" type="file" accept=".pdf" id="pdf-redes" onchange="handleFileUpload('redes', this.files)">
+                        </div>
+                        <div id="pdf-list-redes" class="pdf-list"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tipos de aprendizaje -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-pln">
+                        Diferenciar los tipos de aprendizaje en IA: supervisado, no supervisado y por refuerzo
+                    </button>
+                </h2>
+                <div id="collapse-pln" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
+                    <div class="accordion-body">
+                        <p>Existen tres tipos principales de aprendizaje automático:</p>
+                        <ul>
+                            <li><strong>Aprendizaje supervisado:</strong> Se entrena con datos etiquetados (ejemplo: imágenes de gatos con la etiqueta "gato").</li>
+                            <li><strong>Aprendizaje no supervisado:</strong> Se usa cuando los datos no tienen etiquetas, y el sistema debe encontrar patrones por sí solo.</li>
+                            <li><strong>Aprendizaje por refuerzo:</strong> El agente aprende interactuando con un entorno, recibiendo recompensas o penalizaciones.</li>
+                        </ul>
+                        <div class="file-upload">
+                            <label class="form-label">Subir documento PDF relacionado:</label>
+                            <input class="form-control" type="file" accept=".pdf" id="pdf-pln" onchange="handleFileUpload('pln', this.files)">
+                        </div>
+                        <div id="pdf-list-pln" class="pdf-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sección 4 -->
+    <div class="tab-pane fade" id="seccion4" role="tabpanel">
+        <h2>Sección 4: Reflexión e Investigación</h2>
+        <div class="accordion" id="accordion-seccion4">
+            <!-- ChatGPT -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-etica">
+                        Explica brevemente qué es ChatGPT y cómo funciona
+                    </button>
+                </h2>
+                <div id="collapse-etica" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion4">
+                    <div class="accordion-body">
+                        <p>ChatGPT es un modelo de lenguaje desarrollado por OpenAI que utiliza la arquitectura GPT (Generative Pre-trained Transformer). Está diseñado para generar texto coherente y relevante en función de las entradas que recibe, permitiendo mantener conversaciones, responder preguntas y realizar tareas de generación de contenido.</p>
+                        <div class="file-upload">
+                            <label class="form-label">Subir documento PDF relacionado:</label>
+                            <input class="form-control" type="file" accept=".pdf" id="pdf-etica" onchange="handleFileUpload('etica', this.files)">
+                        </div>
+                        <div id="pdf-list-etica" class="pdf-list"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tecnología detrás de ChatGPT -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-futuro">
+                        ¿Cuál es la tecnología principal que permite el funcionamiento de ChatGPT?
+                    </button>
+                </h2>
+                <div id="collapse-futuro" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
+                    <div class="accordion-body">
+                        <p>La tecnología principal detrás de ChatGPT es la arquitectura Transformer, específicamente la variante GPT. Esta arquitectura utiliza mecanismos de atención para procesar y generar secuencias de texto, permitiendo al modelo comprender el contexto y generar respuestas coherentes.</p>
+                        <div class="file-upload">
+                            <label class="form-label">Subir documento PDF relacionado:</label>
+                            <input class="form-control" type="file" accept=".pdf" id="pdf-futuro" onchange="handleFileUpload('futuro', this.files)">
+                        </div>
+                        <div id="pdf-list-futuro" class="pdf-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Conclusión -->
+    <div class="tab-pane fade" id="conclusion" role="tabpanel">
+        <h2>Conclusión y Reflexión Final</h2>
+        <div class="card">
+            <div class="card-body">
+                <p>Discusión abierta sobre los impactos positivos y negativos de la IA.</p>
+                <p>Reflexión sobre el rol de los ingenieros en la creación de una IA responsable.</p>
+                <p>Pregunta final: ¿Cómo podría la IA transformar el mundo en los próximos 50 años?</p>
+                <div class="file-upload">
+                    <label class="form-label">Subir documento PDF relacionado:</label>
+                    <input class="form-control" type="file" accept=".pdf" id="pdf-conclusion" onchange="handleFileUpload('conclusion', this.files)">
+                </div>
+                <div id="pdf-list-conclusion" class="pdf-list"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Evaluación -->
+    <div class="tab-pane fade" id="evaluacion" role="tabpanel">
+        <h2>Evaluación</h2>
+        <div class="card">
+            <div class="card-body">
+                <p>Cada estudiante presentará una reflexión escrita de una página sobre lo aprendido y su opinión acerca del futuro de la IA (1000 palabras mínimo).</p>
+            </div>
+        </div>
+    </div>
+</div>
                                                                 
                                 <div class="file-upload">
                                     <label class="form-label">Subir documento PDF relacionado:</label>
