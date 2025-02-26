@@ -4,413 +4,699 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia y Creación de la IA</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Estilos personalizados -->
     <style>
-        /* Estilos generales del cuerpo de la página */
         body {
-            font-family: 'Arial', sans-serif;
             background: linear-gradient(to right, #283c86, #45a247);
             color: #fff;
-            text-align: center;
-            padding: 50px;
-            margin: 0;
+            padding-top: 20px;
         }
-
-        /* Estilo del título principal */
-        h1 {
-            font-size: 2.5em;
+        
+        .main-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .file-upload {
+            margin: 10px 0;
+        }
+        
+        .card {
             margin-bottom: 20px;
         }
-
-        /* Estilos de la barra de navegación */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Permite que los botones se ajusten en pantallas pequeñas */
-            gap: 20px;
-            margin-bottom: 20px;
+        
+        .btn-primary {
+            background-color: #283c86;
+            border-color: #283c86;
         }
-
-        /* Estilos de los botones de navegación */
-        .navbar button {
-            background-color: #fff;
-            color: #333;
-            border: none;
-            padding: 15px 30px;
-            cursor: pointer;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            font-size: 1.1em;
+        
+        .btn-primary:hover {
+            background-color: #1e2d6b;
+            border-color: #1e2d6b;
         }
-
-        /* Efecto hover para los botones */
-        .navbar button:hover {
-            background-color: #333;
-            color: #fff;
-            transform: scale(1.05);
+        
+        .btn-success {
+            background-color: #45a247;
+            border-color: #45a247;
         }
-
-        /* Estilo para botones activos */
-        .navbar button.active {
-            background-color: #333;
-            color: #fff;
+        
+        .btn-success:hover {
+            background-color: #388539;
+            border-color: #388539;
         }
-
-        /* Contenedor principal del contenido */
-        .content {
-            background-color: rgba(255, 255, 255, 0.9);
-            color: #333;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 800px;
-            margin: 20px auto;
-            display: none; /* Ocultar inicialmente */
-        }
-
-        /* Estilo del título de sección */
-        .content h2 {
-            margin-top: 0;
-        }
-
-        /* Estilos para el acordeón */
-        .acordeon {
-            margin-bottom: 10px;
-            text-align: left;
-        }
-
-        /* Estilos para los títulos del acordeón */
-        .acordeon summary {
-            font-weight: bold;
-            cursor: pointer;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            margin-bottom: 5px;
-        }
-
-        /* Efecto hover para los títulos del acordeón */
-        .acordeon summary:hover {
-            background-color: #e0e0e0;
-        }
-
-        /* Estilos para el contenido del acordeón */
-        .acordeon p {
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 5px;
-            margin: 0;
-        }
-
-        /* Estilos para el pie de página */
-        footer {
-            margin-top: 20px;
-            font-size: 0.9em;
-        }
-
-        /* Estilos para el nombre del autor */
+        
         .author {
-            font-size: 1.2em;
             margin-bottom: 30px;
             color: #f0f0f0;
         }
-
-        /* Estilos responsivos para pantallas pequeñas */
-        @media (max-width: 768px) {
-            body {
-                padding: 20px;
-            }
-            
-            .navbar button {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
+        
+        .pdf-preview {
+            margin-top: 10px;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .pdf-list {
+            margin-top: 10px;
         }
     </style>
-    <script>
-        /**
-         * Variables globales
-         */
-        let currentTaller = null;
-        let currentSeccion = null;
-
-        /**
-         * Contenido estructurado de los talleres
-         * Organizado por taller y sección para facilitar su acceso
-         */
-        const contenido = {
-            taller1: {
-                seccion1: `
-                    <h2>Sección 1: Introducción a la IA</h2>
-                    <div class="acordeon">
-                        <details>
-                            <summary>Subtítulo 1: Definición de IA</summary>
-                            <p>La Inteligencia Artificial (IA) se refiere a la simulación de procesos de inteligencia humana por parte de máquinas. Estos procesos incluyen el aprendizaje (adquisición de información y reglas para usar la información), el razonamiento (usar las reglas para llegar a conclusiones aproximadas o definitivas) y la autocorrección.</p>
-                        </details>
-                        <details>
-                            <summary>Subtítulo 2: IA Fuerte vs IA Débil</summary>
-                            <p>La IA fuerte (o general) busca replicar completamente la inteligencia humana, creando sistemas con conciencia y capacidad de comprensión genuina. La IA débil (o estrecha) se centra en tareas específicas y está diseñada para resolver problemas particulares sin aspirar a una comprensión general.</p>
-                        </details>
-                        <details>
-                            <summary>Subtítulo 3: Aplicaciones de la IA</summary>
-                            <p>La IA se utiliza en medicina (diagnóstico por imagen, desarrollo de fármacos), transporte (vehículos autónomos, optimización de rutas), finanzas (detección de fraudes, trading algorítmico), asistentes virtuales, y muchas otras industrias transformando la forma en que vivimos y trabajamos.</p>
-                        </details>
-                    </div>
-                `,
-                seccion2: `
-                    <h2>Sección 2: Historia de la IA</h2>
-                    <div class="acordeon">
-                        <details>
-                            <summary>Subtítulo 1: Conferencia de Dartmouth (1956)</summary>
-                            <p>Este evento, organizado por John McCarthy, Marvin Minsky, Nathaniel Rochester y Claude Shannon, marcó el inicio formal de la IA como disciplina científica. Durante la conferencia se acuñó el término "Inteligencia Artificial" y se establecieron las bases para su investigación futura.</p>
-                        </details>
-                        <details>
-                            <summary>Subtítulo 2: Inviernos de la IA</summary>
-                            <p>Períodos de desilusión y reducción de fondos para la investigación en IA. El primer invierno ocurrió en los años 70 debido a limitaciones técnicas y promesas no cumplidas. El segundo sucedió a finales de los 80 y principios de los 90 cuando la popularidad de los sistemas expertos disminuyó al no cumplir las expectativas.</p>
-                        </details>
-                        <details>
-                            <summary>Subtítulo 3: Explosión de la IA en los 2010s</summary>
-                            <p>Avances en aprendizaje profundo, big data y capacidad computacional impulsaron la IA moderna. Hitos como la victoria de AlphaGo sobre el campeón mundial de Go en 2016, el desarrollo de modelos de lenguaje como GPT y la proliferación de asistentes virtuales marcaron una nueva era para la inteligencia artificial.</p>
-                        </details>
-                    </div>
-                `,
-                seccion3: `
-                    <h2>Sección 3: Creación de la IA</h2>
-                    <div class="acordeon">
-                        <details>
-                            <summary>Subtítulo 1: Fundamentos del Aprendizaje Automático</summary>
-                            <p>El aprendizaje automático es una rama de la IA que permite a las máquinas aprender de los datos sin ser explícitamente programadas. Incluye técnicas como aprendizaje supervisado, no supervisado y por refuerzo.</p>
-                        </details>
-                        <details>
-                            <summary>Subtítulo 2: Redes Neuronales y Aprendizaje Profundo</summary>
-                            <p>Las redes neuronales artificiales, inspiradas en el cerebro humano, consisten en capas de nodos interconectados que procesan información. El aprendizaje profundo utiliza redes neuronales con múltiples capas para analizar datos complejos como imágenes, texto y sonido.</p>
-                        </details>
-                        <details>
-                            <summary>Subtítulo 3: Procesamiento del Lenguaje Natural</summary>
-                            <p>El PLN permite a las máquinas entender, interpretar y generar lenguaje humano. Hace posible los asistentes virtuales, la traducción automática y el análisis de sentimientos en redes sociales.</p>
-                        </details>
-                    </div>
-                `,
-                seccion4: `
-                    <h2>Sección 4: Reflexión e Investigación</h2>
-                    <div class="acordeon">
-                        <details>
-                            <summary>Subtítulo 1: Ética en la IA</summary>
-                            <p>La implementación de la IA plantea preguntas éticas sobre privacidad, sesgo algorítmico, responsabilidad, transparencia y el impacto en el empleo. Es crucial desarrollar marcos éticos para guiar el desarrollo responsable de estas tecnologías.</p>
-                        </details>
-                        <details>
-                            <summary>Subtítulo 2: El Futuro de la IA</summary>
-                            <p>La investigación actual se centra en crear sistemas más autónomos, mejorar la interacción humano-máquina y desarrollar IA explicable que pueda justificar sus decisiones. El avance hacia la IA general sigue siendo un objetivo a largo plazo.</p>
-                        </details>
-                        <details>
-                            <summary>Subtítulo 3: IA y Sociedad</summary>
-                            <p>La IA está transformando la economía, la educación, la medicina y prácticamente todos los aspectos de la sociedad. Es importante estudiar y anticipar estos cambios para maximizar los beneficios y mitigar los riesgos potenciales.</p>
-                        </details>
-                    </div>
-                `,
-                conclusion: `
-                    <h2>Conclusión y Reflexión Final</h2>
-                    <p>La inteligencia artificial representa uno de los avances tecnológicos más significativos de nuestra era. Desde sus modestos inicios en la década de 1950 hasta los sofisticados sistemas actuales, la IA ha evolucionado enormemente y continúa transformando nuestra sociedad de maneras profundas.</p>
-                    <p>Su desarrollo futuro dependerá no solo de avances técnicos sino también de consideraciones éticas, legales y sociales. La colaboración entre tecnólogos, políticos, educadores y ciudadanos será esencial para dirigir el desarrollo de la IA hacia un futuro que beneficie a toda la humanidad.</p>
-                    <p>¿Qué papel jugarás tú en esta revolución tecnológica? ¿Cómo te preparas para un mundo cada vez más influenciado por la inteligencia artificial?</p>
-                `,
-                evaluacion: `
-                    <h2>Evaluación</h2>
-                    <p>Para evaluar tu comprensión sobre la Historia y Creación de la IA, considera las siguientes actividades:</p>
-                    <ol style="text-align: left;">
-                        <li>Investiga y crea una línea de tiempo con los eventos más importantes en el desarrollo de la IA.</li>
-                        <li>Analiza un caso de uso actual de la IA en tu campo de interés e identifica sus beneficios y posibles limitaciones.</li>
-                        <li>Debate sobre las implicaciones éticas de un sistema de IA específico (por ejemplo, vehículos autónomos, reconocimiento facial, etc.).</li>
-                        <li>Diseña un proyecto conceptual que aplique la IA para resolver un problema en tu comunidad.</li>
-                    </ol>
-                    <p>Estas actividades te ayudarán a profundizar tu conocimiento y pensamiento crítico sobre la inteligencia artificial.</p>
-                `
-            },
-            taller2: {
-                introduccion: `
-                    <h2>Introducción a las Aplicaciones Prácticas de la IA</h2>
-                    <p>En este taller, exploraremos cómo la inteligencia artificial se aplica en diversos campos y cómo podemos comenzar a implementar soluciones básicas de IA. Veremos ejemplos prácticos y herramientas accesibles para principiantes.</p>
-                    <p>Objetivos del taller:</p>
-                    <ul style="text-align: left;">
-                        <li>Identificar aplicaciones reales de la IA en diferentes industrias</li>
-                        <li>Comprender los componentes básicos de un proyecto de IA</li>
-                        <li>Explorar herramientas y plataformas para principiantes</li>
-                        <li>Diseñar un concepto de aplicación basada en IA</li>
-                    </ul>
-                `,
-                desarrollo: `
-                    <h2>Desarrollo: Herramientas y Aplicaciones de IA</h2>
-                    <div class="acordeon">
-                        <details>
-                            <summary>Plataformas de IA para Principiantes</summary>
-                            <p>Existen numerosas plataformas que permiten experimentar con IA sin necesidad de conocimientos avanzados de programación. Algunas opciones incluyen Google Teachable Machine, Microsoft Azure AI, IBM Watson y Amazon SageMaker.</p>
-                        </details>
-                        <details>
-                            <summary>Aplicaciones de IA por Sector</summary>
-                            <p>La IA está transformando sectores como la salud (diagnóstico médico), educación (tutoría personalizada), agricultura (monitoreo de cultivos), comercio minorista (recomendaciones de productos) y manufactura (mantenimiento predictivo).</p>
-                        </details>
-                        <details>
-                            <summary>Componentes de un Proyecto de IA</summary>
-                            <p>Un proyecto típico incluye: definición del problema, recolección y preparación de datos, selección del algoritmo, entrenamiento del modelo, evaluación y mejora, e implementación.</p>
-                        </details>
-                    </div>
-                `,
-                conclusiones: `
-                    <h2>Conclusiones y Próximos Pasos</h2>
-                    <p>La inteligencia artificial ya no es solo para expertos en tecnología. Hoy existen herramientas y recursos que permiten a personas de diversos campos comenzar a explorar y aplicar soluciones de IA.</p>
-                    <p>Para continuar tu aprendizaje:</p>
-                    <ol style="text-align: left;">
-                        <li>Experimenta con alguna de las plataformas mencionadas</li>
-                        <li>Únete a comunidades online de IA para principiantes</li>
-                        <li>Considera cursos introductorios sobre Python o R, lenguajes populares en IA</li>
-                        <li>Mantente actualizado con las nuevas herramientas y aplicaciones</li>
-                    </ol>
-                    <p>Recuerda que el mejor aprendizaje viene de la práctica. ¡No tengas miedo de experimentar!</p>
-                `
-            }
-        };
-
-        /**
-         * Función para inicializar la página cuando se carga
-         * Configura elementos iniciales y establece oyentes de eventos
-         */
-        function inicializarPagina() {
-            // Mostrar el mensaje de bienvenida inicialmente
-            const contenidoDiv = document.getElementById('contenido');
-            contenidoDiv.innerHTML = `
-                <h2>Bienvenidos al Curso de Historia y Creación de la IA</h2>
-                <p>Este curso te llevará a través de la fascinante evolución de la Inteligencia Artificial, desde sus conceptos fundamentales hasta sus aplicaciones modernas.</p>
-                <p>Selecciona un taller para comenzar tu viaje de aprendizaje.</p>
-            `;
-            contenidoDiv.style.display = 'block';
-            
-            // Actualizar el nombre del autor si es necesario
-            document.querySelector('.author').textContent = 'Creado por [Tu Nombre]';
-        }
-
-        /**
-         * Función para mostrar una sección específica de un taller
-         * @param {string} seccion - El identificador de la sección a mostrar
-         */
-        function mostrarSeccion(seccion) {
-            // Verificar que hay un taller seleccionado
-            if (!currentTaller) {
-                return;
-            }
-            
-            // Actualizar la sección actual
-            currentSeccion = seccion;
-            
-            // Encontrar y actualizar el contenido
-            const contenidoDiv = document.getElementById('contenido');
-            contenidoDiv.innerHTML = contenido[currentTaller][seccion];
-            contenidoDiv.style.display = 'block';
-            
-            // Resaltar el botón activo
-            actualizarBotonesActivos();
-        }
-
-        /**
-         * Función para cambiar entre diferentes talleres
-         * @param {string} taller - El identificador del taller a mostrar
-         */
-        function cambiarTaller(taller) {
-            // Actualizar el taller actual
-            currentTaller = taller;
-            currentSeccion = null;
-            
-            // Obtener referencias a los elementos de la interfaz
-            const botonesTaller1 = document.getElementById('botones-taller1');
-            const botonesTaller2 = document.getElementById('botones-taller2');
-            const contenidoDiv = document.getElementById('contenido');
-            
-            // Actualizar la visibilidad de los botones según el taller seleccionado
-            if (taller === 'taller1') {
-                botonesTaller1.style.display = 'flex';
-                botonesTaller2.style.display = 'none';
-                contenidoDiv.innerHTML = `
-                    <h2>Taller 1: Historia y Fundamentos de la IA</h2>
-                    <p>Selecciona una sección del menú para explorar los fundamentos, historia y conceptos clave de la Inteligencia Artificial.</p>
-                `;
-            } else if (taller === 'taller2') {
-                botonesTaller1.style.display = 'none';
-                botonesTaller2.style.display = 'flex';
-                contenidoDiv.innerHTML = `
-                    <h2>Taller 2: Aplicaciones Prácticas de la IA</h2>
-                    <p>Selecciona una sección del menú para explorar las aplicaciones prácticas y herramientas para comenzar a trabajar con Inteligencia Artificial.</p>
-                `;
-            }
-            
-            // Mostrar el contenido
-            contenidoDiv.style.display = 'block';
-            
-            // Resaltar el botón de taller activo
-            actualizarBotonesActivos();
-        }
-        
-        /**
-         * Función para actualizar el estado visual de los botones activos
-         * Añade la clase 'active' a los botones seleccionados
-         */
-        function actualizarBotonesActivos() {
-            // Eliminar la clase 'active' de todos los botones
-            document.querySelectorAll('.navbar button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Añadir clase 'active' al botón de taller actual
-            if (currentTaller) {
-                document.querySelector(`.navbar button[onclick="cambiarTaller('${currentTaller}')"]`).classList.add('active');
-            }
-            
-            // Añadir clase 'active' al botón de sección actual
-            if (currentSeccion) {
-                const botonSeccion = document.querySelector(`.navbar button[onclick="mostrarSeccion('${currentSeccion}')"]`);
-                if (botonSeccion) {
-                    botonSeccion.classList.add('active');
-                }
-            }
-        }
-        
-        // Inicializar la página cuando se carga el documento
-        document.addEventListener('DOMContentLoaded', inicializarPagina);
-    </script>
 </head>
 <body>
-    <h1>Historia y Creación de la Inteligencia Artificial</h1>
-    <div class="author">Creado por [Tu Nombre]</div>
+    <div class="container main-container">
+        <div class="text-center mb-5">
+            <h1>Historia y Creación de la Inteligencia Artificial</h1>
+            <div class="author">Creado por [Tu Nombre]</div>
+        </div>
 
-    <!-- Navegación principal -->
-    <div class="navbar">
-        <button onclick="cambiarTaller('taller1')">Taller 1: Fundamentos</button>
-        <button onclick="cambiarTaller('taller2')">Taller 2: Aplicaciones</button>
+        <!-- Navegación principal -->
+        <ul class="nav nav-pills mb-4 justify-content-center" id="talleres-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="taller1-tab" data-bs-toggle="pill" data-bs-target="#taller1" type="button" role="tab">
+                    Taller 1: Fundamentos
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="taller2-tab" data-bs-toggle="pill" data-bs-target="#taller2" type="button" role="tab">
+                    Taller 2: Aplicaciones
+                </button>
+            </li>
+        </ul>
+
+        <!-- Contenido de los talleres -->
+        <div class="tab-content" id="talleres-content">
+            <!-- Taller 1 -->
+            <div class="tab-pane fade show active" id="taller1" role="tabpanel">
+                <ul class="nav nav-tabs mb-3" id="taller1-sections" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="seccion1-tab" data-bs-toggle="tab" data-bs-target="#seccion1" type="button" role="tab">
+                            Introducción
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="seccion2-tab" data-bs-toggle="tab" data-bs-target="#seccion2" type="button" role="tab">
+                            Historia
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="seccion3-tab" data-bs-toggle="tab" data-bs-target="#seccion3" type="button" role="tab">
+                            Creación de la IA
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="seccion4-tab" data-bs-toggle="tab" data-bs-target="#seccion4" type="button" role="tab">
+                            Reflexión
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="conclusion-tab" data-bs-toggle="tab" data-bs-target="#conclusion" type="button" role="tab">
+                            Conclusión
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="evaluacion-tab" data-bs-toggle="tab" data-bs-target="#evaluacion" type="button" role="tab">
+                            Evaluación
+                        </button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content bg-white text-dark p-4 rounded" id="taller1-content">
+                    <!-- Sección 1 -->
+                    <div class="tab-pane fade show active" id="seccion1" role="tabpanel">
+                        <h2>Sección 1: Introducción a la IA</h2>
+                        <div class="accordion" id="accordion-seccion1">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-definicion">
+                                        Definición de IA
+                                    </button>
+                                </h2>
+                                <div id="collapse-definicion" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion1">
+                                    <div class="accordion-body">
+                                        <p>La Inteligencia Artificial (IA) se refiere a la simulación de procesos de inteligencia humana por parte de máquinas. Estos procesos incluyen el aprendizaje (adquisición de información y reglas para usar la información), el razonamiento (usar las reglas para llegar a conclusiones aproximadas o definitivas) y la autocorrección.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-definicion" onchange="handleFileUpload('definicion', this.files)">
+                                        </div>
+                                        <div id="pdf-list-definicion" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-fuerte-debil">
+                                        IA Fuerte vs IA Débil
+                                    </button>
+                                </h2>
+                                <div id="collapse-fuerte-debil" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion1">
+                                    <div class="accordion-body">
+                                        <p>La IA fuerte (o general) busca replicar completamente la inteligencia humana, creando sistemas con conciencia y capacidad de comprensión genuina. La IA débil (o estrecha) se centra en tareas específicas y está diseñada para resolver problemas particulares sin aspirar a una comprensión general.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-fuerte-debil" onchange="handleFileUpload('fuerte-debil', this.files)">
+                                        </div>
+                                        <div id="pdf-list-fuerte-debil" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-aplicaciones">
+                                        Aplicaciones de la IA
+                                    </button>
+                                </h2>
+                                <div id="collapse-aplicaciones" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion1">
+                                    <div class="accordion-body">
+                                        <p>La IA se utiliza en medicina (diagnóstico por imagen, desarrollo de fármacos), transporte (vehículos autónomos, optimización de rutas), finanzas (detección de fraudes, trading algorítmico), asistentes virtuales, y muchas otras industrias transformando la forma en que vivimos y trabajamos.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-aplicaciones" onchange="handleFileUpload('aplicaciones', this.files)">
+                                        </div>
+                                        <div id="pdf-list-aplicaciones" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sección 2 -->
+                    <div class="tab-pane fade" id="seccion2" role="tabpanel">
+                        <h2>Sección 2: Historia de la IA</h2>
+                        <div class="accordion" id="accordion-seccion2">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-dartmouth">
+                                        Conferencia de Dartmouth (1956)
+                                    </button>
+                                </h2>
+                                <div id="collapse-dartmouth" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion2">
+                                    <div class="accordion-body">
+                                        <p>Este evento, organizado por John McCarthy, Marvin Minsky, Nathaniel Rochester y Claude Shannon, marcó el inicio formal de la IA como disciplina científica. Durante la conferencia se acuñó el término "Inteligencia Artificial" y se establecieron las bases para su investigación futura.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-dartmouth" onchange="handleFileUpload('dartmouth', this.files)">
+                                        </div>
+                                        <div id="pdf-list-dartmouth" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-inviernos">
+                                        Inviernos de la IA
+                                    </button>
+                                </h2>
+                                <div id="collapse-inviernos" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
+                                    <div class="accordion-body">
+                                        <p>Períodos de desilusión y reducción de fondos para la investigación en IA. El primer invierno ocurrió en los años 70 debido a limitaciones técnicas y promesas no cumplidas. El segundo sucedió a finales de los 80 y principios de los 90 cuando la popularidad de los sistemas expertos disminuyó al no cumplir las expectativas.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-inviernos" onchange="handleFileUpload('inviernos', this.files)">
+                                        </div>
+                                        <div id="pdf-list-inviernos" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-explosion">
+                                        Explosión de la IA en los 2010s
+                                    </button>
+                                </h2>
+                                <div id="collapse-explosion" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
+                                    <div class="accordion-body">
+                                        <p>Avances en aprendizaje profundo, big data y capacidad computacional impulsaron la IA moderna. Hitos como la victoria de AlphaGo sobre el campeón mundial de Go en 2016, el desarrollo de modelos de lenguaje como GPT y la proliferación de asistentes virtuales marcaron una nueva era para la inteligencia artificial.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-explosion" onchange="handleFileUpload('explosion', this.files)">
+                                        </div>
+                                        <div id="pdf-list-explosion" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sección 3 -->
+                    <div class="tab-pane fade" id="seccion3" role="tabpanel">
+                        <h2>Sección 3: Creación de la IA</h2>
+                        <div class="accordion" id="accordion-seccion3">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-aprendizaje">
+                                        Fundamentos del Aprendizaje Automático
+                                    </button>
+                                </h2>
+                                <div id="collapse-aprendizaje" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion3">
+                                    <div class="accordion-body">
+                                        <p>El aprendizaje automático es una rama de la IA que permite a las máquinas aprender de los datos sin ser explícitamente programadas. Incluye técnicas como aprendizaje supervisado, no supervisado y por refuerzo.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-aprendizaje" onchange="handleFileUpload('aprendizaje', this.files)">
+                                        </div>
+                                        <div id="pdf-list-aprendizaje" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-redes">
+                                        Redes Neuronales y Aprendizaje Profundo
+                                    </button>
+                                </h2>
+                                <div id="collapse-redes" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
+                                    <div class="accordion-body">
+                                        <p>Las redes neuronales artificiales, inspiradas en el cerebro humano, consisten en capas de nodos interconectados que procesan información. El aprendizaje profundo utiliza redes neuronales con múltiples capas para analizar datos complejos como imágenes, texto y sonido.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-redes" onchange="handleFileUpload('redes', this.files)">
+                                        </div>
+                                        <div id="pdf-list-redes" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-pln">
+                                        Procesamiento del Lenguaje Natural
+                                    </button>
+                                </h2>
+                                <div id="collapse-pln" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
+                                    <div class="accordion-body">
+                                        <p>El PLN permite a las máquinas entender, interpretar y generar lenguaje humano. Hace posible los asistentes virtuales, la traducción automática y el análisis de sentimientos en redes sociales.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-pln" onchange="handleFileUpload('pln', this.files)">
+                                        </div>
+                                        <div id="pdf-list-pln" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sección 4 -->
+                    <div class="tab-pane fade" id="seccion4" role="tabpanel">
+                        <h2>Sección 4: Reflexión e Investigación</h2>
+                        <div class="accordion" id="accordion-seccion4">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-etica">
+                                        Ética en la IA
+                                    </button>
+                                </h2>
+                                <div id="collapse-etica" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion4">
+                                    <div class="accordion-body">
+                                        <p>La implementación de la IA plantea preguntas éticas sobre privacidad, sesgo algorítmico, responsabilidad, transparencia y el impacto en el empleo. Es crucial desarrollar marcos éticos para guiar el desarrollo responsable de estas tecnologías.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-etica" onchange="handleFileUpload('etica', this.files)">
+                                        </div>
+                                        <div id="pdf-list-etica" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-futuro">
+                                        El Futuro de la IA
+                                    </button>
+                                </h2>
+                                <div id="collapse-futuro" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
+                                    <div class="accordion-body">
+                                        <p>La investigación actual se centra en crear sistemas más autónomos, mejorar la interacción humano-máquina y desarrollar IA explicable que pueda justificar sus decisiones. El avance hacia la IA general sigue siendo un objetivo a largo plazo.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-futuro" onchange="handleFileUpload('futuro', this.files)">
+                                        </div>
+                                        <div id="pdf-list-futuro" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-sociedad">
+                                        IA y Sociedad
+                                    </button>
+                                </h2>
+                                <div id="collapse-sociedad" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
+                                    <div class="accordion-body">
+                                        <p>La IA está transformando la economía, la educación, la medicina y prácticamente todos los aspectos de la sociedad. Es importante estudiar y anticipar estos cambios para maximizar los beneficios y mitigar los riesgos potenciales.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-sociedad" onchange="handleFileUpload('sociedad', this.files)">
+                                        </div>
+                                        <div id="pdf-list-sociedad" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conclusión -->
+                    <div class="tab-pane fade" id="conclusion" role="tabpanel">
+                        <h2>Conclusión y Reflexión Final</h2>
+                        <div class="card">
+                            <div class="card-body">
+                                <p>La inteligencia artificial representa uno de los avances tecnológicos más significativos de nuestra era. Desde sus modestos inicios en la década de 1950 hasta los sofisticados sistemas actuales, la IA ha evolucionado enormemente y continúa transformando nuestra sociedad de maneras profundas.</p>
+                                <p>Su desarrollo futuro dependerá no solo de avances técnicos sino también de consideraciones éticas, legales y sociales. La colaboración entre tecnólogos, políticos, educadores y ciudadanos será esencial para dirigir el desarrollo de la IA hacia un futuro que beneficie a toda la humanidad.</p>
+                                <p>¿Qué papel jugarás tú en esta revolución tecnológica? ¿Cómo te preparas para un mundo cada vez más influenciado por la inteligencia artificial?</p>
+                                
+                                <div class="file-upload">
+                                    <label class="form-label">Subir documento PDF relacionado:</label>
+                                    <input class="form-control" type="file" accept=".pdf" id="pdf-conclusion" onchange="handleFileUpload('conclusion', this.files)">
+                                </div>
+                                <div id="pdf-list-conclusion" class="pdf-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Evaluación -->
+                    <div class="tab-pane fade" id="evaluacion" role="tabpanel">
+                        <h2>Evaluación</h2>
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Para evaluar tu comprensión sobre la Historia y Creación de la IA, considera las siguientes actividades:</p>
+                                <ol>
+                                    <li>Investiga y crea una línea de tiempo con los eventos más importantes en el desarrollo de la IA.</li>
+                                    <li>Analiza un caso de uso actual de la IA en tu campo de interés e identifica sus beneficios y posibles limitaciones.</li>
+                                    <li>Debate sobre las implicaciones éticas de un sistema de IA específico (por ejemplo, vehículos autónomos, reconocimiento facial, etc.).</li>
+                                    <li>Diseña un proyecto conceptual que aplique la IA para resolver un problema en tu comunidad.</li>
+                                </ol>
+                                <p>Estas actividades te ayudarán a profundizar tu conocimiento y pensamiento crítico sobre la inteligencia artificial.</p>
+                                
+                                <div class="file-upload">
+                                    <label class="form-label">Subir documento PDF relacionado:</label>
+                                    <input class="form-control" type="file" accept=".pdf" id="pdf-evaluacion" onchange="handleFileUpload('evaluacion', this.files)">
+                                </div>
+                                <div id="pdf-list-evaluacion" class="pdf-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Taller 2 -->
+            <div class="tab-pane fade" id="taller2" role="tabpanel">
+                <ul class="nav nav-tabs mb-3" id="taller2-sections" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="introduccion-tab" data-bs-toggle="tab" data-bs-target="#introduccion" type="button" role="tab">
+                            Introducción
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="desarrollo-tab" data-bs-toggle="tab" data-bs-target="#desarrollo" type="button" role="tab">
+                            Desarrollo
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="conclusiones-tab" data-bs-toggle="tab" data-bs-target="#conclusiones" type="button" role="tab">
+                            Conclusiones
+                        </button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content bg-white text-dark p-4 rounded" id="taller2-content">
+                    <!-- Introducción taller 2 -->
+                    <div class="tab-pane fade show active" id="introduccion" role="tabpanel">
+                        <h2>Introducción a las Aplicaciones Prácticas de la IA</h2>
+                        <div class="card">
+                            <div class="card-body">
+                                <p>En este taller, exploraremos cómo la inteligencia artificial se aplica en diversos campos y cómo podemos comenzar a implementar soluciones básicas de IA. Veremos ejemplos prácticos y herramientas accesibles para principiantes.</p>
+                                
+                                <h5>Objetivos del taller:</h5>
+                                <ul>
+                                    <li>Identificar aplicaciones reales de la IA en diferentes industrias</li>
+                                    <li>Comprender los componentes básicos de un proyecto de IA</li>
+                                    <li>Explorar herramientas y plataformas para principiantes</li>
+                                    <li>Diseñar un concepto de aplicación basada en IA</li>
+                                </ul>
+                                
+                                <div class="file-upload">
+                                    <label class="form-label">Subir documento PDF relacionado:</label>
+                                    <input class="form-control" type="file" accept=".pdf" id="pdf-intro-t2" onchange="handleFileUpload('intro-t2', this.files)">
+                                </div>
+                                <div id="pdf-list-intro-t2" class="pdf-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Desarrollo taller 2 -->
+                    <div class="tab-pane fade" id="desarrollo" role="tabpanel">
+                        <h2>Desarrollo: Herramientas y Aplicaciones de IA</h2>
+                        <div class="accordion" id="accordion-desarrollo">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-plataformas">
+                                        Plataformas de IA para Principiantes
+                                    </button>
+                                </h2>
+                                <div id="collapse-plataformas" class="accordion-collapse collapse show" data-bs-parent="#accordion-desarrollo">
+                                    <div class="accordion-body">
+                                        <p>Existen numerosas plataformas que permiten experimentar con IA sin necesidad de conocimientos avanzados de programación. Algunas opciones incluyen Google Teachable Machine, Microsoft Azure AI, IBM Watson y Amazon SageMaker.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-plataformas" onchange="handleFileUpload('plataformas', this.files)">
+                                        </div>
+                                        <div id="pdf-list-plataformas" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-sectores">
+                                        Aplicaciones de IA por Sector
+                                    </button>
+                                </h2>
+                                <div id="collapse-sectores" class="accordion-collapse collapse" data-bs-parent="#accordion-desarrollo">
+                                    <div class="accordion-body">
+                                        <p>La IA está transformando sectores como la salud (diagnóstico médico, desarrollo de fármacos), educación (aprendizaje personalizado, sistemas de tutoría), agricultura (monitoreo de cultivos, optimización de recursos), finanzas (detección de fraudes, trading algorítmico) y muchos más.</p>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-sectores" onchange="handleFileUpload('sectores', this.files)">
+                                        </div>
+                                        <div id="pdf-list-sectores" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-proyecto">
+                                        Diseño de un Proyecto de IA
+                                    </button>
+                                </h2>
+                                <div id="collapse-proyecto" class="accordion-collapse collapse" data-bs-parent="#accordion-desarrollo">
+                                    <div class="accordion-body">
+                                        <p>Para diseñar un proyecto de IA, es importante seguir estos pasos:</p>
+                                        <ol>
+                                            <li>Identificar el problema que se quiere resolver</li>
+                                            <li>Definir los objetivos y resultados esperados</li>
+                                            <li>Recopilar y preparar los datos necesarios</li>
+                                            <li>Seleccionar el tipo de algoritmo o modelo adecuado</li>
+                                            <li>Entrenar y optimizar el modelo</li>
+                                            <li>Evaluar los resultados</li>
+                                            <li>Implementar la solución</li>
+                                        </ol>
+                                        
+                                        <div class="file-upload">
+                                            <label class="form-label">Subir documento PDF relacionado:</label>
+                                            <input class="form-control" type="file" accept=".pdf" id="pdf-proyecto" onchange="handleFileUpload('proyecto', this.files)">
+                                        </div>
+                                        <div id="pdf-list-proyecto" class="pdf-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conclusiones taller 2 -->
+                    <div class="tab-pane fade" id="conclusiones" role="tabpanel">
+                        <h2>Conclusiones: El Futuro de las Aplicaciones de IA</h2>
+                        <div class="card">
+                            <div class="card-body">
+                                <p>La inteligencia artificial continuará evolucionando y expandiéndose a nuevas áreas. Las tendencias futuras incluyen:</p>
+                                <ul>
+                                    <li>Mayor integración de la IA en dispositivos cotidianos (IoT)</li>
+                                    <li>Sistemas de IA más autónomos y adaptables</li>
+                                    <li>Mejora en la colaboración humano-máquina</li>
+                                    <li>Democratización de las herramientas de IA</li>
+                                    <li>Mayor énfasis en la ética y transparencia</li>
+                                </ul>
+                                
+                                <p>A medida que estas tecnologías evolucionan, surge la necesidad de desarrollar habilidades para trabajar junto a sistemas inteligentes y aprovechar su potencial para resolver problemas complejos.</p>
+                                
+                                <div class="file-upload">
+                                    <label class="form-label">Subir documento PDF relacionado:</label>
+                                    <input class="form-control" type="file" accept=".pdf" id="pdf-conclusiones" onchange="handleFileUpload('conclusiones', this.files)">
+                                </div>
+                                <div id="pdf-list-conclusiones" class="pdf-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botones de navegación -->
+        <div class="d-flex justify-content-between mt-4">
+            <button class="btn btn-primary" id="prev-button" disabled>Anterior</button>
+            <button class="btn btn-success" id="next-button">Siguiente</button>
+        </div>
     </div>
-
-    <!-- Botones para Taller 1 -->
-    <div class="navbar" id="botones-taller1" style="display: none;">
-        <button onclick="mostrarSeccion('seccion1')">Introducción</button>
-        <button onclick="mostrarSeccion('seccion2')">Historia</button>
-        <button onclick="mostrarSeccion('seccion3')">Creación de la IA</button>
-        <button onclick="mostrarSeccion('seccion4')">Reflexión</button>
-        <button onclick="mostrarSeccion('conclusion')">Conclusión</button>
-        <button onclick="mostrarSeccion('evaluacion')">Evaluación</button>
-    </div>
-
-    <!-- Botones para Taller 2 -->
-    <div class="navbar" id="botones-taller2" style="display: none;">
-        <button onclick="mostrarSeccion('introduccion')">Introducción</button>
-        <button onclick="mostrarSeccion('desarrollo')">Desarrollo</button>
-        <button onclick="mostrarSeccion('conclusiones')">Conclusiones</button>
-    </div>
-
-    <!-- Contenido dinámico -->
-    <div class="content" id="contenido">
-        <!-- El contenido se cargará dinámicamente -->
-    </div>
-
-    <!-- Pie de página -->
-    <footer>
-        <p>© 2025 Historia y Creación de la IA</p>
-    </footer>
+    
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script personalizado -->
+    <script>
+        // Función para manejar la subida de archivos PDF
+        function handleFileUpload(section, files) {
+            if (files.length === 0) return;
+            
+            const file = files[0];
+            const listElement = document.getElementById(`pdf-list-${section}`);
+            
+            // Crear elemento para mostrar el archivo
+            const fileElement = document.createElement('div');
+            fileElement.className = 'alert alert-info mt-2';
+            fileElement.innerHTML = `
+                <strong>${file.name}</strong> (${(file.size / 1024).toFixed(2)} KB)
+                <button type="button" class="btn-close float-end" aria-label="Close"></button>
+            `;
+            
+            // Agregar función para eliminar el archivo
+            const closeButton = fileElement.querySelector('.btn-close');
+            closeButton.addEventListener('click', () => {
+                listElement.removeChild(fileElement);
+            });
+            
+            listElement.appendChild(fileElement);
+            
+            // Mostrar vista previa (opcional para futura implementación)
+            // Esta función simularía la visualización del PDF
+            // showPdfPreview(file, section);
+        }
+        
+        // Función para navegar entre secciones
+        document.addEventListener('DOMContentLoaded', function() {
+            const nextButton = document.getElementById('next-button');
+            const prevButton = document.getElementById('prev-button');
+            
+            // Obtener todas las pestañas de nivel superior
+            const talleresTabs = document.querySelectorAll('#talleres-tab button');
+            const seccionesT1 = document.querySelectorAll('#taller1-sections button');
+            const seccionesT2 = document.querySelectorAll('#taller2-sections button');
+            
+            let currentTaller = 0;
+            let currentSeccionT1 = 0;
+            let currentSeccionT2 = 0;
+            
+            nextButton.addEventListener('click', () => {
+                if (currentTaller === 0) {
+                    // Estamos en Taller 1
+                    if (currentSeccionT1 < seccionesT1.length - 1) {
+                        // Avanzar a la siguiente sección del Taller 1
+                        currentSeccionT1++;
+                        new bootstrap.Tab(seccionesT1[currentSeccionT1]).show();
+                    } else {
+                        // Cambiar al Taller 2
+                        currentTaller = 1;
+                        new bootstrap.Tab(talleresTabs[currentTaller]).show();
+                    }
+                } else {
+                    // Estamos en Taller 2
+                    if (currentSeccionT2 < seccionesT2.length - 1) {
+                        // Avanzar a la siguiente sección del Taller 2
+                        currentSeccionT2++;
+                        new bootstrap.Tab(seccionesT2[currentSeccionT2]).show();
+                    }
+                }
+                
+                updateButtons();
+            });
+            
+            prevButton.addEventListener('click', () => {
+                if (currentTaller === 1) {
+                    // Estamos en Taller 2
+                    if (currentSeccionT2 > 0) {
+                        // Retroceder a la sección anterior del Taller 2
+                        currentSeccionT2--;
+                        new bootstrap.Tab(seccionesT2[currentSeccionT2]).show();
+                    } else {
+                        // Cambiar al Taller 1, última sección
+                        currentTaller = 0;
+                        currentSeccionT1 = seccionesT1.length - 1;
+                        new bootstrap.Tab(talleresTabs[currentTaller]).show();
+                        new bootstrap.Tab(seccionesT1[currentSeccionT1]).show();
+                    }
+                } else {
+                    // Estamos en Taller 1
+                    if (currentSeccionT1 > 0) {
+                        // Retroceder a la sección anterior del Taller 1
+                        currentSeccionT1--;
+                        new bootstrap.Tab(seccionesT1[currentSeccionT1]).show();
+                    }
+                }
+                
+                updateButtons();
+            });
+            
+            // Actualizar el estado de los botones
+            function updateButtons() {
+                prevButton.disabled = (currentTaller === 0 && currentSeccionT1 === 0);
+                nextButton.disabled = (currentTaller === 1 && currentSeccionT2 === seccionesT2.length - 1);
+            }
+            
+            // Actualizar índices cuando se cambia manualmente de pestaña
+            talleresTabs.forEach((tab, index) => {
+                tab.addEventListener('shown.bs.tab', () => {
+                    currentTaller = index;
+                    updateButtons();
+                });
+            });
+            
+            seccionesT1.forEach((tab, index) => {
+                tab.addEventListener('shown.bs.tab', () => {
+                    currentSeccionT1 = index;
+                    updateButtons();
+                });
+            });
+            
+            seccionesT2.forEach((tab, index) => {
+                tab.addEventListener('shown.bs.tab', () => {
+                    currentSeccionT2 = index;
+                    updateButtons();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
