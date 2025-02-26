@@ -320,151 +320,253 @@
         </div>
     </div>
     
-    <!-- Sección 2 -->
     <div class="tab-pane fade" id="seccion2" role="tabpanel">
-        <h2>Sección 2: Historia de la IA</h2>
-        <div class="accordion" id="accordion-seccion2">
-            <!-- Término "Inteligencia Artificial" -->
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-dartmouth">
-                        ¿Quién acuñó el término 'Inteligencia Artificial' y en qué contexto?
-                    </button>
-                </h2>
-                <div id="collapse-dartmouth" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion2">
-                    <div class="accordion-body">
-                        <p>El término "Inteligencia Artificial" fue acuñado por John McCarthy en 1956 durante la Conferencia de Dartmouth, un evento clave en la historia de la IA. McCarthy, junto con Marvin Minsky, Nathaniel Rochester y Claude Shannon, organizó esta conferencia con el objetivo de reunir a investigadores interesados en la posibilidad de que las máquinas pudieran imitar la inteligencia humana.</p>
-                        <div class="file-upload">
-                            <label class="form-label">Subir documento PDF relacionado:</label>
-                            <input class="form-control" type="file" accept=".pdf" id="pdf-dartmouth" onchange="handleFileUpload('dartmouth', this.files)">
-                        </div>
-                        <div id="pdf-list-dartmouth" class="pdf-list"></div>
+    <h2 class="mb-4">Sección 2: Historia de la IA</h2>
+    <div class="accordion" id="accordion-seccion2">
+        <!-- Término "Inteligencia Artificial" -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-dartmouth">
+                    ¿Quién acuñó el término 'Inteligencia Artificial' y en qué contexto?
+                </button>
+            </h2>
+            <div id="collapse-dartmouth" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion2">
+                <div class="accordion-body">
+                    <p>El término <strong>"Inteligencia Artificial"</strong> fue acuñado por <strong>John McCarthy</strong> en 1956 durante la <strong>Conferencia de Dartmouth</strong>, un evento clave en la historia de la IA. McCarthy, junto con Marvin Minsky, Nathaniel Rochester y Claude Shannon, organizó esta conferencia con el objetivo de reunir a investigadores interesados en la posibilidad de que las máquinas pudieran imitar la inteligencia humana.</p>
+                    <p>La conferencia propuso formalmente el estudio de la IA como una disciplina independiente, con el objetivo de desarrollar máquinas que pudieran realizar tareas como resolver problemas, aprender y entender el lenguaje natural.</p>
+                    <div class="file-upload mt-3">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-dartmouth" onchange="handleFileUpload('dartmouth', this.files)">
                     </div>
+                    <div id="pdf-list-dartmouth" class="pdf-list mt-2"></div>
                 </div>
             </div>
-            
-            <!-- Conferencia de Dartmouth -->
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-inviernos">
-                        Explicar la importancia de la Conferencia de Dartmouth (1956) en el desarrollo de la IA
-                    </button>
-                </h2>
-                <div id="collapse-inviernos" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
-                    <div class="accordion-body">
-                        <p>La Conferencia de Dartmouth es considerada el punto de partida oficial del campo de la inteligencia artificial. En este evento:</p>
-                        <ul>
-                            <li>Se estableció la IA como una nueva disciplina de investigación dentro de la informática.</li>
-                            <li>Se plantearon problemas fundamentales como el desarrollo de redes neuronales artificiales y la mejora automática de los sistemas computacionales.</li>
-                        </ul>
-                        <div class="file-upload">
-                            <label class="form-label">Subir documento PDF relacionado:</label>
-                            <input class="form-control" type="file" accept=".pdf" id="pdf-inviernos" onchange="handleFileUpload('inviernos', this.files)">
-                        </div>
-                        <div id="pdf-list-inviernos" class="pdf-list"></div>
+        </div>
+
+        <!-- Conferencia de Dartmouth -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-inviernos">
+                    Explicar la importancia de la Conferencia de Dartmouth (1956) en el desarrollo de la IA
+                </button>
+            </h2>
+            <div id="collapse-inviernos" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
+                <div class="accordion-body">
+                    <p>La <strong>Conferencia de Dartmouth</strong> es considerada el punto de partida oficial del campo de la inteligencia artificial. En este evento:</p>
+                    <ul>
+                        <li>Se estableció la IA como una nueva disciplina de investigación dentro de la informática.</li>
+                        <li>Se plantearon problemas fundamentales como:
+                            <ul>
+                                <li>Cómo programar computadoras para entender el lenguaje.</li>
+                                <li>El desarrollo de redes neuronales artificiales.</li>
+                                <li>La mejora automática de los sistemas computacionales.</li>
+                                <li>La creatividad y la abstracción en las máquinas.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="file-upload mt-3">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-inviernos" onchange="handleFileUpload('inviernos', this.files)">
                     </div>
+                    <div id="pdf-list-inviernos" class="pdf-list mt-2"></div>
                 </div>
             </div>
-            
-            <!-- Hitos importantes -->
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-explosion">
-                        Identificar hitos importantes en la evolución de la IA durante el siglo XX y XXI
-                    </button>
-                </h2>
-                <div id="collapse-explosion" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
-                    <div class="accordion-body">
-                        <p>Algunos de los momentos más importantes en la historia de la IA incluyen:</p>
-                        <ul>
-                            <li>1956: Conferencia de Dartmouth.</li>
-                            <li>1997: IBM Deep Blue vence al campeón mundial de ajedrez, Garry Kasparov.</li>
-                            <li>2011: IBM Watson gana el concurso de Jeopardy.</li>
-                            <li>2016: AlphaGo de DeepMind vence al campeón mundial de Go.</li>
-                        </ul>
-                        <div class="file-upload">
-                            <label class="form-label">Subir documento PDF relacionado:</label>
-                            <input class="form-control" type="file" accept=".pdf" id="pdf-explosion" onchange="handleFileUpload('explosion', this.files)">
-                        </div>
-                        <div id="pdf-list-explosion" class="pdf-list"></div>
+        </div>
+
+        <!-- Hitos importantes -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-explosion">
+                    Identificar hitos importantes en la evolución de la IA durante el siglo XX y XXI
+                </button>
+            </h2>
+            <div id="collapse-explosion" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
+                <div class="accordion-body">
+                    <p>Algunos de los momentos más importantes en la historia de la IA incluyen:</p>
+                    <ul>
+                        <li><strong>1956:</strong> Conferencia de Dartmouth.</li>
+                        <li><strong>1997:</strong> IBM Deep Blue vence al campeón mundial de ajedrez, Garry Kasparov.</li>
+                        <li><strong>2011:</strong> IBM Watson gana el concurso de Jeopardy.</li>
+                        <li><strong>2016:</strong> AlphaGo de DeepMind vence al campeón mundial de Go.</li>
+                    </ul>
+                    <div class="file-upload mt-3">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-explosion" onchange="handleFileUpload('explosion', this.files)">
                     </div>
+                    <div id="pdf-list-explosion" class="pdf-list mt-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Explosión de IA en la década de 2010 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-explosion-ia">
+                    Describir el impacto de la 'Explosión de IA' en la década de 2010
+                </button>
+            </h2>
+            <div id="collapse-explosion-ia" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
+                <div class="accordion-body">
+                    <p>La década de 2010 marcó un resurgimiento de la IA debido a tres factores clave:</p>
+                    <ul>
+                        <li><strong>Disponibilidad de grandes volúmenes de datos (Big Data).</strong></li>
+                        <li><strong>Mayor capacidad de procesamiento gracias a las GPU y TPU.</strong></li>
+                        <li><strong>Avances en aprendizaje profundo (Deep Learning).</strong></li>
+                    </ul>
+                    <div class="file-upload mt-3">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-explosion-ia" onchange="handleFileUpload('explosion-ia', this.files)">
+                    </div>
+                    <div id="pdf-list-explosion-ia" class="pdf-list mt-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inviernos de la IA -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-inviernos-ia">
+                    Investigar qué son los 'inviernos de la IA' y cómo afectaron su desarrollo
+                </button>
+            </h2>
+            <div id="collapse-inviernos-ia" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
+                <div class="accordion-body">
+                    <p>Los <strong>inviernos de la IA</strong> son períodos en los que el interés y la financiación en IA disminuyeron drásticamente debido a expectativas no cumplidas y avances tecnológicos limitados. Ha habido dos inviernos principales:</p>
+                    <ul>
+                        <li><strong>Primer invierno (1974-1980):</strong> Debido a la falta de avances significativos y al escepticismo sobre las capacidades de la IA.</li>
+                        <li><strong>Segundo invierno (1987-1993):</strong> Causado por la caída del interés en los sistemas expertos y la falta de financiación.</li>
+                    </ul>
+                    <div class="file-upload mt-3">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-inviernos-ia" onchange="handleFileUpload('inviernos-ia', this.files)">
+                    </div>
+                    <div id="pdf-list-inviernos-ia" class="pdf-list mt-2"></div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <!-- Sección 3 -->
-    <div class="tab-pane fade" id="seccion3" role="tabpanel">
-        <h2>Sección 3: Creación de la IA y sus Fundamentos</h2>
-        <div class="accordion" id="accordion-seccion3">
-            <!-- Algoritmos de aprendizaje automático -->
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-aprendizaje">
-                        Explicar el funcionamiento de los algoritmos de aprendizaje automático
-                    </button>
-                </h2>
-                <div id="collapse-aprendizaje" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion3">
-                    <div class="accordion-body">
-                        <p>Los algoritmos de aprendizaje automático permiten a las computadoras identificar patrones en datos y hacer predicciones sin ser programadas explícitamente. Su funcionamiento se basa en tres etapas principales:</p>
-                        <ol>
-                            <li>Recopilación y preparación de datos.</li>
-                            <li>Entrenamiento del modelo.</li>
-                            <li>Evaluación y optimización.</li>
-                        </ol>
-                        <div class="file-upload">
-                            <label class="form-label">Subir documento PDF relacionado:</label>
-                            <input class="form-control" type="file" accept=".pdf" id="pdf-aprendizaje" onchange="handleFileUpload('aprendizaje', this.files)">
-                        </div>
-                        <div id="pdf-list-aprendizaje" class="pdf-list"></div>
+</div>
+   <div class="tab-pane fade" id="seccion3" role="tabpanel">
+    <h2 class="mb-4">Sección 3: Creación de la IA y sus Fundamentos</h2>
+    <div class="accordion" id="accordion-seccion3">
+        <!-- Algoritmos de aprendizaje automático -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-aprendizaje">
+                    Explicar el funcionamiento de los algoritmos de aprendizaje automático
+                </button>
+            </h2>
+            <div id="collapse-aprendizaje" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion3">
+                <div class="accordion-body">
+                    <p>Los algoritmos de aprendizaje automático permiten a las computadoras identificar patrones en datos y hacer predicciones sin ser programadas explícitamente. Su funcionamiento se basa en tres etapas principales:</p>
+                    <ol>
+                        <li><strong>Recopilación y preparación de datos:</strong> Se recopilan y limpian los datos para su uso.</li>
+                        <li><strong>Entrenamiento del modelo:</strong> El algoritmo aprende de los datos para identificar patrones.</li>
+                        <li><strong>Evaluación y optimización:</strong> Se evalúa el rendimiento del modelo y se ajustan los parámetros para mejorar su precisión.</li>
+                    </ol>
+                    <div class="file-upload mt-3">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-aprendizaje" onchange="handleFileUpload('aprendizaje', this.files)">
                     </div>
+                    <div id="pdf-list-aprendizaje" class="pdf-list mt-2"></div>
                 </div>
             </div>
-            
-            <!-- Redes Neuronales Artificiales -->
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-redes">
-                        ¿Qué son las redes neuronales artificiales y cómo se inspiran en el cerebro humano?
-                    </button>
-                </h2>
-                <div id="collapse-redes" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
-                    <div class="accordion-body">
-                        <p>Las redes neuronales artificiales (RNA) son modelos computacionales inspirados en la estructura y funcionamiento del cerebro humano. Están compuestas por neuronas artificiales, organizadas en capas interconectadas.</p>
-                        <div class="file-upload">
-                            <label class="form-label">Subir documento PDF relacionado:</label>
-                            <input class="form-control" type="file" accept=".pdf" id="pdf-redes" onchange="handleFileUpload('redes', this.files)">
-                        </div>
-                        <div id="pdf-list-redes" class="pdf-list"></div>
+        </div>
+
+        <!-- Redes Neuronales Artificiales -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-redes">
+                    ¿Qué son las redes neuronales artificiales y cómo se inspiran en el cerebro humano?
+                </button>
+            </h2>
+            <div id="collapse-redes" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
+                <div class="accordion-body">
+                    <p>Las <strong>redes neuronales artificiales (RNA)</strong> son modelos computacionales inspirados en la estructura y funcionamiento del cerebro humano. Están compuestas por neuronas artificiales, organizadas en capas interconectadas.</p>
+                    <p>Estas redes son capaces de aprender de los datos y realizar tareas como reconocimiento de imágenes, procesamiento de lenguaje natural y predicción de tendencias.</p>
+                    <div class="file-upload mt-3">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-redes" onchange="handleFileUpload('redes', this.files)">
                     </div>
+                    <div id="pdf-list-redes" class="pdf-list mt-2"></div>
                 </div>
             </div>
-            
-            <!-- Tipos de aprendizaje -->
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-pln">
-                        Diferenciar los tipos de aprendizaje en IA: supervisado, no supervisado y por refuerzo
-                    </button>
-                </h2>
-                <div id="collapse-pln" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
-                    <div class="accordion-body">
-                        <p>Existen tres tipos principales de aprendizaje automático:</p>
-                        <ul>
-                            <li><strong>Aprendizaje supervisado:</strong> Se entrena con datos etiquetados (ejemplo: imágenes de gatos con la etiqueta "gato").</li>
-                            <li><strong>Aprendizaje no supervisado:</strong> Se usa cuando los datos no tienen etiquetas, y el sistema debe encontrar patrones por sí solo.</li>
-                            <li><strong>Aprendizaje por refuerzo:</strong> El agente aprende interactuando con un entorno, recibiendo recompensas o penalizaciones.</li>
-                        </ul>
-                        <div class="file-upload">
-                            <label class="form-label">Subir documento PDF relacionado:</label>
-                            <input class="form-control" type="file" accept=".pdf" id="pdf-pln" onchange="handleFileUpload('pln', this.files)">
-                        </div>
-                        <div id="pdf-list-pln" class="pdf-list"></div>
+        </div>
+
+        <!-- Tipos de aprendizaje -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-pln">
+                    Diferenciar los tipos de aprendizaje en IA: supervisado, no supervisado y por refuerzo
+                </button>
+            </h2>
+            <div id="collapse-pln" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
+                <div class="accordion-body">
+                    <p>Existen tres tipos principales de aprendizaje automático:</p>
+                    <ul>
+                        <li><strong>Aprendizaje supervisado:</strong> Se entrena con datos etiquetados (ejemplo: imágenes de gatos con la etiqueta "gato").</li>
+                        <li><strong>Aprendizaje no supervisado:</strong> Se usa cuando los datos no tienen etiquetas, y el sistema debe encontrar patrones por sí solo.</li>
+                        <li><strong>Aprendizaje por refuerzo:</strong> El agente aprende interactuando con un entorno, recibiendo recompensas o penalizaciones.</li>
+                    </ul>
+                    <div class="file-upload mt-3">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-pln" onchange="handleFileUpload('pln', this.files)">
                     </div>
+                    <div id="pdf-list-pln" class="pdf-list mt-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Herramientas y lenguajes de programación -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-herramientas">
+                    Mencionar herramientas y lenguajes de programación comunes en el desarrollo de IA
+                </button>
+            </h2>
+            <div id="collapse-herramientas" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
+                <div class="accordion-body">
+                    <p>El desarrollo de inteligencia artificial se apoya en diversas herramientas y lenguajes de programación:</p>
+                    <ul>
+                        <li><strong>Lenguajes de programación:</strong> Python, R, Julia, Java y C++.</li>
+                        <li><strong>Bibliotecas y frameworks:</strong> TensorFlow, PyTorch, Scikit-learn, Keras, OpenCV, NLTK y spaCy.</li>
+                    </ul>
+                    <div class="file-upload mt-3">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-herramientas" onchange="handleFileUpload('herramientas', this.files)">
+                    </div>
+                    <div id="pdf-list-herramientas" class="pdf-list mt-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Componentes de un sistema de IA -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-componentes">
+                    ¿Cuáles son los principales componentes de un sistema de IA?
+                </button>
+            </h2>
+            <div id="collapse-componentes" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
+                <div class="accordion-body">
+                    <p>Un sistema de inteligencia artificial está compuesto por varios elementos clave:</p>
+                    <ul>
+                        <li><strong>Datos:</strong> La materia prima para entrenar y alimentar los modelos.</li>
+                        <li><strong>Modelo de aprendizaje:</strong> El algoritmo que procesa los datos y aprende de ellos.</li>
+                        <li><strong>Motor de procesamiento:</strong> La infraestructura que ejecuta los cálculos.</li>
+                        <li><strong>Algoritmos de optimización:</strong> Métodos para mejorar el rendimiento del modelo.</li>
+                        <li><strong>Interfaz de usuario:</strong> La forma en que los usuarios interactúan con el sistema.</li>
+                    </ul>
+                    <div class="file-upload mt-3">
+                        <label class="form-label">Subir documento PDF relacionado:</label>
+                        <input class="form-control" type="file" accept=".pdf" id="pdf-componentes" onchange="handleFileUpload('componentes', this.files)">
+                    </div>
+                    <div id="pdf-list-componentes" class="pdf-list mt-2"></div>
                 </div>
             </div>
         </div>
     </div>
+</div>
     
    <!-- Sección 4: Reflexión e Investigación -->
 <div class="tab-pane fade" id="seccion4" role="tabpanel">
