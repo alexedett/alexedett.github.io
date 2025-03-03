@@ -24,10 +24,6 @@
             width: 100%;
         }
         
-        .file-upload {
-            margin: 10px 0;
-        }
-        
         .card {
             margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -56,13 +52,6 @@
         .author {
             margin-bottom: 30px;
             color: #f0f0f0;
-        }
-        
-        .pdf-preview {
-            margin-top: 10px;
-            background: #f8f9fa;
-            padding: 10px;
-            border-radius: 5px;
         }
         
         .pdf-list {
@@ -218,11 +207,6 @@
                                             <li><strong>IA basada en la racionalidad:</strong> Se enfoca en la toma de decisiones óptimas, sin necesidad de imitar a los humanos.</li>
                                             <li><strong>IA como agentes inteligentes:</strong> Sistemas que perciben su entorno y actúan de manera autónoma para cumplir sus objetivos.</li>
                                         </ul>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-definicion" onchange="handleFileUpload('definicion', this.files)">
-                                        </div>
-                                        <div id="pdf-list-definicion" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -248,11 +232,6 @@
                                             <li>Capaz de resolver problemas complejos y tomar decisiones en una variedad de situaciones.</li>
                                             <li><strong>Ejemplo:</strong> Un robot que puede aprender a cocinar cualquier platillo o realizar tareas domésticas sin programación específica.</li>
                                         </ul>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-fuerte-debil" onchange="handleFileUpload('fuerte-debil', this.files)">
-                                        </div>
-                                        <div id="pdf-list-fuerte-debil" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -273,11 +252,6 @@
                                             <li><strong>Asistentes virtuales:</strong> Siri, Alexa y Google Assistant.</li>
                                             <li><strong>Recomendaciones personalizadas:</strong> Plataformas como Netflix y Spotify.</li>
                                         </ul>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-aplicaciones" onchange="handleFileUpload('aplicaciones', this.files)">
-                                        </div>
-                                        <div id="pdf-list-aplicaciones" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -300,11 +274,6 @@
                                             <li>Modelos inspirados en la estructura del cerebro humano, compuestos por capas de neuronas artificiales interconectadas.</li>
                                             <li>Cuando estas redes tienen múltiples capas ocultas, se habla de aprendizaje profundo (deep learning).</li>
                                         </ul>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-relacionia" onchange="handleFileUpload('relacionia', this.files)">
-                                        </div>
-                                        <div id="pdf-list-relacionia" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -326,11 +295,6 @@
                                     <div class="accordion-body">
                                         <p>El término <strong>"Inteligencia Artificial"</strong> fue acuñado por <strong>John McCarthy</strong> en 1956 durante la <strong>Conferencia de Dartmouth</strong>, un evento clave en la historia de la IA. McCarthy, junto con Marvin Minsky, Nathaniel Rochester y Claude Shannon, organizó esta conferencia con el objetivo de reunir a investigadores interesados en la posibilidad de que las máquinas pudieran imitar la inteligencia humana.</p>
                                         <p>La conferencia propuso formalmente el estudio de la IA como una disciplina independiente, con el objetivo de desarrollar máquinas que pudieran realizar tareas como resolver problemas, aprender y entender el lenguaje natural.</p>
-                                        <div class="file-upload mt-3">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-dartmouth" onchange="handleFileUpload('dartmouth', this.files)">
-                                        </div>
-                                        <div id="pdf-list-dartmouth" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -356,11 +320,6 @@
                                                 </ul>
                                             </li>
                                         </ul>
-                                        <div class="file-upload mt-3">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-inviernos" onchange="handleFileUpload('inviernos', this.files)">
-                                        </div>
-                                        <div id="pdf-list-inviernos" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -381,11 +340,6 @@
                                             <li><strong>2011:</strong> IBM Watson gana el concurso de Jeopardy.</li>
                                             <li><strong>2016:</strong> AlphaGo de DeepMind vence al campeón mundial de Go.</li>
                                         </ul>
-                                        <div class="file-upload mt-3">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-explosion" onchange="handleFileUpload('explosion', this.files)">
-                                        </div>
-                                        <div id="pdf-list-explosion" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -405,11 +359,6 @@
                                             <li><strong>Mayor capacidad de procesamiento gracias a las GPU y TPU.</strong></li>
                                             <li><strong>Avances en aprendizaje profundo (Deep Learning).</strong></li>
                                         </ul>
-                                        <div class="file-upload mt-3">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-explosion-ia" onchange="handleFileUpload('explosion-ia', this.files)">
-                                        </div>
-                                        <div id="pdf-list-explosion-ia" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -428,11 +377,6 @@
                                             <li><strong>Primer invierno (1974-1980):</strong> Debido a la falta de avances significativos y al escepticismo sobre las capacidades de la IA.</li>
                                             <li><strong>Segundo invierno (1987-1993):</strong> Causado por la caída del interés en los sistemas expertos y la falta de financiación.</li>
                                         </ul>
-                                        <div class="file-upload mt-3">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-inviernos-ia" onchange="handleFileUpload('inviernos-ia', this.files)">
-                                        </div>
-                                        <div id="pdf-list-inviernos-ia" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -458,11 +402,6 @@
                                             <li><strong>Entrenamiento del modelo:</strong> El algoritmo aprende de los datos para identificar patrones.</li>
                                             <li><strong>Evaluación y optimización:</strong> Se evalúa el rendimiento del modelo y se ajustan los parámetros para mejorar su precisión.</li>
                                         </ol>
-                                        <div class="file-upload mt-3">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-aprendizaje" onchange="handleFileUpload('aprendizaje', this.files)">
-                                        </div>
-                                        <div id="pdf-list-aprendizaje" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -478,11 +417,6 @@
                                     <div class="accordion-body">
                                         <p>Las <strong>redes neuronales artificiales (RNA)</strong> son modelos computacionales inspirados en la estructura y funcionamiento del cerebro humano. Están compuestas por neuronas artificiales, organizadas en capas interconectadas.</p>
                                         <p>Estas redes son capaces de aprender de los datos y realizar tareas como reconocimiento de imágenes, procesamiento de lenguaje natural y predicción de tendencias.</p>
-                                        <div class="file-upload mt-3">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-redes" onchange="handleFileUpload('redes', this.files)">
-                                        </div>
-                                        <div id="pdf-list-redes" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -502,11 +436,6 @@
                                             <li><strong>Aprendizaje no supervisado:</strong> Se usa cuando los datos no tienen etiquetas, y el sistema debe encontrar patrones por sí solo.</li>
                                             <li><strong>Aprendizaje por refuerzo:</strong> El agente aprende interactuando con un entorno, recibiendo recompensas o penalizaciones.</li>
                                         </ul>
-                                        <div class="file-upload mt-3">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-pln" onchange="handleFileUpload('pln', this.files)">
-                                        </div>
-                                        <div id="pdf-list-pln" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -525,11 +454,6 @@
                                             <li><strong>Lenguajes de programación:</strong> Python, R, Julia, Java y C++.</li>
                                             <li><strong>Bibliotecas y frameworks:</strong> TensorFlow, PyTorch, Scikit-learn, Keras, OpenCV, NLTK y spaCy.</li>
                                         </ul>
-                                        <div class="file-upload mt-3">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-herramientas" onchange="handleFileUpload('herramientas', this.files)">
-                                        </div>
-                                        <div id="pdf-list-herramientas" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -551,11 +475,6 @@
                                             <li><strong>Algoritmos de optimización:</strong> Métodos para mejorar el rendimiento del modelo.</li>
                                             <li><strong>Interfaz de usuario:</strong> La forma en que los usuarios interactúan con el sistema.</li>
                                         </ul>
-                                        <div class="file-upload mt-3">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-componentes" onchange="handleFileUpload('componentes', this.files)">
-                                        </div>
-                                        <div id="pdf-list-componentes" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -582,11 +501,6 @@
                                             <li>Se entrena con grandes volúmenes de datos para aprender patrones lingüísticos.</li>
                                             <li>Puede mantener conversaciones fluidas y contextualizadas.</li>
                                         </ul>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-chatgpt" onchange="handleFileUpload('chatgpt', this.files)">
-                                        </div>
-                                        <div id="pdf-list-chatgpt" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -607,11 +521,6 @@
                                             <li>Entrenamiento con grandes volúmenes de datos para aprender patrones lingüísticos.</li>
                                             <li>Capacidad para generar texto en función del contexto proporcionado.</li>
                                         </ul>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-tecnologia" onchange="handleFileUpload('tecnologia', this.files)">
-                                        </div>
-                                        <div id="pdf-list-tecnologia" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -631,11 +540,6 @@
                                             <li><strong>Posibles sesgos:</strong> Puede reflejar sesgos presentes en los datos de entrenamiento, lo que podría llevar a respuestas parcializadas o inapropiadas.</li>
                                             <li><strong>Falta de comprensión profunda:</strong> Aunque genera respuestas coherentes, no posee una comprensión real del mundo y puede producir información incorrecta o sin sentido.</li>
                                         </ul>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-limitaciones" onchange="handleFileUpload('limitaciones', this.files)">
-                                        </div>
-                                        <div id="pdf-list-limitaciones" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -654,11 +558,6 @@
                                             <li><strong>Preentrenamiento:</strong> El modelo se expone a una gran cantidad de texto para aprender patrones lingüísticos, gramática y conocimiento general.</li>
                                             <li><strong>Ajuste fino (Fine-tuning):</strong> Se refina el modelo utilizando conjuntos de datos más específicos y, en ocasiones, retroalimentación humana para mejorar su desempeño en tareas particulares.</li>
                                         </ol>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-entrenamiento" onchange="handleFileUpload('entrenamiento', this.files)">
-                                        </div>
-                                        <div id="pdf-list-entrenamiento" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -678,11 +577,6 @@
                                             <li><strong>Ajuste fino con retroalimentación humana:</strong> Utilizar evaluaciones humanas para identificar y corregir respuestas sesgadas durante el proceso de ajuste fino.</li>
                                             <li><strong>Transparencia:</strong> Documentar y comunicar los posibles sesgos del modelo para que los usuarios sean conscientes de sus limitaciones.</li>
                                         </ul>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-sesgos" onchange="handleFileUpload('sesgos', this.files)">
-                                        </div>
-                                        <div id="pdf-list-sesgos" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -704,11 +598,6 @@
                                             <li><strong>Generación de contenido:</strong> Herramientas como ChatGPT para redacción de textos.</li>
                                             <li><strong>Sistemas de recomendación:</strong> Plataformas como Netflix y Spotify.</li>
                                         </ul>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-aplicaciones-ia" onchange="handleFileUpload('aplicaciones-ia', this.files)">
-                                        </div>
-                                        <div id="pdf-list-aplicaciones-ia" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -728,11 +617,6 @@
                                             <li><strong>Accesibilidad a la información:</strong> Herramientas de IA facilitan el acceso rápido a información relevante.</li>
                                             <li><strong>Automatización de tareas:</strong> Asistentes virtuales y chatbots automatizan tareas de atención al cliente y soporte técnico.</li>
                                         </ul>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-comunicacion" onchange="handleFileUpload('comunicacion', this.files)">
-                                        </div>
-                                        <div id="pdf-list-comunicacion" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -747,11 +631,7 @@
                                 <p>Discusión abierta sobre los impactos positivos y negativos de la IA.</p>
                                 <p>Reflexión sobre el rol de los ingenieros en la creación de una IA responsable.</p>
                                 <p>Pregunta final: ¿Cómo podría la IA transformar el mundo en los próximos 50 años?</p>
-                                <div class="file-upload">
-                                    <label class="form-label">Subir documento PDF relacionado:</label>
-                                    <input class="form-control" type="file" accept=".pdf" id="pdf-conclusion" onchange="handleFileUpload('conclusion', this.files)">
-                                </div>
-                                <div id="pdf-list-conclusion" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
+                                <div id="pdf-list-conclusion" class="pdf-list" data-preloaded-pdf="conclusion.pdf" data-preloaded-name="Conclusion PDF" data-preloaded-size="150"></div>
                             </div>
                         </div>
                     </div>
@@ -762,11 +642,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <p>Cada estudiante presentará una reflexión escrita de una página sobre lo aprendido y su opinión acerca del futuro de la IA (1000 palabras mínimo).</p>
-                                <div class="file-upload">
-                                    <label class="form-label">Subir documento PDF relacionado:</label>
-                                    <input class="form-control" type="file" accept=".pdf" id="pdf-evaluacion" onchange="handleFileUpload('evaluacion', this.files)">
-                                </div>
-                                <div id="pdf-list-evaluacion" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
+                                <div id="pdf-list-evaluacion" class="pdf-list" data-preloaded-pdf="evaluacion.pdf" data-preloaded-name="Evaluacion PDF" data-preloaded-size="150"></div>
                             </div>
                         </div>
                     </div>
@@ -815,11 +691,6 @@
                                     <li>¿En qué ámbitos crees que se usa la IA actualmente?</li>
                                     <li>Enumera al menos tres ejemplos de aplicaciones de IA que hayas utilizado sin darte cuenta.</li>
                                 </ul>
-                                <div class="file-upload">
-                                    <label class="form-label">Subir documento PDF relacionado:</label>
-                                    <input class="form-control" type="file" accept=".pdf" id="pdf-introduccion" onchange="handleFileUpload('introduccion', this.files)">
-                                </div>
-                                <div id="pdf-list-introduccion" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                             </div>
                         </div>
                     </div>
@@ -849,11 +720,6 @@
                                             <li>Sistemas de recomendación como Netflix o Spotify.</li>
                                             <li>Reconocimiento facial en cámaras de seguridad.</li>
                                         </ul>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-ani" onchange="handleFileUpload('ani', this.files)">
-                                        </div>
-                                        <div id="pdf-list-ani" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -878,11 +744,6 @@
                                             <li>Un robot que puede aprender a cocinar cualquier platillo o realizar tareas domésticas sin programación específica.</li>
                                             <li>Un sistema que puede resolver problemas científicos complejos sin intervención humana.</li>
                                         </ul>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-agi" onchange="handleFileUpload('agi', this.files)">
-                                        </div>
-                                        <div id="pdf-list-agi" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -908,11 +769,6 @@
                                             <li>Impacto en la sociedad y riesgos existenciales.</li>
                                             <li>Responsabilidad sobre las decisiones tomadas por la IA.</li>
                                         </ul>
-                                        <div class="file-upload">
-                                            <label class="form-label">Subir documento PDF relacionado:</label>
-                                            <input class="form-control" type="file" accept=".pdf" id="pdf-asi" onchange="handleFileUpload('asi', this.files)">
-                                        </div>
-                                        <div id="pdf-list-asi" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                                     </div>
                                 </div>
                             </div>
@@ -956,11 +812,6 @@
                                     <li><strong>¿Qué aspectos hacen que una IA sea ética o no?</strong><br>Depende de cómo se diseñe, implemente y utilice, asegurando que beneficie a la sociedad y respete los derechos humanos.</li>
                                     <li><strong>¿Cómo podría la IA mejorar la seguridad cibernética?</strong><br>La IA puede detectar amenazas en tiempo real, mejorar la protección de datos y prevenir ciberataques.</li>
                                 </ol>
-                                <div class="file-upload">
-                                    <label class="form-label">Subir documento PDF relacionado:</label>
-                                    <input class="form-control" type="file" accept=".pdf" id="pdf-conclusiones" onchange="handleFileUpload('conclusiones', this.files)">
-                                </div>
-                                <div id="pdf-list-conclusiones" class="pdf-list" data-preloaded-pdf="example.pdf" data-preloaded-name="Example PDF" data-preloaded-size="150"></div>
                             </div>
                         </div>
                     </div>
@@ -980,13 +831,6 @@
     
     <!-- Script personalizado -->
     <script>
-        // Función para manejar la subida de archivos PDF (solo para referencia, no afecta al PDF preloaded)
-        function handleFileUpload(section, files) {
-            if (files.length === 0) return;
-            // Los archivos subidos por el usuario no afectan al PDF preloaded permanente
-            console.log(`Archivo subido en sección ${section}: ${files[0].name}`);
-        }
-
         // Función para cargar el PDF predefinido
         function loadPreloadedPDF(section) {
             const listElement = document.getElementById(`pdf-list-${section}`);
@@ -1007,9 +851,8 @@
 
         // Cargar PDFs predefinidos al iniciar la página
         document.addEventListener('DOMContentLoaded', function() {
-            const pdfLists = document.querySelectorAll('.pdf-list[data-preloaded-pdf]');
-            pdfLists.forEach(list => {
-                const section = list.id.replace('pdf-list-', '');
+            const sectionsWithPDFs = ['conclusion', 'evaluacion'];
+            sectionsWithPDFs.forEach(section => {
                 loadPreloadedPDF(section);
             });
 
