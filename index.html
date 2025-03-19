@@ -904,18 +904,17 @@
                 <pre id="code" class="bg-light p-3"></pre>
             </div>
             
-            <!-- Botón para ejecutar el archivo -->
-            <button class="btn btn-success mt-3" id="run-button" disabled>Ejecutar Archivo</button>
-            
-            <!-- Área para mostrar la salida -->
-            <div id="output-area" class="mt-3">
-                <h5>Salida:</h5>
-                <pre id="output" class="bg-light p-3"></pre>
+           <!-- Área para mostrar el código -->
+            <div id="code-preview" class="mt-3">
+                <h5>Código:</h5>
+                <pre id="code" class="bg-light p-3"></pre>
             </div>
+            
+            <!-- Botón para descargar el archivo -->
+            <a id="download-link" class="btn btn-success mt-3" style="display: none;">Descargar Archivo</a>
         </div>
     </div>
 </div>
-
         <!-- Botones de navegación -->
         <div class="d-flex justify-content-between mt-4">
             <button class="btn btn-primary" id="prev-button" disabled>Anterior</button>
@@ -1049,34 +1048,15 @@ document.getElementById('file-selector').addEventListener('change', async functi
         // Mostrar el código en el área de previsualización
         document.getElementById('code').textContent = code;
         
-        // Habilitar el botón de ejecución
-        document.getElementById('run-button').disabled = false;
+        // Mostrar el botón de descarga
+        const downloadLink = document.getElementById('download-link');
+        downloadLink.href = `/archivos/${selectedFile}`;
+        downloadLink.download = selectedFile;
+        downloadLink.style.display = 'block';
     } else {
         // Limpiar el área de código si no hay archivo seleccionado
         document.getElementById('code').textContent = '';
-        document.getElementById('run-button').disabled = true;
-    }
-});
-
-// Evento para ejecutar el archivo seleccionado
-document.getElementById('run-button').addEventListener('click', async function() {
-    const selectedFile = document.getElementById('file-selector').value;
-    if (selectedFile) {
-        const outputElement = document.getElementById('output');
-        outputElement.textContent = 'Ejecutando archivo...';
-        
-        // Enviar el archivo al backend para ejecutarlo
-        const response = await fetch('/ejecutar', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ file: selectedFile }),
-        });
-        
-        // Mostrar la salida del archivo
-        const result = await response.json();
-        outputElement.textContent = result.output || result.error;
+        document.getElementById('download-link').style.display = 'none';
     }
 });
     </script>
