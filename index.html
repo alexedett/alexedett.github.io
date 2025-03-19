@@ -885,35 +885,39 @@
                 </div>
             </div>
         </div>
-          <!-- Nuevo panel para el Parcial de IA -->
-            <div class="tab-pane fade" id="parcial-ia" role="tabpanel">
-                <h2>Parcial de IA</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <p>Carga y visualiza hasta 4 archivos de Python, luego ejecútalos.</p>
-                        
-                        <!-- Área para cargar archivos -->
-                        <input type="file" id="file-input" multiple accept=".py" style="display: none;">
-                        <button class="btn btn-primary" onclick="document.getElementById('file-input').click()">Cargar Archivos</button>
-                        
-                        <!-- Área para visualizar archivos -->
-                        <div id="file-preview" class="mt-3">
-                            <h5>Archivos Cargados:</h5>
-                            <ul id="file-list" class="list-group"></ul>
-                        </div>
-                        
-                        <!-- Botón para ejecutar archivos -->
-                        <button class="btn btn-success mt-3" id="run-button" disabled>Ejecutar Archivos</button>
-                        
-                        <!-- Área para mostrar la salida de los archivos -->
-                        <div id="output-area" class="mt-3">
-                            <h5>Salida:</h5>
-                            <pre id="output" class="bg-light p-3"></pre>
-                        </div>
-                    </div>
-                </div>
+         <!-- Nuevo panel para el Parcial de IA -->
+<div class="tab-pane fade" id="parcial-ia" role="tabpanel">
+    <h2>Parcial de IA</h2>
+    <div class="card">
+        <div class="card-body">
+            <p>Selecciona un archivo para ver su código y ejecutarlo.</p>
+            
+            <!-- Selector de archivos -->
+            <select id="file-selector" class="form-select mb-3">
+                <option value="">Selecciona un archivo</option>
+                <option value="archivo1.py">Archivo 1</option>
+                <option value="archivo2.py">Archivo 2</option>
+                <option value="archivo3.py">Archivo 3</option>
+                <option value="archivo4.py">Archivo 4</option>
+            </select>
+            
+            <!-- Área para mostrar el código -->
+            <div id="code-preview" class="mt-3">
+                <h5>Código:</h5>
+                <pre id="code" class="bg-light p-3"></pre>
+            </div>
+            
+            <!-- Botón para ejecutar el archivo -->
+            <button class="btn btn-success mt-3" id="run-button" disabled>Ejecutar Archivo</button>
+            
+            <!-- Área para mostrar la salida -->
+            <div id="output-area" class="mt-3">
+                <h5>Salida:</h5>
+                <pre id="output" class="bg-light p-3"></pre>
             </div>
         </div>
+    </div>
+</div>
 
         <!-- Botones de navegación -->
         <div class="d-flex justify-content-between mt-4">
@@ -1037,41 +1041,46 @@
                 });
             });
         });
-        // Variables para almacenar los archivos cargados
-let files = [];
-
-// Evento para cargar archivos
-document.getElementById('file-input').addEventListener('change', function(event) {
-    const fileList = document.getElementById('file-list');
-    fileList.innerHTML = ''; // Limpiar la lista de archivos
-    files = Array.from(event.target.files).slice(0, 4); // Limitar a 4 archivos
-
-    // Mostrar los archivos cargados
-    files.forEach((file, index) => {
-        const listItem = document.createElement('li');
-        listItem.className = 'list-group-item';
-        listItem.textContent = `${index + 1}. ${file.name}`;
-        fileList.appendChild(listItem);
-    });
-
-    // Habilitar el botón de ejecución si hay archivos cargados
-    document.getElementById('run-button').disabled = files.length === 0;
+// Evento para cargar el código del archivo seleccionado
+document.getElementById('file-selector').addEventListener('change', async function() {
+    const selectedFile = this.value;
+    if (selectedFile) {
+        // Cargar el contenido del archivo desde el servidor
+        const response = await fetch(`/archivos/${selectedFile}`);
+        const code = await response.text();
+        
+        // Mostrar el código en el área de previsualización
+        document.getElementById('code').textContent = code;
+        
+        // Habilitar el botón de ejecución
+        document.getElementById('run-button').disabled = false;
+    } else {
+        // Limpiar el área de código si no hay archivo seleccionado
+        document.getElementById('code').textContent = '';
+        document.getElementById('run-button').disabled = true;
+    }
 });
 
-// Evento para ejecutar los archivos
+// Evento para ejecutar el archivo seleccionado
 document.getElementById('run-button').addEventListener('click', async function() {
-    const outputElement = document.getElementById('output');
-    outputElement.textContent = 'Ejecutando archivos...';
-
-    // Simular la ejecución de los archivos (esto es un ejemplo)
-    let output = '';
-    for (const file of files) {
-        const content = await file.text();
-        output += `Ejecutando ${file.name}:\n${content}\n\n`;
+    const selectedFile = document.getElementById('file-selector').value;
+    if (selectedFile) {
+        const outputElement = document.getElementById('output');
+        outputElement.textContent = 'Ejecutando archivo...';
+        
+        // Enviar el archivo al backend para ejecutarlo
+        const response = await fetch('/ejecutar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ file: selectedFile }),
+        });
+        
+        // Mostrar la salida del archivo
+        const result = await response.json();
+        outputElement.textContent = result.output || result.error;
     }
-
-    // Mostrar la salida simulada
-    outputElement.textContent = output;
 });
     </script>
 </body>
