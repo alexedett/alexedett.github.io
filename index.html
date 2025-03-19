@@ -125,6 +125,23 @@
             font-size: 32px;
             margin-bottom: 15px;
         }
+           /* Estilos para el Parcial de IA */
+        #file-preview {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        #output-area {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        #output {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
     </style>
 </head>
 <body>
@@ -144,6 +161,11 @@
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="taller2-tab" data-bs-toggle="pill" data-bs-target="#taller2" type="button" role="tab">
                     Taller 2: Tipologías de la Inteligencia Artificial
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="parcial-ia-tab" data-bs-toggle="pill" data-bs-target="#parcial-ia" type="button" role="tab">
+                    Parcial de IA
                 </button>
             </li>
         </ul>
@@ -863,6 +885,35 @@
                 </div>
             </div>
         </div>
+          <!-- Nuevo panel para el Parcial de IA -->
+            <div class="tab-pane fade" id="parcial-ia" role="tabpanel">
+                <h2>Parcial de IA</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p>Carga y visualiza hasta 4 archivos de Python, luego ejecútalos.</p>
+                        
+                        <!-- Área para cargar archivos -->
+                        <input type="file" id="file-input" multiple accept=".py" style="display: none;">
+                        <button class="btn btn-primary" onclick="document.getElementById('file-input').click()">Cargar Archivos</button>
+                        
+                        <!-- Área para visualizar archivos -->
+                        <div id="file-preview" class="mt-3">
+                            <h5>Archivos Cargados:</h5>
+                            <ul id="file-list" class="list-group"></ul>
+                        </div>
+                        
+                        <!-- Botón para ejecutar archivos -->
+                        <button class="btn btn-success mt-3" id="run-button" disabled>Ejecutar Archivos</button>
+                        
+                        <!-- Área para mostrar la salida de los archivos -->
+                        <div id="output-area" class="mt-3">
+                            <h5>Salida:</h5>
+                            <pre id="output" class="bg-light p-3"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Botones de navegación -->
         <div class="d-flex justify-content-between mt-4">
@@ -986,6 +1037,42 @@
                 });
             });
         });
+        // Variables para almacenar los archivos cargados
+let files = [];
+
+// Evento para cargar archivos
+document.getElementById('file-input').addEventListener('change', function(event) {
+    const fileList = document.getElementById('file-list');
+    fileList.innerHTML = ''; // Limpiar la lista de archivos
+    files = Array.from(event.target.files).slice(0, 4); // Limitar a 4 archivos
+
+    // Mostrar los archivos cargados
+    files.forEach((file, index) => {
+        const listItem = document.createElement('li');
+        listItem.className = 'list-group-item';
+        listItem.textContent = `${index + 1}. ${file.name}`;
+        fileList.appendChild(listItem);
+    });
+
+    // Habilitar el botón de ejecución si hay archivos cargados
+    document.getElementById('run-button').disabled = files.length === 0;
+});
+
+// Evento para ejecutar los archivos
+document.getElementById('run-button').addEventListener('click', async function() {
+    const outputElement = document.getElementById('output');
+    outputElement.textContent = 'Ejecutando archivos...';
+
+    // Simular la ejecución de los archivos (esto es un ejemplo)
+    let output = '';
+    for (const file of files) {
+        const content = await file.text();
+        output += `Ejecutando ${file.name}:\n${content}\n\n`;
+    }
+
+    // Mostrar la salida simulada
+    outputElement.textContent = output;
+});
     </script>
 </body>
 </html>
