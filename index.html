@@ -125,19 +125,32 @@
             font-size: 32px;
             margin-bottom: 15px;
         }
-           /* Estilos para el Parcial de IA */
-        #file-preview {
-            max-height: 200px;
-            overflow-y: auto;
-        }
+           /* Estilos para el código en el Parcial de IA */
+#code-preview {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: auto;
+}
 
-        #output-area {
-            background-color: #f8f9fa;
-            border-radius: 5px;
-            padding: 10px;
-            margin-top: 20px;
-        }
+#code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 0;
+}
 
+#download-link {
+    margin-top: 15px;
+}
        
     </style>
 </head>
@@ -882,7 +895,7 @@
                 </div>
             </div>
         </div>
-         <!-- Nuevo panel para el Parcial de IA -->
+<!-- Nuevo panel para el Parcial de IA -->
 <div class="tab-pane fade" id="parcial-ia" role="tabpanel">
     <h2>Parcial de IA</h2>
     <div class="card">
@@ -892,14 +905,14 @@
             <!-- Selector de archivos -->
             <select id="file-selector" class="form-select mb-3">
                 <option value="">Selecciona un archivo</option>
-                <option value="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/parcial%20ia%2C%20codigo%20piloto%201.py">Codigo Piloto 1</option>
-                <option value="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/parcial%20ia%2C%20codigo%20piloto%20con%20datos%20reales%202.py">Codigo Piloto con Datos Reales 2</option>
-                <option value="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/parcial%20ia%2C%20codigo%20piloto%20con%20datos%20reales%20grafico%203.py">Codigo con Datos reales y gráfico 3</option>
-                <option value="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/parcial%20ia%2C%20otro%20algoritmo%20con%20datos%20y%20grafico%204.py">Codigo con datos reales pero usando otro algoritmo y gráfico 4</option>
+                <option value="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/parcial%20ia%2C%20codigo%20piloto%201.py">Código Piloto 1</option>
+                <option value="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/parcial%20ia%2C%20codigo%20piloto%20con%20datos%20reales%202.py">Código Piloto con Datos Reales 2</option>
+                <option value="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/parcial%20ia%2C%20codigo%20piloto%20con%20datos%20reales%20grafico%203.py">Código con Datos Reales y Gráfico 3</option>
+                <option value="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/parcial%20ia%2C%20otro%20algoritmo%20con%20datos%20y%20grafico%204.py">Código con Datos Reales pero usando otro Algoritmo y Gráfico 4</option>
             </select>
             
             <!-- Área para mostrar el código -->
-            <div id="code-preview" class="mt-3">
+            <div id="code-preview">
                 <h5>Código:</h5>
                 <pre id="code" class="bg-light p-3"></pre>
             </div>
@@ -1031,28 +1044,28 @@
                 });
             });
         });
-   // Evento para cargar el código del archivo seleccionado
-    document.getElementById('file-selector').addEventListener('change', async function() {
-        const selectedFile = this.value;
-        if (selectedFile) {
-            // Cargar el contenido del archivo desde el servidor
-            const response = await fetch(selectedFile);
-            const code = await response.text();
-            
-            // Mostrar el código en el área de previsualización
-            document.getElementById('code').textContent = code;
-            
-            // Mostrar el botón de descarga
-            const downloadLink = document.getElementById('download-link');
-            downloadLink.href = selectedFile;
-            downloadLink.download = selectedFile.split('/').pop(); // Obtener el nombre del archivo
-            downloadLink.style.display = 'block';
-        } else {
-            // Limpiar el área de código si no hay archivo seleccionado
-            document.getElementById('code').textContent = '';
-            document.getElementById('download-link').style.display = 'none';
-        }
-    });
+ // Evento para cargar el código del archivo seleccionado
+document.getElementById('file-selector').addEventListener('change', async function() {
+    const selectedFile = this.value;
+    if (selectedFile) {
+        // Cargar el contenido del archivo desde el servidor
+        const response = await fetch(selectedFile);
+        const code = await response.text();
+        
+        // Mostrar el código en el área de previsualización
+        document.getElementById('code').textContent = code;
+        
+        // Mostrar el botón de descarga
+        const downloadLink = document.getElementById('download-link');
+        downloadLink.href = selectedFile;
+        downloadLink.download = selectedFile.split('/').pop(); // Obtener el nombre del archivo
+        downloadLink.style.display = 'block';
+    } else {
+        // Limpiar el área de código si no hay archivo seleccionado
+        document.getElementById('code').textContent = '';
+        document.getElementById('download-link').style.display = 'none';
+    }
+});
     </script>
 </body>
 </html>
