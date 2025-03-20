@@ -126,32 +126,31 @@
             margin-bottom: 15px;
         }
 
-#code-preview {
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    padding: 15px;
-    margin-top: 20px;
-    color: #333;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-    line-height: 1.5;
-    overflow-x: auto;
-}
+        #code-preview {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            color: #333;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
 
-#code {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    background-color: #f8f9fa;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin: 0;
-}
+        #code {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0;
+        }
 
-#download-link {
-    margin-top: 15px;
-}
-       
+        #download-link {
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -174,6 +173,11 @@
                 </button>
             </li>
             <li class="nav-item" role="presentation">
+                <button class="nav-link" id="exposicion-tab" data-bs-toggle="pill" data-bs-target="#exposicion" type="button" role="tab">
+                    Exposición Juego Lógico
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
                 <button class="nav-link" id="parcial-ia-tab" data-bs-toggle="pill" data-bs-target="#parcial-ia" type="button" role="tab">
                     Parcial de IA
                 </button>
@@ -184,748 +188,51 @@
         <div class="tab-content" id="talleres-content">
             <!-- Taller 1 -->
             <div class="tab-pane fade show active" id="taller1" role="tabpanel">
-                <ul class="nav nav-tabs mb-3" id="taller1-sections" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="seccion1-tab" data-bs-toggle="tab" data-bs-target="#seccion1" type="button" role="tab">
-                            Introducción a la IA
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="seccion2-tab" data-bs-toggle="tab" data-bs-target="#seccion2" type="button" role="tab">
-                            Historia de la IA
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="seccion3-tab" data-bs-toggle="tab" data-bs-target="#seccion3" type="button" role="tab">
-                            Creación de la IA y sus Fundamentos
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="seccion4-tab" data-bs-toggle="tab" data-bs-target="#seccion4" type="button" role="tab">
-                            Preguntas de Reflexión
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="conclusion-tab" data-bs-toggle="tab" data-bs-target="#conclusion" type="button" role="tab">
-                            Conclusión y Reflexión Final
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="evaluacion-tab" data-bs-toggle="tab" data-bs-target="#evaluacion" type="button" role="tab">
-                            Evaluación
-                        </button>
-                    </li>
-                </ul>
-
-                <div class="tab-content bg-white text-dark p-4 rounded" id="taller1-content">
-                    <!-- Sección 1 -->
-                    <div class="tab-pane fade show active" id="seccion1" role="tabpanel">
-                        <h2>Sección 1: Introducción a la IA</h2>
-                        <div class="accordion" id="accordion-seccion1">
-                            <!-- Definición de IA -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-definicion">
-                                        Definir el concepto de IA
-                                    </button>
-                                </h2>
-                                <div id="collapse-definicion" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion1">
-                                    <div class="accordion-body">
-                                        <p>La inteligencia artificial (IA) es un campo de la informática que busca desarrollar sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como el aprendizaje, la toma de decisiones y el reconocimiento de patrones.</p>
-                                        <p><strong>Enfoques de la IA:</strong></p>
-                                        <ul>
-                                            <li><strong>IA como construcción de programas:</strong> Se centra en el desarrollo de software capaz de resolver problemas complejos.</li>
-                                            <li><strong>IA basada en el comportamiento humano:</strong> Busca imitar el razonamiento y la conducta de las personas (ejemplo: Test de Turing).</li>
-                                            <li><strong>IA basada en la racionalidad:</strong> Se enfoca en la toma de decisiones óptimas, sin necesidad de imitar a los humanos.</li>
-                                            <li><strong>IA como agentes inteligentes:</strong> Sistemas que perciben su entorno y actúan de manera autónoma para cumplir sus objetivos.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- IA Fuerte vs IA Débil -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-fuerte-debil">
-                                        Explicar las diferencias entre IA Fuerte e IA Débil
-                                    </button>
-                                </h2>
-                                <div id="collapse-fuerte-debil" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion1">
-                                    <div class="accordion-body">
-                                        <p><strong>IA Débil (Estrecha):</strong></p>
-                                        <ul>
-                                            <li>Se refiere a sistemas diseñados para realizar tareas específicas de forma eficiente.</li>
-                                            <li>No tiene conciencia ni comprensión general, solo ejecuta programas y algoritmos para resolver problemas específicos.</li>
-                                            <li><strong>Ejemplo:</strong> Un sistema de recomendación de películas en Netflix.</li>
-                                        </ul>
-                                        <p><strong>IA Fuerte (General):</strong></p>
-                                        <ul>
-                                            <li>Busca replicar la cognición humana en su totalidad.</li>
-                                            <li>Capaz de resolver problemas complejos y tomar decisiones en una variedad de situaciones.</li>
-                                            <li><strong>Ejemplo:</strong> Un robot que puede aprender a cocinar cualquier platillo o realizar tareas domésticas sin programación específica.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Aplicaciones de la IA -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-aplicaciones">
-                                        Identificar las principales aplicaciones de la IA en la vida cotidiana
-                                    </button>
-                                </h2>
-                                <div id="collapse-aplicaciones" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion1">
-                                    <div class="accordion-body">
-                                        <p>La inteligencia artificial ha sido llevada a la cotidianidad a través de diversos mecanismos comerciales:</p>
-                                        <ul>
-                                            <li><strong>Teléfonos inteligentes:</strong> Texto predictivo y reconocimiento facial.</li>
-                                            <li><strong>Correo electrónico:</strong> Herramientas como Grammarly y filtros de spam.</li>
-                                            <li><strong>Asistentes virtuales:</strong> Siri, Alexa y Google Assistant.</li>
-                                            <li><strong>Recomendaciones personalizadas:</strong> Plataformas como Netflix y Spotify.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Relación entre IA y otras tecnologías -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-relacionia">
-                                        Comprender la relación entre la IA y otras tecnologías emergentes
-                                    </button>
-                                </h2>
-                                <div id="collapse-relacionia" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion1">
-                                    <div class="accordion-body">
-                                        <p><strong>IA y Aprendizaje Automático:</strong></p>
-                                        <ul>
-                                            <li>El aprendizaje automático es una subcategoría de la IA que permite a los sistemas aprender de los datos sin ser programados explícitamente.</li>
-                                        </ul>
-                                        <p><strong>Redes Neuronales Artificiales:</strong></p>
-                                        <ul>
-                                            <li>Modelos inspirados en la estructura del cerebro humano, compuestos por capas de neuronas artificiales interconectadas.</li>
-                                            <li>Cuando estas redes tienen múltiples capas ocultas, se habla de aprendizaje profundo (deep learning).</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sección 2 -->
-                    <div class="tab-pane fade" id="seccion2" role="tabpanel">
-                        <h2 class="mb-4">Sección 2: Historia de la IA</h2>
-                        <div class="accordion" id="accordion-seccion2">
-                            <!-- Término "Inteligencia Artificial" -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-dartmouth">
-                                        ¿Quién acuñó el término 'Inteligencia Artificial' y en qué contexto?
-                                    </button>
-                                </h2>
-                                <div id="collapse-dartmouth" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion2">
-                                    <div class="accordion-body">
-                                        <p>El término <strong>"Inteligencia Artificial"</strong> fue acuñado por <strong>John McCarthy</strong> en 1956 durante la <strong>Conferencia de Dartmouth</strong>, un evento clave en la historia de la IA. McCarthy, junto con Marvin Minsky, Nathaniel Rochester y Claude Shannon, organizó esta conferencia con el objetivo de reunir a investigadores interesados en la posibilidad de que las máquinas pudieran imitar la inteligencia humana.</p>
-                                        <p>La conferencia propuso formalmente el estudio de la IA como una disciplina independiente, con el objetivo de desarrollar máquinas que pudieran realizar tareas como resolver problemas, aprender y entender el lenguaje natural.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Conferencia de Dartmouth -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-inviernos">
-                                        Explicar la importancia de la Conferencia de Dartmouth (1956) en el desarrollo de la IA
-                                    </button>
-                                </h2>
-                                <div id="collapse-inviernos" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
-                                    <div class="accordion-body">
-                                        <p>La <strong>Conferencia de Dartmouth</strong> es considerada el punto de partida oficial del campo de la inteligencia artificial. En este evento:</p>
-                                        <ul>
-                                            <li>Se estableció la IA como una nueva disciplina de investigación dentro de la informática.</li>
-                                            <li>Se plantearon problemas fundamentales como:
-                                                <ul>
-                                                    <li>Cómo programar computadoras para entender el lenguaje.</li>
-                                                    <li>El desarrollo de redes neuronales artificiales.</li>
-                                                    <li>La mejora automática de los sistemas computacionales.</li>
-                                                    <li>La creatividad y la abstracción en las máquinas.</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Hitos importantes -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-explosion">
-                                        Identificar hitos importantes en la evolución de la IA durante el siglo XX y XXI
-                                    </button>
-                                </h2>
-                                <div id="collapse-explosion" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
-                                    <div class="accordion-body">
-                                        <p>Algunos de los momentos más importantes en la historia de la IA incluyen:</p>
-                                        <ul>
-                                            <li><strong>1956:</strong> Conferencia de Dartmouth.</li>
-                                            <li><strong>1997:</strong> IBM Deep Blue vence al campeón mundial de ajedrez, Garry Kasparov.</li>
-                                            <li><strong>2011:</strong> IBM Watson gana el concurso de Jeopardy.</li>
-                                            <li><strong>2016:</strong> AlphaGo de DeepMind vence al campeón mundial de Go.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Explosión de IA en la década de 2010 -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-explosion-ia">
-                                        Describir el impacto de la 'Explosión de IA' en la década de 2010
-                                    </button>
-                                </h2>
-                                <div id="collapse-explosion-ia" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
-                                    <div class="accordion-body">
-                                        <p>La década de 2010 marcó un resurgimiento de la IA debido a tres factores clave:</p>
-                                        <ul>
-                                            <li><strong>Disponibilidad de grandes volúmenes de datos (Big Data).</strong></li>
-                                            <li><strong>Mayor capacidad de procesamiento gracias a las GPU y TPU.</strong></li>
-                                            <li><strong>Avances en aprendizaje profundo (Deep Learning).</strong></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Inviernos de la IA -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-inviernos-ia">
-                                        Investigar qué son los 'inviernos de la IA' y cómo afectaron su desarrollo
-                                    </button>
-                                </h2>
-                                <div id="collapse-inviernos-ia" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion2">
-                                    <div class="accordion-body">
-                                        <p>Los <strong>inviernos de la IA</strong> son períodos en los que el interés y la financiación en IA disminuyeron drásticamente debido a expectativas no cumplidas y avances tecnológicos limitados. Ha habido dos inviernos principales:</p>
-                                        <ul>
-                                            <li><strong>Primer invierno (1974-1980):</strong> Debido a la falta de avances significativos y al escepticismo sobre las capacidades de la IA.</li>
-                                            <li><strong>Segundo invierno (1987-1993):</strong> Causado por la caída del interés en los sistemas expertos y la falta de financiación.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sección 3 -->
-                    <div class="tab-pane fade" id="seccion3" role="tabpanel">
-                        <h2 class="mb-4">Sección 3: Creación de la IA y sus Fundamentos</h2>
-                        <div class="accordion" id="accordion-seccion3">
-                            <!-- Algoritmos de aprendizaje automático -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-aprendizaje">
-                                        Explicar el funcionamiento de los algoritmos de aprendizaje automático
-                                    </button>
-                                </h2>
-                                <div id="collapse-aprendizaje" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion3">
-                                    <div class="accordion-body">
-                                        <p>Los algoritmos de aprendizaje automático permiten a las computadoras identificar patrones en datos y hacer predicciones sin ser programadas explícitamente. Su funcionamiento se basa en tres etapas principales:</p>
-                                        <ol>
-                                            <li><strong>Recopilación y preparación de datos:</strong> Se recopilan y limpian los datos para su uso.</li>
-                                            <li><strong>Entrenamiento del modelo:</strong> El algoritmo aprende de los datos para identificar patrones.</li>
-                                            <li><strong>Evaluación y optimización:</strong> Se evalúa el rendimiento del modelo y se ajustan los parámetros para mejorar su precisión.</li>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Redes Neuronales Artificiales -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-redes">
-                                        ¿Qué son las redes neuronales artificiales y cómo se inspiran en el cerebro humano?
-                                    </button>
-                                </h2>
-                                <div id="collapse-redes" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
-                                    <div class="accordion-body">
-                                        <p>Las <strong>redes neuronales artificiales (RNA)</strong> son modelos computacionales inspirados en la estructura y funcionamiento del cerebro humano. Están compuestas por neuronas artificiales, organizadas en capas interconectadas.</p>
-                                        <p>Estas redes son capaces de aprender de los datos y realizar tareas como reconocimiento de imágenes, procesamiento de lenguaje natural y predicción de tendencias.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Tipos de aprendizaje -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-pln">
-                                        Diferenciar los tipos de aprendizaje en IA: supervisado, no supervisado y por refuerzo
-                                    </button>
-                                </h2>
-                                <div id="collapse-pln" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
-                                    <div class="accordion-body">
-                                        <p>Existen tres tipos principales de aprendizaje automático:</p>
-                                        <ul>
-                                            <li><strong>Aprendizaje supervisado:</strong> Se entrena con datos etiquetados (ejemplo: imágenes de gatos con la etiqueta "gato").</li>
-                                            <li><strong>Aprendizaje no supervisado:</strong> Se usa cuando los datos no tienen etiquetas, y el sistema debe encontrar patrones por sí solo.</li>
-                                            <li><strong>Aprendizaje por refuerzo:</strong> El agente aprende interactuando con un entorno, recibiendo recompensas o penalizaciones.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Herramientas y lenguajes de programación -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-herramientas">
-                                        Mencionar herramientas y lenguajes de programación comunes en el desarrollo de IA
-                                    </button>
-                                </h2>
-                                <div id="collapse-herramientas" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
-                                    <div class="accordion-body">
-                                        <p>El desarrollo de inteligencia artificial se apoya en diversas herramientas y lenguajes de programación:</p>
-                                        <ul>
-                                            <li><strong>Lenguajes de programación:</strong> Python, R, Julia, Java y C++.</li>
-                                            <li><strong>Bibliotecas y frameworks:</strong> TensorFlow, PyTorch, Scikit-learn, Keras, OpenCV, NLTK y spaCy.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Componentes de un sistema de IA -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-componentes">
-                                        ¿Cuáles son los principales componentes de un sistema de IA?
-                                    </button>
-                                </h2>
-                                <div id="collapse-componentes" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion3">
-                                    <div class="accordion-body">
-                                        <p>Un sistema de inteligencia artificial está compuesto por varios elementos clave:</p>
-                                        <ul>
-                                            <li><strong>Datos:</strong> La materia prima para entrenar y alimentar los modelos.</li>
-                                            <li><strong>Modelo de aprendizaje:</strong> El algoritmo que procesa los datos y aprende de ellos.</li>
-                                            <li><strong>Motor de procesamiento:</strong> La infraestructura que ejecuta los cálculos.</li>
-                                            <li><strong>Algoritmos de optimización:</strong> Métodos para mejorar el rendimiento del modelo.</li>
-                                            <li><strong>Interfaz de usuario:</strong> La forma en que los usuarios interactúan con el sistema.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sección 4 -->
-                    <div class="tab-pane fade" id="seccion4" role="tabpanel">
-                        <h2>Sección 4: Reflexión e Investigación</h2>
-                        <div class="accordion" id="accordion-seccion4">
-                            <!-- ¿Qué es ChatGPT? -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-chatgpt">
-                                        Explica brevemente qué es ChatGPT y cómo funciona
-                                    </button>
-                                </h2>
-                                <div id="collapse-chatgpt" class="accordion-collapse collapse show" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p>ChatGPT es un modelo de lenguaje desarrollado por OpenAI que utiliza la arquitectura GPT (Generative Pre-trained Transformer). Está diseñado para generar texto coherente y relevante en función de las entradas que recibe, permitiendo mantener conversaciones, responder preguntas y realizar tareas de generación de contenido.</p>
-                                        <p><strong>Funcionamiento:</strong></p>
-                                        <ul>
-                                            <li>Utiliza mecanismos de atención para procesar y generar secuencias de texto.</li>
-                                            <li>Se entrena con grandes volúmenes de datos para aprender patrones lingüísticos.</li>
-                                            <li>Puede mantener conversaciones fluidas y contextualizadas.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Tecnología detrás de ChatGPT -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-tecnologia">
-                                        ¿Cuál es la tecnología principal que permite el funcionamiento de ChatGPT?
-                                    </button>
-                                </h2>
-                                <div id="collapse-tecnologia" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p>La tecnología principal detrás de ChatGPT es la arquitectura <strong>Transformer</strong>, específicamente la variante GPT (Generative Pre-trained Transformer). Esta arquitectura utiliza mecanismos de atención para procesar y generar secuencias de texto, permitiendo al modelo comprender el contexto y generar respuestas coherentes.</p>
-                                        <p><strong>Características clave:</strong></p>
-                                        <ul>
-                                            <li>Mecanismos de atención para procesar texto de manera eficiente.</li>
-                                            <li>Entrenamiento con grandes volúmenes de datos para aprender patrones lingüísticos.</li>
-                                            <li>Capacidad para generar texto en función del contexto proporcionado.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Limitaciones de ChatGPT -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-limitaciones">
-                                        ¿Cuáles son las limitaciones actuales de ChatGPT?
-                                    </button>
-                                </h2>
-                                <div id="collapse-limitaciones" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p>ChatGPT tiene algunas limitaciones importantes:</p>
-                                        <ul>
-                                            <li><strong>Conocimiento desactualizado:</strong> El modelo fue entrenado con datos hasta 2021, por lo que no tiene información sobre eventos o desarrollos posteriores a esa fecha.</li>
-                                            <li><strong>Posibles sesgos:</strong> Puede reflejar sesgos presentes en los datos de entrenamiento, lo que podría llevar a respuestas parcializadas o inapropiadas.</li>
-                                            <li><strong>Falta de comprensión profunda:</strong> Aunque genera respuestas coherentes, no posee una comprensión real del mundo y puede producir información incorrecta o sin sentido.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Entrenamiento de ChatGPT -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-entrenamiento">
-                                        ¿Cómo se entrena un modelo de lenguaje como ChatGPT?
-                                    </button>
-                                </h2>
-                                <div id="collapse-entrenamiento" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p>El entrenamiento de ChatGPT implica dos fases principales:</p>
-                                        <ol>
-                                            <li><strong>Preentrenamiento:</strong> El modelo se expone a una gran cantidad de texto para aprender patrones lingüísticos, gramática y conocimiento general.</li>
-                                            <li><strong>Ajuste fino (Fine-tuning):</strong> Se refina el modelo utilizando conjuntos de datos más específicos y, en ocasiones, retroalimentación humana para mejorar su desempeño en tareas particulares.</li>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Precauciones para evitar sesgos -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-sesgos">
-                                        ¿Qué precauciones se toman para evitar sesgos en la IA?
-                                    </button>
-                                </h2>
-                                <div id="collapse-sesgos" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p>Para mitigar los sesgos en modelos de IA como ChatGPT, se implementan diversas estrategias:</p>
-                                        <ul>
-                                            <li><strong>Curación de datos:</strong> Seleccionar y filtrar los datos de entrenamiento para minimizar la inclusión de contenido sesgado.</li>
-                                            <li><strong>Ajuste fino con retroalimentación humana:</strong> Utilizar evaluaciones humanas para identificar y corregir respuestas sesgadas durante el proceso de ajuste fino.</li>
-                                            <li><strong>Transparencia:</strong> Documentar y comunicar los posibles sesgos del modelo para que los usuarios sean conscientes de sus limitaciones.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Aplicaciones actuales de IA -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-aplicaciones-ia">
-                                        ¿Qué aplicaciones actuales de IA se mencionan en el video?
-                                    </button>
-                                </h2>
-                                <div id="collapse-aplicaciones-ia" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p>Las aplicaciones comunes de la IA incluyen:</p>
-                                        <ul>
-                                            <li><strong>Asistentes virtuales:</strong> Siri, Alexa y Google Assistant.</li>
-                                            <li><strong>Traducción automática:</strong> Herramientas como Google Translate.</li>
-                                            <li><strong>Análisis de datos:</strong> Plataformas que utilizan IA para analizar grandes volúmenes de datos.</li>
-                                            <li><strong>Generación de contenido:</strong> Herramientas como ChatGPT para redacción de textos.</li>
-                                            <li><strong>Sistemas de recomendación:</strong> Plataformas como Netflix y Spotify.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Impacto de la IA en la comunicación -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-comunicacion">
-                                        ¿Cuál es el impacto de la IA en la comunicación entre humanos y máquinas?
-                                    </button>
-                                </h2>
-                                <div id="collapse-comunicacion" class="accordion-collapse collapse" data-bs-parent="#accordion-seccion4">
-                                    <div class="accordion-body">
-                                        <p>La IA ha transformado la interacción entre humanos y máquinas, permitiendo comunicaciones más naturales y eficientes. Algunos impactos clave incluyen:</p>
-                                        <ul>
-                                            <li><strong>Conversaciones fluidas:</strong> Modelos como ChatGPT permiten mantener diálogos coherentes y contextualizados.</li>
-                                            <li><strong>Accesibilidad a la información:</strong> Herramientas de IA facilitan el acceso rápido a información relevante.</li>
-                                            <li><strong>Automatización de tareas:</strong> Asistentes virtuales y chatbots automatizan tareas de atención al cliente y soporte técnico.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Conclusión -->
-                    <div class="tab-pane fade" id="conclusion" role="tabpanel">
-                        <h2>Conclusión y Reflexión Final</h2>
-                        <div class="card">
-                            <div class="card-body">
-                                <p>Discusión abierta sobre los impactos positivos y negativos de la IA.</p>
-                                <p>Reflexión sobre el rol de los ingenieros en la creación de una IA responsable.</p>
-                                <p>Pregunta final: ¿Cómo podría la IA transformar el mundo en los próximos 50 años?</p>
-                                <div id="pdf-list-conclusion" class="pdf-list" data-preloaded-pdf="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/Conclusion%20y%20reflexion%20final.pdf" data-preloaded-name="Conclusion PDF" data-preloaded-size="150"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Evaluación -->
-                    <div class="tab-pane fade" id="evaluacion" role="tabpanel">
-                        <h2>Evaluación</h2>
-                        <div class="card">
-                            <div class="card-body">
-                                <p>Cada estudiante presentará una reflexión escrita de una página sobre lo aprendido y su opinión acerca del futuro de la IA (1000 palabras mínimo).</p>
-                                <div id="pdf-list-evaluacion" class="pdf-list" data-preloaded-pdf="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/Evaluation.pdf" data-preloaded-name="Evaluacion PDF" data-preloaded-size="150"></div>
-                            </div>
-                        </div>
+                <h2>Taller 1: Subir PDF</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p>Sube un archivo PDF relacionado con la Historia y Creación de la Inteligencia Artificial.</p>
+                        <input type="file" id="pdf-upload-taller1" accept="application/pdf">
+                        <div id="pdf-preview-taller1" class="pdf-list mt-3"></div>
                     </div>
                 </div>
             </div>
 
             <!-- Taller 2 -->
             <div class="tab-pane fade" id="taller2" role="tabpanel">
-                <ul class="nav nav-tabs mb-3" id="taller2-sections" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="introduccion-tab" data-bs-toggle="tab" data-bs-target="#introduccion" type="button" role="tab">
-                            Introducción
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="desarrollo-tab" data-bs-toggle="tab" data-bs-target="#desarrollo" type="button" role="tab">
-                            Desarrollo
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="conclusiones-tab" data-bs-toggle="tab" data-bs-target="#conclusiones" type="button" role="tab">
-                            Conclusiones
-                        </button>
-                    </li>
-                </ul>
-
-                <div class="tab-content bg-white text-dark p-4 rounded" id="taller2-content">
-                    <!-- Introducción taller 2 -->
-                    <div class="tab-pane fade show active" id="introduccion" role="tabpanel">
-                        <h2>Introducción a las Tipologías de la Inteligencia Artificial</h2>
-                        <div class="card">
-                            <div class="card-body">
-                                <p>Este taller tiene como objetivo introducir a los estudiantes en las diferentes tipologías de la Inteligencia Artificial (IA), su clasificación y aplicaciones en la vida cotidiana. Al finalizar, los estudiantes comprenderán las diferencias entre IA Estrecha (ANI), IA General (AGI) y IA Superinteligente (ASI), sin necesidad de conocimientos previos en programación.</p>
-                                
-                                <h5>Objetivos del taller:</h5>
-                                <ul>
-                                    <li>Definir qué es la Inteligencia Artificial y sus aplicaciones.</li>
-                                    <li>Comprender las diferencias entre ANI, AGI y ASI.</li>
-                                    <li>Reflexionar sobre los desafíos éticos de la IA.</li>
-                                    <li>Identificar ejemplos de IA en la vida cotidiana.</li>
-                                </ul>
-
-                                <h5>Preguntas iniciales:</h5>
-                                <ul>
-                                    <li>¿Habías escuchado sobre IA antes?</li>
-                                    <p>
-        Sí, la inteligencia artificial (IA) es un campo ampliamente conocido y en constante crecimiento. Se refiere a la capacidad de las máquinas para realizar tareas que normalmente requieren inteligencia humana, como aprender, razonar, tomar decisiones y resolver problemas.
-    </p>
-
-                                    <li>¿En qué ámbitos crees que se usa la IA actualmente?</li>
-                                     <p>
-        La IA se utiliza en una gran variedad de ámbitos, entre los que destacan:
-    </p>
-    <ul>
-        <li><strong>Medicina</strong>: Diagnóstico de enfermedades, análisis de imágenes médicas y desarrollo de tratamientos personalizados.</li>
-        <li><strong>Finanzas</strong>: Detección de fraudes, análisis de riesgos y asesoramiento automatizado de inversiones.</li>
-        <li><strong>Transporte</strong>: Vehículos autónomos, optimización de rutas y gestión del tráfico.</li>
-        <li><strong>Educación</strong>: Plataformas de aprendizaje adaptativo y tutorías virtuales.</li>
-        <li><strong>Entretenimiento</strong>: Recomendaciones personalizadas en plataformas como Netflix o Spotify.</li>
-    </ul>
-                                    <li>Enumera al menos tres ejemplos de aplicaciones de IA que hayas utilizado sin darte cuenta.</li>
-                                    <p>
-        Algunos ejemplos comunes son:
-    </p>
-    <ol>
-        <li><strong>Asistentes virtuales</strong>: Como Siri, Alexa o Google Assistant, que utilizan IA para entender y responder a tus preguntas.</li>
-        <li><strong>Búsquedas en Google</strong>: El motor de búsqueda utiliza IA para ofrecer resultados relevantes y predecir lo que estás buscando.</li>
-        <li><strong>Recomendaciones en redes sociales</strong>: Plataformas como Instagram o Facebook usan IA para mostrar contenido que podría interesarte basado en tu comportamiento.</li>
-    </ol>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Desarrollo taller 2 -->
-                    <div class="tab-pane fade" id="desarrollo" role="tabpanel">
-                        <h2>Desarrollo: Tipologías de la Inteligencia Artificial</h2>
-                        <div class="accordion" id="accordion-desarrollo">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ani">
-                                        IA Estrecha (ANI)
-                                    </button>
-                                </h2>
-                                <div id="collapse-ani" class="accordion-collapse collapse show" data-bs-parent="#accordion-desarrollo">
-                                    <div class="accordion-body">
-                                        <p>La IA Estrecha (ANI) se especializa en una tarea concreta y depende de los datos de entrenamiento. No tiene capacidad de aprendizaje fuera de su dominio específico.</p>
-                                        <p><strong>Características:</strong></p>
-                                        <ul>
-                                            <li>Especializada en una tarea específica.</li>
-                                            <li>Alta dependencia de los datos de entrenamiento.</li>
-                                            <li>No puede generalizar conocimientos.</li>
-                                        </ul>
-                                        <p><strong>Ejemplos:</strong></p>
-                                        <ul>
-                                            <li>Asistentes virtuales como Siri o Alexa.</li>
-                                            <li>Sistemas de recomendación como Netflix o Spotify.</li>
-                                            <li>Reconocimiento facial en cámaras de seguridad.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-agi">
-                                        IA General (AGI)
-                                    </button>
-                                </h2>
-                                <div id="collapse-agi" class="accordion-collapse collapse" data-bs-parent="#accordion-desarrollo">
-                                    <div class="accordion-body">
-                                        <p>La IA General (AGI) tiene la capacidad de aprender de manera general, razonar y resolver problemas complejos, y adaptarse a nuevos entornos y tareas desconocidas.</p>
-                                        <p><strong>Características:</strong></p>
-                                        <ul>
-                                            <li>Capacidad de aprendizaje general.</li>
-                                            <li>Razonamiento y resolución de problemas complejos.</li>
-                                            <li>Adaptabilidad a nuevos entornos.</li>
-                                        </ul>
-                                        <p><strong>Ejemplo futuro:</strong></p>
-                                        <ul>
-                                            <li>Un robot que puede aprender a cocinar cualquier platillo o realizar tareas domésticas sin programación específica.</li>
-                                            <li>Un sistema que puede resolver problemas científicos complejos sin intervención humana.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-asi">
-                                        IA Superinteligente (ASI)
-                                    </button>
-                                </h2>
-                                <div id="collapse-asi" class="accordion-collapse collapse" data-bs-parent="#accordion-desarrollo">
-                                    <div class="accordion-body">
-                                        <p>La IA Superinteligente (ASI) superaría el intelecto humano en todas las áreas, tomaría decisiones autónomas a gran escala y plantearía debates éticos sobre su control.</p>
-                                        <p><strong>Características:</strong></p>
-                                        <ul>
-                                            <li>Supera el intelecto humano en todas las áreas.</li>
-                                            <li>Capacidad de tomar decisiones autónomas a gran escala.</li>
-                                            <li>Plantea debates éticos sobre su control.</li>
-                                        </ul>
-                                        <p><strong>Desafíos éticos:</strong></p>
-                                        <ul>
-                                            <li>Control de la IA y su autonomía.</li>
-                                            <li>Impacto en la sociedad y riesgos existenciales.</li>
-                                            <li>Responsabilidad sobre las decisiones tomadas por la IA.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Conclusiones taller 2 -->
-                    <div class="tab-pane fade" id="conclusiones" role="tabpanel">
-                        <h2>Conclusiones: Reflexiones sobre las Tipologías de IA</h2>
-                        <div class="card">
-                            <div class="card-body">
-                                <p>Al finalizar este taller, los estudiantes habrán comprendido las diferencias entre ANI, AGI y ASI, y habrán reflexionado sobre los desafíos éticos y aplicaciones prácticas de cada una.</p>
-                                
-                                <h5>Preguntas finales:</h5>
-                                <ul>
-                                    <li>¿Cuál de estas tipologías crees que tiene mayor impacto en la actualidad?</li>
-                                    <p>
-        En la actualidad, la <strong>IA estrecha o débil (ANI, Artificial Narrow Intelligence)</strong> es la que tiene mayor impacto. Esta es la forma de IA que está diseñada para realizar tareas específicas, como reconocimiento de voz, recomendaciones en plataformas digitales, diagnósticos médicos o conducción autónoma. Su impacto se debe a que ya está integrada en muchas aplicaciones cotidianas y está transformando industrias enteras.
-    </p>
-    <p>
-        La <strong>IA general o fuerte (AGI, Artificial General Intelligence)</strong>, que sería capaz de realizar cualquier tarea intelectual como un humano, aún no existe y sigue siendo un objetivo a largo plazo.
-    </p>
-                                    <li>¿La AGI es realmente alcanzable?</li>
-                                      <p>
-        La posibilidad de alcanzar la <strong>AGI</strong> es un tema de debate en la comunidad científica y tecnológica. Algunos puntos clave son:
-    </p>
-    <ul>
-        <li><strong>Desafíos técnicos</strong>: La AGI requeriría avances significativos en áreas como el aprendizaje profundo, la comprensión del contexto, la conciencia y la capacidad de generalizar conocimientos entre dominios completamente diferentes.</li>
-        <li><strong>Incertidumbre temporal</strong>: No hay consenso sobre cuándo (o si) se logrará. Algunos expertos creen que podría ser posible en décadas, mientras que otros dudan de que alguna vez se alcance.</li>
-        <li><strong>Riesgos y consideraciones éticas</strong>: La creación de una AGI plantea preguntas profundas sobre el control, la seguridad y el impacto en la sociedad, lo que ha llevado a muchos a abogar por un enfoque cauteloso.</li>
-    </ul>
-                                    <li>¿Cuáles son los límites éticos de la IA?</li>
-                                     <ol>
-        <li><strong>Privacidad</strong>: La IA a menudo depende de grandes cantidades de datos personales, lo que plantea preocupaciones sobre cómo se recopilan, almacenan y utilizan estos datos.</li>
-        <li><strong>Sesgos y discriminación</strong>: Los sistemas de IA pueden perpetuar o amplificar sesgos presentes en los datos con los que se entrenan, lo que puede llevar a decisiones injustas o discriminatorias.</li>
-        <li><strong>Transparencia y explicabilidad</strong>: Muchos sistemas de IA, especialmente los basados en aprendizaje profundo, funcionan como "cajas negras", lo que dificulta entender cómo toman decisiones. Esto es problemático en áreas críticas como la medicina o la justicia.</li>
-        <li><strong>Responsabilidad</strong>: Cuando un sistema de IA comete un error o causa daño, ¿quién es responsable? ¿El desarrollador, la empresa o el propio sistema?</li>
-        <li><strong>Impacto laboral</strong>: La automatización impulsada por la IA podría desplazar trabajos, lo que plantea desafíos económicos y sociales.</li>
-        <li><strong>Uso militar y vigilancia</strong>: La IA se utiliza en aplicaciones militares (como drones autónomos) y de vigilancia masiva, lo que genera preocupaciones sobre el uso ético de la tecnología.</li>
-        <li><strong>Autonomía y control</strong>: A medida que los sistemas de IA se vuelven más avanzados, existe el riesgo de que se les pierda el control o se utilicen de maneras no deseadas.</li>
-    </ol>
-                                </ul>
-
-                                <h5>Preguntas de análisis y respuestas:</h5>
-                                <ol>
-                                    <li><strong>¿Cuál es la principal diferencia entre ANI y AGI?</strong><br>La ANI está especializada en una tarea específica, mientras que la AGI tiene la capacidad de aprender y razonar en múltiples áreas, similar a la inteligencia humana.</li>
-                                    <li><strong>¿Qué riesgos tiene una AGI mal implementada?</strong><br>Podría tomar decisiones autónomas peligrosas o fuera de control, especialmente si no está bien alineada con los valores humanos.</li>
-                                    <li><strong>¿Cómo afectan los sesgos en los datos a la IA?</strong><br>Los sesgos pueden llevar a decisiones injustas o discriminatorias, ya que la IA aprende de los datos proporcionados.</li>
-                                    <li><strong>¿Cuáles son las ventajas de la IA en la educación?</strong><br>Personalización del aprendizaje, automatización de tareas administrativas y acceso a recursos educativos avanzados.</li>
-                                    <li><strong>¿Qué impacto tiene la IA en la toma de decisiones humanas?</strong><br>La IA puede mejorar la precisión y eficiencia, pero también puede generar dependencia y reducir el juicio humano.</li>
-                                    <li><strong>¿Cómo puede la IA ayudar a resolver problemas ambientales?</strong><br>Puede optimizar el uso de recursos, predecir desastres naturales y mejorar la gestión de residuos.</li>
-                                    <li><strong>¿Qué sectores industriales se benefician más de la IA?</strong><br>Salud, finanzas, manufactura, transporte y retail.</li>
-                                    <li><strong>¿Es posible alcanzar una AGI en el corto plazo?</strong><br>Es poco probable, ya que requiere avances significativos en tecnología y comprensión de la inteligencia humana.</li>
-                                    <li><strong>¿Qué dilemas éticos enfrenta la ASI?</strong><br>Control, autonomía, impacto en la sociedad y posibles riesgos existenciales.</li>
-                                    <li><strong>¿Cómo se puede regular la IA para evitar daños?</strong><br>Se necesitan leyes y estándares éticos para garantizar que la IA se use de manera responsable y segura.</li>
-                                    <li><strong>¿Qué tan importante es la transparencia en los algoritmos de IA?</strong><br>Es crucial para evitar decisiones sesgadas o injustas y para generar confianza en los usuarios.</li>
-                                    <li><strong>¿Cómo se diferencia la IA de los sistemas tradicionales de software?</strong><br>La IA puede aprender y adaptarse, mientras que el software tradicional sigue reglas predefinidas.</li>
-                                    <li><strong>¿Puede una IA creativa sustituir a los humanos en el arte?</strong><br>Puede complementar la creatividad humana, pero es poco probable que reemplace completamente a los artistas.</li>
-                                    <li><strong>¿Cómo influye la IA en la privacidad de los datos?</strong><br>La IA puede recopilar y analizar grandes cantidades de datos, lo que plantea preocupaciones sobre la privacidad y el uso ético de la información.</li>
-                                    <li><strong>¿Qué desafíos enfrenta la implementación de IA en medicina?</strong><br>Integración con los profesionales de la salud, aceptación por parte de los pacientes y manejo de datos sensibles.</li>
-                                    <li><strong>¿Puede la IA generar discriminación en sus decisiones?</strong><br>Puede ocurrir si los datos de entrenamiento contienen sesgos o si los algoritmos no están bien diseñados.</li>
-                                    <li><strong>¿Qué tan autónomas deberían ser las decisiones de una IA?</strong><br>Debe ser limitada y supervisada por humanos para evitar riesgos.</li>
-                                    <li><strong>¿Cómo afecta la IA al empleo y la automatización?</strong><br>La automatización puede eliminar algunos trabajos, pero también crear nuevos roles y oportunidades.</li>
-                                    <li><strong>¿Qué aspectos hacen que una IA sea ética o no?</strong><br>Depende de cómo se diseñe, implemente y utilice, asegurando que beneficie a la sociedad y respete los derechos humanos.</li>
-                                    <li><strong>¿Cómo podría la IA mejorar la seguridad cibernética?</strong><br>La IA puede detectar amenazas en tiempo real, mejorar la protección de datos y prevenir ciberataques.</li>
-                                </ol>
-                            </div>
-                        </div>
+                <h2>Taller 2: Subir PDF</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p>Sube un archivo PDF relacionado con las Tipologías de la Inteligencia Artificial.</p>
+                        <input type="file" id="pdf-upload-taller2" accept="application/pdf">
+                        <div id="pdf-preview-taller2" class="pdf-list mt-3"></div>
                     </div>
                 </div>
             </div>
-        </div>
-<!-- Nuevo panel para el Parcial de IA -->
-<div class="tab-pane fade" id="parcial-ia" role="tabpanel">
-    <h2>Parcial de IA</h2>
-    <div class="card">
-        <div class="card-body">
-            <p>Selecciona un archivo para ver su código y descargarlo.</p>
-            
-            <!-- Selector de archivos -->
-            <select id="file-selector" class="form-select mb-3">
-                <option value="">Selecciona un archivo</option>
-                <option value="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/parcial%20ia%2C%20codigo%20piloto%201.py">Código Piloto 1</option>
-                <option value="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/parcial%20ia%2C%20codigo%20piloto%20con%20datos%20reales%202.py">Código Piloto con Datos Reales 2</option>
-                <option value="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/parcial%20ia%2C%20codigo%20piloto%20con%20datos%20reales%20grafico%203.py">Código con Datos Reales y Gráfico 3</option>
-                <option value="https://raw.githubusercontent.com/alexedett/alexedett.github.io/main/parcial%20ia%2C%20otro%20algoritmo%20con%20datos%20y%20grafico%204.py">Código con Datos Reales pero usando otro Algoritmo y Gráfico 4</option>
-            </select>
-            
-            <!-- Área para mostrar el código -->
-            <div id="code-preview">
-                <h5>Código:</h5>
-                <pre id="code" class="bg-light p-3"></pre>
+
+            <!-- Exposición Juego Lógico -->
+            <div class="tab-pane fade" id="exposicion" role="tabpanel">
+                <h2>Exposición Juego Lógico: Subir PDF</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p>Sube un archivo PDF relacionado con la Exposición del Juego Lógico.</p>
+                        <input type="file" id="pdf-upload-exposicion" accept="application/pdf">
+                        <div id="pdf-preview-exposicion" class="pdf-list mt-3"></div>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Botón para descargar el archivo -->
-            <a id="download-link" class="btn btn-success mt-3" style="display: none;">Descargar Archivo</a>
-        </div>
-    </div>
-</div>
-        <!-- Botones de navegación -->
-        <div class="d-flex justify-content-between mt-4">
-            <button class="btn btn-primary" id="prev-button" disabled>Anterior</button>
-            <button class="btn btn-success" id="next-button">Siguiente</button>
+
+            <!-- Parcial de IA -->
+            <div class="tab-pane fade" id="parcial-ia" role="tabpanel">
+                <h2>Parcial de IA: Subir PDF</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p>Sube un archivo PDF relacionado con el Parcial de Inteligencia Artificial.</p>
+                        <input type="file" id="pdf-upload-parcial" accept="application/pdf">
+                        <div id="pdf-preview-parcial" class="pdf-list mt-3"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -934,138 +241,34 @@
     
     <!-- Script personalizado -->
     <script>
-        // Función para cargar el PDF predefinido
-        function loadPreloadedPDF(section) {
-            const listElement = document.getElementById(`pdf-list-${section}`);
-            const preloadedPDF = listElement.getAttribute('data-preloaded-pdf');
-            const preloadedName = listElement.getAttribute('data-preloaded-name');
-            const preloadedSize = listElement.getAttribute('data-preloaded-size');
+        // Función para cargar y mostrar el PDF subido
+        function handlePDFUpload(inputId, previewId) {
+            const input = document.getElementById(inputId);
+            const preview = document.getElementById(previewId);
 
-            if (preloadedPDF && preloadedName && preloadedSize) {
-                listElement.innerHTML = ''; // Limpiar cualquier contenido previo
-                const fileElement = document.createElement('div');
-                fileElement.className = 'alert alert-info mt-2';
-                fileElement.innerHTML = `
-                    <a href="${preloadedPDF}" target="_blank"><strong>${preloadedName}</strong></a> (${preloadedSize} KB)
-                `;
-                listElement.appendChild(fileElement);
-            }
+            input.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        preview.innerHTML = `
+                            <embed src="${e.target.result}" width="100%" height="600px" type="application/pdf">
+                        `;
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    preview.innerHTML = '';
+                }
+            });
         }
 
-        // Cargar PDFs predefinidos al iniciar la página
+        // Inicializar los manejadores de PDF
         document.addEventListener('DOMContentLoaded', function() {
-            const sectionsWithPDFs = ['conclusion', 'evaluacion'];
-            sectionsWithPDFs.forEach(section => {
-                loadPreloadedPDF(section);
-            });
-
-            // Código de navegación
-            const nextButton = document.getElementById('next-button');
-            const prevButton = document.getElementById('prev-button');
-            
-            const talleresTabs = document.querySelectorAll('#talleres-tab button');
-            const seccionesT1 = document.querySelectorAll('#taller1-sections button');
-            const seccionesT2 = document.querySelectorAll('#taller2-sections button');
-            
-            let currentTaller = 0;
-            let currentSeccionT1 = 0;
-            let currentSeccionT2 = 0;
-
-            nextButton.addEventListener('click', () => {
-                if (currentTaller === 0) { // Taller 1
-                    if (currentSeccionT1 < seccionesT1.length - 1) {
-                        currentSeccionT1++;
-                        new bootstrap.Tab(seccionesT1[currentSeccionT1]).show();
-                    } else {
-                        currentTaller = 1;
-                        currentSeccionT1 = 0;
-                        currentSeccionT2 = 0;
-                        new bootstrap.Tab(talleresTabs[currentTaller]).show();
-                        new bootstrap.Tab(seccionesT2[currentSeccionT2]).show();
-                    }
-                } else { // Taller 2
-                    if (currentSeccionT2 < seccionesT2.length - 1) {
-                        currentSeccionT2++;
-                        new bootstrap.Tab(seccionesT2[currentSeccionT2]).show();
-                    }
-                }
-                updateButtons();
-            });
-
-            prevButton.addEventListener('click', () => {
-                if (currentTaller === 1) { // Taller 2
-                    if (currentSeccionT2 > 0) {
-                        currentSeccionT2--;
-                        new bootstrap.Tab(seccionesT2[currentSeccionT2]).show();
-                    } else {
-                        currentTaller = 0;
-                        currentSeccionT2 = 0;
-                        currentSeccionT1 = seccionesT1.length - 1;
-                        new bootstrap.Tab(talleresTabs[currentTaller]).show();
-                        new bootstrap.Tab(seccionesT1[currentSeccionT1]).show();
-                    }
-                } else { // Taller 1
-                    if (currentSeccionT1 > 0) {
-                        currentSeccionT1--;
-                        new bootstrap.Tab(seccionesT1[currentSeccionT1]).show();
-                    }
-                }
-                updateButtons();
-            });
-
-            function updateButtons() {
-                prevButton.disabled = (currentTaller === 0 && currentSeccionT1 === 0);
-                nextButton.disabled = (currentTaller === 1 && currentSeccionT2 === seccionesT2.length - 1);
-            }
-
-            talleresTabs.forEach((tab, index) => {
-                tab.addEventListener('shown.bs.tab', () => {
-                    currentTaller = index;
-                    if (currentTaller === 0) {
-                        new bootstrap.Tab(seccionesT1[currentSeccionT1]).show();
-                    } else {
-                        new bootstrap.Tab(seccionesT2[currentSeccionT2]).show();
-                    }
-                    updateButtons();
-                });
-            });
-
-            seccionesT1.forEach((tab, index) => {
-                tab.addEventListener('shown.bs.tab', () => {
-                    currentSeccionT1 = index;
-                    updateButtons();
-                });
-            });
-
-            seccionesT2.forEach((tab, index) => {
-                tab.addEventListener('shown.bs.tab', () => {
-                    currentSeccionT2 = index;
-                    updateButtons();
-                });
-            });
+            handlePDFUpload('pdf-upload-taller1', 'pdf-preview-taller1');
+            handlePDFUpload('pdf-upload-taller2', 'pdf-preview-taller2');
+            handlePDFUpload('pdf-upload-exposicion', 'pdf-preview-exposicion');
+            handlePDFUpload('pdf-upload-parcial', 'pdf-preview-parcial');
         });
- // Evento para cargar el código del archivo seleccionado
-document.getElementById('file-selector').addEventListener('change', async function() {
-    const selectedFile = this.value;
-    if (selectedFile) {
-        // Cargar el contenido del archivo desde el servidor
-        const response = await fetch(selectedFile);
-        const code = await response.text();
-        
-        // Mostrar el código en el área de previsualización
-        document.getElementById('code').textContent = code;
-        
-        // Mostrar el botón de descarga
-        const downloadLink = document.getElementById('download-link');
-        downloadLink.href = selectedFile;
-        downloadLink.download = selectedFile.split('/').pop(); // Obtener el nombre del archivo
-        downloadLink.style.display = 'block';
-    } else {
-        // Limpiar el área de código si no hay archivo seleccionado
-        document.getElementById('code').textContent = '';
-        document.getElementById('download-link').style.display = 'none';
-    }
-});
     </script>
 </body>
 </html>
